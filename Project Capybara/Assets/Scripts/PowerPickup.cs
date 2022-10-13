@@ -29,4 +29,9 @@ public class PowerPickup : Pickup
     {
         Debug.Log(powerupDescription);
     }
+
+    public override void powerupImplementation()
+    {
+        
+    }
 }

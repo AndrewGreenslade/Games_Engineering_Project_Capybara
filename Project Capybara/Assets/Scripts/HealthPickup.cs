@@ -28,4 +28,9 @@ public class HealthPickup : Pickup
     {
         Debug.Log(powerupDescription);
     }
+
+    public override void powerupImplementation()
+    {
+
+    }
 }

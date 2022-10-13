@@ -20,14 +20,11 @@ public abstract class Pickup : MonoBehaviour
         
     }
 
-    public void Movement()
-    {
-
-    }
-
     public abstract void outputPowerupName();
 
     public abstract void outputPowerupDescription();
+
+    public abstract void powerupImplementation();
 
 
 }
