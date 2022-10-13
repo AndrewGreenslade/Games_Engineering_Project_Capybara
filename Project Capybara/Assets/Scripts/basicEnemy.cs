@@ -29,5 +29,9 @@ public class basicEnemy : INpc
     {
         Debug.Log("basic enemy hitplayer");
     }
+    public override void Animate()
+    {
+        throw new System.NotImplementedException();
+    }
 
 }

@@ -28,6 +28,10 @@ public class followerEnemy : INpc
     {
         Debug.Log("follower enemy hitplayer");
     }
+    public override void Animate()
+    {
+        Debug.Log("follower enemy hitplayer");
+    }
 
-   
+
 }
