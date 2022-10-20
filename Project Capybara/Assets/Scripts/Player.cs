@@ -23,12 +23,12 @@ public enum States
 public class Player : MonoBehaviour
 {
     // Normal Movements Variables
-    private float walkSpeed;
+    public float walkSpeed;
     private float curSpeed;
     private float maxSpeed;
     private float charSpeed = 5.0f;
     private float agility = 10.0f;
-    private float sprintSpeed;
+    public float sprintSpeed;
     public Animator anim;
     public States state;
 
@@ -150,6 +150,13 @@ public class Player : MonoBehaviour
         //////
         anim.SetInteger("State", (int)state);
     }
+
+    public void speedChangeForSpeedPowerup()
+    {
+        walkSpeed = (float) (walkSpeed * 1.5);
+        sprintSpeed = (float) (sprintSpeed * 1.5);
+    }
+        
 
 
 
