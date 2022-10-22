@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SpeedPowerup
   layers:
   - Default
   - TransparentFX
@@ -46,4 +47,7 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 2747986787
+    locked: 0
+  - name: Powerup
+    uniqueID: 1739428881
     locked: 0
