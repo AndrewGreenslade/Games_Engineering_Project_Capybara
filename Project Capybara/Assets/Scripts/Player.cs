@@ -156,8 +156,10 @@ public class Player : MonoBehaviour
         walkSpeed = (float) (walkSpeed * 1.5);
         sprintSpeed = (float) (sprintSpeed * 1.5);
     }
-        
 
-
-
+    public void speedChangeResetForSpeedPowerup()
+    {
+        walkSpeed = (float)(walkSpeed / 1.5);
+        sprintSpeed = (float)(sprintSpeed / 1.5);
+    }
 }
