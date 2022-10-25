@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 
 public enum States
 {
@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     public float sprintSpeed;
     public Animator anim;
     public States state;
+    public TextMeshProUGUI levelText;
 
 
     void Start()
@@ -161,5 +162,43 @@ public class Player : MonoBehaviour
     {
         walkSpeed = (float)(walkSpeed / 1.5);
         sprintSpeed = (float)(sprintSpeed / 1.5);
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Level1") || collision.gameObject.CompareTag("Level2")
+            || collision.gameObject.CompareTag("Level3")|| collision.gameObject.CompareTag("Level4")
+            || collision.gameObject.CompareTag("LevelBoss"))
+        {
+            levelText.gameObject.SetActive(false);
+        }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Level1"))
+        {
+            levelText.gameObject.SetActive(true);
+            levelText.text = "Press SPACE to Enter:\r\nLevel 1";
+        }
+        else if(collision.gameObject.CompareTag("Level2"))
+        {
+            levelText.gameObject.SetActive(true);
+            levelText.text = "Press SPACE to Enter:\r\nLevel 2";
+        }
+        else if (collision.gameObject.CompareTag("Level3"))
+        {
+            levelText.gameObject.SetActive(true);
+            levelText.text = "Press SPACE to Enter:\r\nLevel 3";
+        }
+        else if (collision.gameObject.CompareTag("Level4"))
+        {
+            levelText.gameObject.SetActive(true);
+            levelText.text = "Press SPACE to Enter:\r\nLevel 4";
+        }
+        else if (collision.gameObject.CompareTag("LevelBoss"))
+        {
+            levelText.gameObject.SetActive(true);
+            levelText.text = "Press SPACE to Enter:\r\nCentral Chamber";
+        }
     }
 }
