@@ -11,6 +11,7 @@ TagManager:
   - Level4
   - LevelBoss
   - Save Bench
+  - Room
   layers:
   - Default
   - TransparentFX

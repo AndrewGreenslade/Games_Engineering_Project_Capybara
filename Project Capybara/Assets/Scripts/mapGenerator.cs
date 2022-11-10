@@ -22,42 +22,35 @@ public class mapGenerator : MonoBehaviour
     public int mapSizeX = 75;
     public int mapSizey = 75;
 
+    public GameObject room;
+
     // Start is called before the first frame update
     void Start()
     {
         generateStartRoom();
-    }   
-    
-    // Update is called once per frame
-    void Update()
-    {
 
+        Instantiate(room,transform.position,Quaternion.identity);
     }
-
 
     private void generateStartRoom()
     {
-        bg.transform.position = -(new Vector3(mapSizeX / 2, mapSizey / 2));
-        fg.transform.position = -(new Vector3(mapSizeX / 2, mapSizey / 2));
-
-        for (int x = 0; x < mapSizeX; x++)
+        for (int x = -(mapSizeX / 2); x < mapSizeX / 2; x++)
         {
-            for (int y = 0; y < mapSizey; y++)
+            for (int y = -(mapSizey / 2); y < mapSizey / 2; y++)
             {
                 bg.SetTile(new Vector3Int((int)x, (int)y, 0), tiles[(int)TilesList.bgTile]);
             }
         }
 
-        generateRoomFloor((new Vector3Int(mapSizeX / 2, mapSizey / 2)), TilesList.cobbleFloor, startRoomSize);
-        generateRoomWalls((new Vector3Int(mapSizeX / 2, mapSizey / 2)), TilesList.cobbleWall, startRoomSize);
+        generateRoomFloor(new Vector3Int(0, 0), TilesList.cobbleFloor, startRoomSize);
+        generateRoomWalls(new Vector3Int(0, 0), TilesList.cobbleWall, startRoomSize);
     }
 
-
-    private void generateRoomFloor(Vector3Int startPos,TilesList floorTile, uint roomSize)
+    private void generateRoomFloor(Vector3Int startPos, TilesList floorTile, uint roomSize)
     {
         float half = (roomSize / 2.0f);
 
-        for (float x = -half; x  < half; x ++)
+        for (float x = -half; x < half; x++)
         {
             for (float y = -half; y < half; y++)
             {
@@ -74,11 +67,21 @@ public class mapGenerator : MonoBehaviour
         {
             for (float y = -half - 1; y < half + 1; y++)
             {
-                if(x < -half || x >= half || y < -half || y >= half)
+                if (x < -half || x >= half || y < -half || y >= half)
                 {
                     fg.SetTile(startPos + new Vector3Int((int)x, (int)y, 0), tiles[(int)floorTile]);
                 }
             }
         }
+    }
+
+    public void generateExternalRoomFloor(Vector3Int startPos, TilesList floorTile, uint roomSize)
+    {
+        generateRoomFloor(startPos,floorTile,roomSize);
+    }
+
+    public void generateExternalRoomWalls(Vector3Int startPos, TilesList floorTile, uint roomSize)
+    {
+        generateRoomWalls(startPos, floorTile, roomSize);
     }
 }
