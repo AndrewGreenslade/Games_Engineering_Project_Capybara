@@ -11,6 +11,8 @@ TagManager:
   - Level4
   - LevelBoss
   - Save Bench
+  - llama
+  - spit
   layers:
   - Default
   - TransparentFX
