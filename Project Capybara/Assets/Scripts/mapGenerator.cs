@@ -30,6 +30,12 @@ public class mapGenerator : MonoBehaviour
         generateStartRoom();
 
         Instantiate(room,transform.position,Quaternion.identity);
+        Instantiate(room, transform.position, Quaternion.identity);
+        Instantiate(room, transform.position, Quaternion.identity);
+        Instantiate(room, transform.position, Quaternion.identity);
+        Instantiate(room, transform.position, Quaternion.identity);
+        Instantiate(room, transform.position, Quaternion.identity);
+
     }
 
     private void generateStartRoom()

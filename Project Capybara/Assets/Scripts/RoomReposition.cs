@@ -17,7 +17,7 @@ public class RoomReposition : MonoBehaviour
     {
         mapGen = FindObjectOfType<mapGenerator>();
 
-        GetComponent<BoxCollider2D>().size = new Vector2(roomSize + 2,roomSize + 2);
+        GetComponent<BoxCollider2D>().size = new Vector2(roomSize + 6,roomSize + 6);
         
         MaxMapSize = new Vector2((mapGen.mapSizeX / 2.0f) - roomSize, (mapGen.mapSizeX / 2.0f) - roomSize);
         MinMapSize = new Vector2(-(mapGen.mapSizeX / 2.0f) + roomSize, -(mapGen.mapSizey / 2.0f) + roomSize);
