@@ -11,14 +11,16 @@ TagManager:
   - Level4
   - LevelBoss
   - Save Bench
+  - Enemy
+  - attack
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - attack
   - 
   - 
   - 
