@@ -11,6 +11,9 @@ TagManager:
   - Level4
   - LevelBoss
   - Save Bench
+  - Hub
+  - Settings
+  - Exit
   layers:
   - Default
   - TransparentFX
