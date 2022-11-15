@@ -21,6 +21,8 @@ public class mapGenerator : MonoBehaviour
     public uint startRoomSize = 3;
     public int mapSizeX = 75;
     public int mapSizey = 75;
+    public int RoomsTogenerate = 5;
+    public int RoomsGenerated = 0;
 
     public GameObject room;
 
@@ -30,12 +32,21 @@ public class mapGenerator : MonoBehaviour
         generateStartRoom();
 
         Instantiate(room,transform.position,Quaternion.identity);
-        Instantiate(room, transform.position, Quaternion.identity);
-        Instantiate(room, transform.position, Quaternion.identity);
-        Instantiate(room, transform.position, Quaternion.identity);
-        Instantiate(room, transform.position, Quaternion.identity);
-        Instantiate(room, transform.position, Quaternion.identity);
 
+        StartCoroutine(spawnRooms());
+    }
+
+    IEnumerator spawnRooms()
+    {
+        Instantiate(room, transform.position, Quaternion.identity);
+        RoomsGenerated++;
+
+        yield return new WaitForSeconds(RoomReposition.spawnTime);
+
+        if (RoomsGenerated <= RoomsTogenerate)
+        {
+            StartCoroutine(spawnRooms());
+        }
     }
 
     private void generateStartRoom()

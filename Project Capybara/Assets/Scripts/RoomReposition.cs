@@ -11,7 +11,8 @@ public class RoomReposition : MonoBehaviour
     public bool isGenerated = false;
     public Vector2 MaxMapSize;
     public Vector2 MinMapSize;
-    public float spawnTime = 1.0f;
+    public static float spawnTime = 0.5f;
+    public List<GameObject> collisions = new List<GameObject>();
 
     private void Awake()
     {
@@ -29,29 +30,40 @@ public class RoomReposition : MonoBehaviour
 
     private void Update()
     {
-        if (!isGenerated)
+        if (collisions.Count <= 0)
         {
-            if (shoudIncreaseTime && roomTime < spawnTime)
+            if (!isGenerated)
             {
-                roomTime += Time.deltaTime;
-            }
+                if (shoudIncreaseTime && roomTime < spawnTime)
+                {
+                    roomTime += Time.deltaTime;
+                }
 
-            if (roomTime >= spawnTime)
-            {
-                mapGen.generateExternalRoomWalls(new Vector3Int((int)transform.position.x + (int)mapGen.fg.transform.position.x, (int)transform.position.y + (int)mapGen.fg.transform.position.y, 0), TilesList.cobbleWall, roomSize);
-                mapGen.generateExternalRoomFloor(new Vector3Int((int)transform.position.x + (int)mapGen.bg.transform.position.x, (int)transform.position.y + (int)mapGen.bg.transform.position.y, 0), TilesList.cobbleFloor, roomSize);
-                isGenerated = true;
+                if (roomTime >= spawnTime)
+                {
+                    mapGen.generateExternalRoomWalls(new Vector3Int((int)transform.position.x, (int)transform.position.y , 0), TilesList.cobbleWall, roomSize);
+                    mapGen.generateExternalRoomFloor(new Vector3Int((int)transform.position.x, (int)transform.position.y , 0), TilesList.cobbleFloor, roomSize);
+                    isGenerated = true;
+                    shoudIncreaseTime = false;
+                }
             }
         }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Room"))
+        else if (collisions.Count > 0 && !isGenerated)
         {
             roomTime = 0;
             shoudIncreaseTime = false;
             RepositionRoom();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Room"))
+        {
+            if (!collisions.Contains(collision.gameObject))
+            {
+                collisions.Add(collision.gameObject);
+            }
         }
     }
 
@@ -65,7 +77,14 @@ public class RoomReposition : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        roomTime = 0;
-        shoudIncreaseTime = true;
+        if (collision.CompareTag("Room"))
+        {
+            if (collisions.Contains(collision.gameObject))
+            {
+                collisions.Remove(collision.gameObject);
+                roomTime = 0;
+                shoudIncreaseTime = true;
+            }
+        }
     }
 }
