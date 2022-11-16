@@ -8,6 +8,7 @@ public class SpeedPickup : Pickup
     private string powerupDescription;
     public float powerupDuration;
     public GameObject Scroll;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,12 +23,12 @@ public class SpeedPickup : Pickup
 
     public override void outputPowerupName()
     {
-        Debug.Log(" You picked up " + PowerName);
+        powerupNameText.text = PowerName;
     }
 
     public override void outputPowerupDescription()
     {
-        Debug.Log(powerupDescription);
+        powerupText.text = powerupDescription;
     }
 
 

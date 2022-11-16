@@ -114,5 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28c275b98657d84281b1ed52f7515e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
   powerupDuration: 15
   Scroll: {fileID: 3622171618464763438, guid: f7a786a69fd91804a9bbcfcd289583be, type: 3}
+  powerupText: {fileID: 2225739579007620450, guid: 492bcd715ca31704192fc0b946610389, type: 3}
+  powerupNameText: {fileID: 3960786316801894682, guid: 3ba8e5198632a6b4cb07a8f2a09ca869, type: 3}
