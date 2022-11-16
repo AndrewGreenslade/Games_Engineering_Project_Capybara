@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class SpeedPickup : Pickup
 {
-    private GameObject Speed;
     private string PowerName;
     private string powerupDescription;
-    private bool hasCollisionHappened;
-    private float powerupDuration;
+    public float powerupDuration;
     public GameObject Scroll;
     // Start is called before the first frame update
     void Start()
     {
-        Speed = GetComponent<GameObject>();
         PowerName = "Speed Boost";
         powerupDescription = "Gives capybara a temporary speed boost";
-        hasCollisionHappened = false;
-        powerupDuration = 5;
     }
 
     // Update is called once per frame
@@ -35,24 +30,17 @@ public class SpeedPickup : Pickup
         Debug.Log(powerupDescription);
     }
 
-    public override void powerupImplementation()
-    {
-        
-    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (hasCollisionHappened == false)
+        if (collision.tag == "Player")
         {
-            if (collision.tag == "Player")
-            {
-                outputPowerupName();
-                outputPowerupDescription();
-                collision.GetComponent<Player>().speedChangeForSpeedPowerup();
-                this.transform.position = new Vector3(5000.0f, 5000.0f, 100.0f);
-                var newScroll = Instantiate(Scroll);
-                StartCoroutine(SelfDestruct(collision));
-            }
+            outputPowerupName();
+            outputPowerupDescription();
+            collision.GetComponent<Player>().speedChangeForSpeedPowerup();
+            this.transform.position = new Vector3(5000.0f, 5000.0f, 100.0f);
+            var newScroll = Instantiate(Scroll);
+            StartCoroutine(SelfDestruct(collision));
         }
     }
 

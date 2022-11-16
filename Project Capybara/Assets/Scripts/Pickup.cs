@@ -24,7 +24,5 @@ public abstract class Pickup : MonoBehaviour
 
     public abstract void outputPowerupDescription();
 
-    public abstract void powerupImplementation();
-
 
 }
