@@ -15709,7 +15709,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &757579152
 GameObject:
@@ -17028,6 +17028,10 @@ PrefabInstance:
       propertyPath: m_capyTransform
       value: 
       objectReference: {fileID: 1057370777}
+    - target: {fileID: 3567371308388402799, guid: 3d3b35730e4aaf24c827538e0f965815, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3b35730e4aaf24c827538e0f965815, type: 3}
 --- !u!1 &1935340333
