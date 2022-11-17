@@ -27,15 +27,18 @@ public class Player : MonoBehaviour
     private float agility = 10.0f;
     public float timerForAttackAlive = 0.5f;
     private int attackDirection = 0;
-
+    private float playerHealth = 2.5f;
     public float sprintSpeed;
+    private bool isHealthAdded = false;
     public Animator anim;
     public States state;
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI saveText;
     private GameObject cloneAttack;
+    private GameObject healthClone;
+    public Vector3 originalLocalScale;
     public GameObject attackObject;
-
+    public GameObject heartObject;
     public bool playerHasAttacked = false;
     public bool levelTwoUnlock = false;
     public bool levelThreeUnlock = false;
@@ -49,6 +52,11 @@ public class Player : MonoBehaviour
         sprintSpeed = walkSpeed + (walkSpeed / 2);
         anim = GetComponent<Animator>();
         state = States.Idle;
+        healthClone = Instantiate(heartObject, new Vector3(0, 0, 0), Quaternion.identity);
+        originalLocalScale = healthClone.transform.localScale;
+
+
+
     }
 
     void FixedUpdate()
@@ -75,7 +83,27 @@ public class Player : MonoBehaviour
         checkStatesForAnimator();
         attack();
 
+        positionHealth();
+
+        if (playerHealth <= 0.0f)
+        {
+            // game lost 
+        }
+
+
     }
+    private void positionHealth()
+    {
+        float distanceFromCamera = Camera.main.nearClipPlane; // Change this value if you want
+        Vector3 topLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, distanceFromCamera));
+     
+
+        healthClone.transform.position = new Vector3(topLeft.x + 1, topLeft.y - 0.8f, 0);
+        healthClone.gameObject.transform.localScale = new Vector3(playerHealth, playerHealth, 0);
+
+
+    }
+
 
 
 
