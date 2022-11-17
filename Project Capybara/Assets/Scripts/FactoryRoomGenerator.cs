@@ -11,12 +11,14 @@ public enum TilesList
     cobbleWall = 2
 }
 
-public class mapGenerator : MonoBehaviour
+public class FactoryRoomGenerator : MonoBehaviour
 {
     public Tilemap bg; //background tilemap
     public Tilemap fg; //foreground tilemap
+    public Tilemap darkness; //foreground tilemap
 
     public List<Tile> tiles;
+    public List<GameObject> Rooms;
 
     public uint startRoomSize = 3;
     public int mapSizeX = 75;
@@ -31,21 +33,24 @@ public class mapGenerator : MonoBehaviour
     {
         generateStartRoom();
 
-        Instantiate(room,transform.position,Quaternion.identity);
-
         StartCoroutine(spawnRooms());
     }
 
     IEnumerator spawnRooms()
     {
-        Instantiate(room, transform.position, Quaternion.identity);
+        GameObject rooms = Instantiate(room, transform.position, Quaternion.identity);
+        Rooms.Add(rooms);
         RoomsGenerated++;
 
         yield return new WaitForSeconds(RoomReposition.spawnTime);
 
-        if (RoomsGenerated <= RoomsTogenerate)
+        if (RoomsGenerated < RoomsTogenerate)
         {
             StartCoroutine(spawnRooms());
+        }
+        else
+        {
+            GeneratePaths();
         }
     }
 
@@ -55,9 +60,11 @@ public class mapGenerator : MonoBehaviour
         {
             for (int y = -(mapSizey / 2); y < mapSizey / 2; y++)
             {
-                bg.SetTile(new Vector3Int((int)x, (int)y, 0), tiles[(int)TilesList.bgTile]);
+                darkness.SetTile(new Vector3Int((int)x, (int)y, 0), tiles[(int)TilesList.bgTile]);
             }
         }
+
+        Rooms.Add(gameObject);
 
         generateRoomFloor(new Vector3Int(0, 0), TilesList.cobbleFloor, startRoomSize);
         generateRoomWalls(new Vector3Int(0, 0), TilesList.cobbleWall, startRoomSize);
@@ -71,6 +78,7 @@ public class mapGenerator : MonoBehaviour
         {
             for (float y = -half; y < half; y++)
             {
+                darkness.SetTile(startPos + new Vector3Int((int)x, (int)y, 0), null);
                 bg.SetTile(startPos + new Vector3Int((int)x, (int)y, 0), tiles[(int)floorTile]);
             }
         }
@@ -86,8 +94,61 @@ public class mapGenerator : MonoBehaviour
             {
                 if (x < -half || x >= half || y < -half || y >= half)
                 {
+                    darkness.SetTile(startPos + new Vector3Int((int)x, (int)y, 0), null);
                     fg.SetTile(startPos + new Vector3Int((int)x, (int)y, 0), tiles[(int)floorTile]);
                 }
+            }
+        }
+    }
+
+    private void generatePath(Vector2 t_pos1, Vector2 t_pos2, TilesList floorTile)
+    {
+        int currentX = (int)t_pos1.x;
+        int currentY = (int)t_pos1.y;
+
+        while(currentX != t_pos2.x)
+        {
+            bg.SetTile(new Vector3Int(currentX, currentY , 0), tiles[(int)floorTile]);
+            fg.SetTile(new Vector3Int(currentX, currentY, 0), null);
+            darkness.SetTile(new Vector3Int(currentX, currentY, 0), null);
+
+            if (currentX <= t_pos2.x)
+            {
+                currentX++;
+            }
+            else
+            {
+                currentX--;
+            }
+        }
+
+        while (currentY != t_pos2.y)
+        {
+            bg.SetTile(new Vector3Int(currentX, currentY, 0), tiles[(int)floorTile]);
+            fg.SetTile(new Vector3Int(currentX, currentY, 0), null);
+            darkness.SetTile(new Vector3Int(currentX, currentY, 0), null);
+
+            if (currentY <= t_pos2.y)
+            {
+                currentY++;
+            }
+            else
+            {
+                currentY--;
+            }
+        }
+    }
+
+    private void GeneratePaths()
+    {
+        int currentRoom = 1;
+
+        for (int i = 0; i < Rooms.Count; i++)
+        {
+            if(currentRoom < Rooms.Count)
+            {
+                generatePath(Rooms[i].transform.position, Rooms[currentRoom].transform.position, TilesList.cobbleFloor);
+                currentRoom++;
             }
         }
     }

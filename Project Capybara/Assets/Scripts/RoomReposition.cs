@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoomReposition : MonoBehaviour
 {
-    public mapGenerator mapGen;
+    public FactoryRoomGenerator mapGen;
     public float roomTime;
     private uint roomSize = 6;
     private bool shoudIncreaseTime = false;
@@ -16,7 +16,7 @@ public class RoomReposition : MonoBehaviour
 
     private void Awake()
     {
-        mapGen = FindObjectOfType<mapGenerator>();
+        mapGen = FindObjectOfType<FactoryRoomGenerator>();
 
         GetComponent<BoxCollider2D>().size = new Vector2(roomSize + 6,roomSize + 6);
         
