@@ -14,14 +14,16 @@ TagManager:
   - Hub
   - Settings
   - Exit
+  - Enemy
+  - attack
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - attack
   - 
   - 
   - 

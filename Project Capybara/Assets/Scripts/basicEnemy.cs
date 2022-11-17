@@ -34,4 +34,15 @@ public class basicEnemy : INpc
         throw new System.NotImplementedException();
     }
 
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+        if (collision.gameObject.CompareTag("attack"))
+        {
+            Debug.Log("Attacked");
+        }
+    }
+
+
+
 }
