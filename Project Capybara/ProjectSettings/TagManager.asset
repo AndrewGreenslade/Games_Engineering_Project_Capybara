@@ -16,6 +16,8 @@ TagManager:
   - Exit
   - Enemy
   - attack
+  - llama
+  - spit
   layers:
   - Default
   - TransparentFX
