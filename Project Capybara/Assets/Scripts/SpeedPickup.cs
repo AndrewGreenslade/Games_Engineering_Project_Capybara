@@ -9,6 +9,7 @@ public class SpeedPickup : Pickup
     private string powerupDescription;
     private bool hasCollisionHappened;
     private float powerupDuration;
+    public GameObject Scroll;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +50,7 @@ public class SpeedPickup : Pickup
                 outputPowerupDescription();
                 collision.GetComponent<Player>().speedChangeForSpeedPowerup();
                 this.transform.position = new Vector3(5000.0f, 5000.0f, 100.0f);
+                var newScroll = Instantiate(Scroll);
                 StartCoroutine(SelfDestruct(collision));
             }
         }

@@ -4,13 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - spit
+  - attack
   - SpeedPowerup
-  - Level1
-  - Level2
-  - Level3
   - Level4
-  - LevelBoss
+  - Enemy
+  - Level1
   - Save Bench
+  - Level3
+  - LevelBoss
+  - Level2
+  - llama
   - Room
   layers:
   - Default
@@ -48,13 +52,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Player
-    uniqueID: 996030659
-    locked: 0
-  - name: Enemy
-    uniqueID: 2747986787
-    locked: 0
-  - name: Powerup
-    uniqueID: 1739428881
     locked: 0

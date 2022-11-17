@@ -11,13 +11,9 @@ public enum States
     RunningRight = 2,
     RunningUp = 3,
     RunningDown = 4,
-    Dead = 5,
+    Attack = 5,
     Hurt = 6
 }
-
-
-
-
 
 
 
@@ -29,11 +25,21 @@ public class Player : MonoBehaviour
     private float maxSpeed;
     private float charSpeed = 5.0f;
     private float agility = 10.0f;
+    public float timerForAttackAlive = 0.5f;
+    private int attackDirection = 0;
+    private float playerHealth = 2.5f;
     public float sprintSpeed;
+    private bool isHealthAdded = false;
     public Animator anim;
     public States state;
     public TextMeshProUGUI levelText;
-
+    public TextMeshProUGUI saveText;
+    private GameObject cloneAttack;
+    private GameObject healthClone;
+    public Vector3 originalLocalScale;
+    public GameObject attackObject;
+    public GameObject heartObject;
+    public bool playerHasAttacked = false;
     public bool levelTwoUnlock = false;
     public bool levelThreeUnlock = false;
     public bool levelFourUnlock = false;
@@ -46,6 +52,11 @@ public class Player : MonoBehaviour
         sprintSpeed = walkSpeed + (walkSpeed / 2);
         anim = GetComponent<Animator>();
         state = States.Idle;
+        healthClone = Instantiate(heartObject, new Vector3(0, 0, 0), Quaternion.identity);
+        originalLocalScale = healthClone.transform.localScale;
+
+
+
     }
 
     void FixedUpdate()
@@ -55,8 +66,6 @@ public class Player : MonoBehaviour
         // Move senteces
         GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Lerp(0, Input.GetAxis("Horizontal") * curSpeed, 0.8f),
                                              Mathf.Lerp(0, Input.GetAxis("Vertical") * curSpeed, 0.8f));
-
-
         if (Input.GetKey(KeyCode.LeftShift))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Lerp(0, Input.GetAxis("Horizontal") * sprintSpeed, 0.8f),
@@ -67,17 +76,33 @@ public class Player : MonoBehaviour
     }
 
 
-
     private void Update()
     {
+        timerForAttackAlive -= Time.deltaTime;
+
         checkStatesForAnimator();
+        attack();
 
+        positionHealth();
 
+        if (playerHealth <= 0.0f)
+        {
+            // game lost 
+        }
 
 
     }
+    private void positionHealth()
+    {
+        float distanceFromCamera = Camera.main.nearClipPlane; // Change this value if you want
+        Vector3 topLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, distanceFromCamera));
+     
+
+        healthClone.transform.position = new Vector3(topLeft.x + 1, topLeft.y - 0.8f, 0);
+        healthClone.gameObject.transform.localScale = new Vector3(playerHealth, playerHealth, 0);
 
 
+    }
 
 
 
@@ -93,28 +118,32 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 state = States.RunningLeft;
+                attackDirection = 3;
             }
 
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
                 state = States.RunningRight;
+                attackDirection = 1;
 
             }
 
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
                 state = States.RunningUp;
+                attackDirection = 4;
 
             }
 
             if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
                 state = States.RunningDown;
+                attackDirection = 2;
 
             }
         }
 
-
+       
 
 
         //////
@@ -176,6 +205,10 @@ public class Player : MonoBehaviour
             || collision.gameObject.CompareTag("LevelBoss"))
         {
             levelText.gameObject.SetActive(false);
+        }
+        if (collision.gameObject.CompareTag("Save Bench"))
+        {
+            saveText.gameObject.SetActive(false);
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
@@ -258,5 +291,61 @@ public class Player : MonoBehaviour
                 levelText.text = "P̵̧̳̼̪͙̬̘͔̯͖̱͍̥͇͖͍̻̼͖͙̫̬͕̾̍͂̅͊͑̏̅͒̓̌̉́̔̃́̎͋̕ͅŗ̴̻̯͕̼̱͈̩͙̤̜̤̹͔̫̗͚̲̳̺̞̯̮̣̼͓͉͉̫̺͍̳͓̄͂̽̆͂̐͒͂͒͗͛͗̔̎̎̽̈́̌͌͛̎͘̚͝͠e̵̢̲̠̟̩͙̝̹̫̼͊̓̐͆͆̀͛̾̂̾͊̈́̈́̒̋̎͂̓͌͘͘̕̕͠͝ͅs̶̢̢̡̨̡̨͙͚̜̤̰̰̺̖͔̘͕͍̠͈͈̥̰̲̥͎̹͍͖̭̹͉͈̱͖̻̱̫͔̞̣̪̣̦̩̦͐̏̔̓̔̈̌̃̓͒͂͌͗̍́̾͆͌͗̉̓̉̈́̋̌́͑͆̓̈̋̽̊͘s̷̢̧̙̠̪̼̫̲̻̱̑̈́̾͒͒̽̃̾̈́̿̈́̃̀͑͠ ̶̨̧̛̰̪̼̣̰̥̪̪̮̣̬̺̖̹̱̭̖̺̙̝̖̬̤͖̪͇̟̽̀̇̐͑̀̐̋́̌́̽́̓̏̍͋̒̿̌͌̍̓͂̆̿͆̓̽̉͂͑̏̄̂͗̌̆̀͘̕̚̚̕͝͠͠Ş̸̡̛̛̝͈͍͍̖̞̭͉̬͓͇͔̤͓̟̟̮̬͙͇͇̖̦̳͎̳̜̯̺̘̜͎͈̼͙̖̮̘̥͌̑̆́̂̔̐͗͆̓̽̓̉͌̿̋͐͑͛̇̄́͛̔͆͂͘̕͜͠͠͝ͅͅP̶͕͎̖̖̪͕̱͔̼̺̰͂͑̌͋͒̾͂̈̉̈́̽͑͊͛̊̎̀̿̄̒͊͒͋͐̈̆͘͘͝͠͠Ā̶̱̪̍̌͂̃̾̈́̆͐͊̈̉́͛̓̉͋̇̓̈́̾̉̽͐̀̍̈̂̈̋̎͋̚̚̕͝Ç̴̡̼͍͕̻͖͇͉̜̘̣̦̞̗͕̼͍̝͚͍̟̯̥͖̱̰̪͎̭̞̟̥̺̦̥̻̯̝̘͕͍͚̲̐̏̽̀ͅͅE̵̡̢̨̢̧̢̛̼̝̹̮̠̞̣̣̯̜͎̼̙̼̻̰̙̳̦̦̝̤͈̱̩̞̣̝̻̬̺̦͔̪̟̲͇͔̐̌̓̃̃͌̂̅̅̎̄͂̈́͜͜͜͜͠ͅͅ ̸̢̫̠͎̻͕͗̾̄̍̋̊̀̉̊̄͌͌͊͑̑̀͝ť̶̡̛̛̩̪͈̺͔̪̪̪̤̪̗͚̲͚͍̙͎͊͒̿͗̔͊̍͝͝ơ̸̢̢̨̢̡̛͓̘̗͕̻̺̪̤͓͉͍͓̣̞͎̪̥̹̮͎̱͈͉̭̠̻̹̗͓̭͙̳̥͈̥̥̖̂̋̓͗̀̋̓̍̌̐̈̾͌ͅͅ ̶̧̢̡̢̡̡̡̠̩͍̳̟̼͈̣̳̫̝͙̼̠͎̙͇̭͎̟̟̣̤͇̱̭̦̤͓͚̦͊̿̈́̈͐̃̏̊̈́͐͋͛̍͋̔͌͒̽̐̃̎̍̑̆̋͑̓̌̂̃̉̃͆̿̏̈́͑̐̄͌͒̌̀͒͂͂͘͜͝ͅͅÈ̴̲̔̿͊̿̃͌̀̀̈́̈́͑͂́͋̈͂̀̆̊̾̒̉̉͒̋̅̐̋̋́̾͒̽͗͐̈́͛͋̽͝͝n̷̛͍̱̰̝͉̣̻̞̣͕͈͙̞͔̲̲̠̹̦̥̟͚̹̜͔̟̮̗͉̲̘̮̬̞̼͒͆̓͑̒̈́͐͐̉̆̏̂̽̈́͑̋̇̈́̈́́͊̎̅̐̾͆̑̿͂̎̂͋̊̕͘̕͝͝͝͝ͅt̶̡̠̱̬̱͚̮̤̝̳̪̝̲̺͚̻͍͔͇̺̜͉̫̬͔̕͝͝ͅe̵̡̦̗̘͉͉̙̘̭͕̲̝͎̺̳͖̬͔̳̯̯̬̬͈͇͚̙͍̔͊̓͆̚̚̚͝͝ŗ̷̢̢̯̖͔̙̼̞̦͚̮̰͎͔̠͔̼͇͇̖͓͎͉̬͇̻̪̪̞̮͍̬̦͊̈́̆͌̃̽̎̆̌͂̋̉͊̄͊͐̈́̓̀͐͛̀̏̈́͗͂͋́̏̒͐̋̈́̇̀̕̕͘͜͠͝ͅ:̶̢̢̢̡̱̲̦͚͓͎̲̠̞̫̗̪̫̹̩͎̖̠̪͐̏͂̐̍̀̒̇̀̽͌̾̀̎͐̓̂͛͘͜͜ \r\n ̸̢̡̨̢̛̘͙̲͉̘͖͙̖͇̠̻͓̹̻̖̹̻̦̙̮͈̼͓͔̳̦̗̽̏̑́̏̆̉̐̋̓͂̈́̃̈̎͘̕͠͝C̴͖͐̋̄̈́͒͑͛̇ë̵̡̪̬̪̤͈̗͙̳͚̳̩̝̘̘̗́̈̇̍̃̽̈́̈́͐̄̅́́́̎̿͛́̍́̋̏̎̈́͒͗̓̒̈́̏̈́̽̑͐̊͘͝͠͠͝͝͝͠ͅn̷̢̡͍͎̞͍͔͎̙̘̭̙͓̺̉͐̂̊̌̽̏̒̅͌̂̆̂͊̾̕̚ṫ̸̢̧̡͓̪̣̪̞̙͈̼͙͓̝͎̰̥͍̺̗̮̼̟̰͙̘̜͈̼͕̤͚̳͖̤̞̗̯͍͍̟̤̭͎͈̻͙͖́́̊̇͊͆̓̇̌͆͂̊͒̓̏̀̒̀̾̑͋͌̃̏͆̍̑̆̕̚͜͝͝͠͝͝͝ṙ̶̡̛̫̗͈̥̬͎͙͉̝͎̖̟̼͍͕͉̯͉̦̤̹̘͇̙̼̹̩̙͇̯͑̀̑̑̈́̆̆̽̃̄́̈́́̀̌̕͜͠͝ͅͅa̷̳̜̯͐͛̒̄́̔́̈̅͌̀̒̊̍̀͝͝l̴̛̛̦͎̻̙̮̣͕̣̜̺̪̲͓̘̱̙͈̰͈͕̬̞̥̳̘̩̱͖̙͚͖͗͌̏̎̒̒͗̔̓̃̈̃̓̍͒͂̊̈͋̋̉̆̀̓ͅ ̸̡̧̨̢̢̺͚̲̼̗͔̬͖̼͉͕̞̣̥̦̺̥͍̦̭̳̱̩̥̫̘͉̤̱͓̯̯̦̤̹͖̱̉͗̽̍̀̔͛̅̈̉̿̆̏̓̾̃̄̀̽͗͗̈̈́͊́́̈́͂͂́̇̔͆͐̕̕͘͘͜͜͝͠ͅͅC̴̰̙̪̬̮̪̣̞͇͓͓̘̺͉̭̲̤̝̳͍̟̺̤̗͍̖̠̳̬̻̄̀̏͛̇͊͆̈́̅̌̒̈́̍̍͌͌̇̌́̊̄͂͗̄͐̿̓̔́̎̀̊̕̕̚̕͜͠͝͠͠͝͝h̴̨̡̨̢̡̛̫͙͓̣̫̜͎̱̠̙̦̦͚̘͎̹̪̼͚͉̖̣̪̣̱͕̲̼̜̭̭̲̰̪͊̔̇̀͂̽́͗̀͑̒́͑̓͗̽̄̾̈͆̎́̌̽́͆̔̓̈́̓̈́̈́̾̓̈͒͘͘͘͘͝͝͝͠ͅã̸̧̢̢̡̛̛̞͉̜͕͎̥̟̱̱̜̥̟͍͍̱͙̭̻͉̱̳͈͎̘̗͇̫̱͛́͌̂̉́͑̽̅̉͛͌̂͊́͊̋̀̓͆͛̌̌̕̕͝͝͝ͅͅm̸̻͕̙̱̝͓̜͖͔͖̟͗̌̀̑́͌̈́̍͆͂̆́̈̌̉͘͘b̴̡͔̗̤̠̣̹̤̯̠͕̥̠̤͔͎͔̞̉̅̇͒̄̊ȩ̴̡̛̭͕̪͚̘̈̃̈́̓̂̎̈́̀̎̋̈́̉̎͋͊͛̉̍̈́̈́̈́̉̈́͗͆́͂̅̆̀͆̈́̒̕͘͘̕͘͠͠͝ŗ̴̛̱̫̝̘̫͔͎̇̅̉̔́͒́̿̈́͗̈́̂̍̈͗̒̐̇͗͊̑̽̍̈́͑̉̄̿̈́́͌̓͋͋̾̒͂̋͗͐̇̃̊̉͝͠͠";
             }
         }
+        else if (collision.gameObject.CompareTag("Save Bench"))
+        {
+            saveText.gameObject.SetActive(true);
+
+            saveText.text = "Press SPACE to Save Game";
+            if (Input.GetKey(KeyCode.Space))
+            {
+                //Save Game
+            }
+          
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+    }
+
+
+    private void attack()
+    {
+        if (Input.GetKey(KeyCode.Space) && !playerHasAttacked)
+        {
+            cloneAttack = Instantiate(attackObject, gameObject.transform.position, Quaternion.identity);
+            playerHasAttacked = true;
+            timerForAttackAlive = 0.5f;
+            Destroy(cloneAttack, 0.5f);
+
+        }
+
+        if (timerForAttackAlive <= 0.03f)
+        {
+            playerHasAttacked = false;
+        }
+
+        if (playerHasAttacked)
+        {
+            if (attackDirection == 3)
+            {
+                cloneAttack.transform.position = new Vector2(gameObject.transform.position.x - 1, gameObject.transform.position.y);
+            }
+            if (attackDirection == 1)
+            {
+                cloneAttack.transform.position = new Vector2(gameObject.transform.position.x + 1, gameObject.transform.position.y);
+            }
+            if (attackDirection == 4)
+            {
+                cloneAttack.transform.position = new Vector2(gameObject.transform.position.x , gameObject.transform.position.y + 1);
+            }
+            if (attackDirection == 2)
+            {
+                cloneAttack.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 1);
+            }
+            
+        }
+
     }
 }
