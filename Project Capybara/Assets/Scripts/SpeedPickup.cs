@@ -12,30 +12,26 @@ public class SpeedPickup : Pickup
     // Start is called before the first frame update
     void Start()
     {
+        base.Start();
         PowerName = "Speed Boost";
         powerupDescription = "Gives capybara a temporary speed boost";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     public override void outputPowerupName()
     {
-        powerupNameText.text = PowerName;
+        base.SetPowerUpNameText(PowerName);
     }
 
     public override void outputPowerupDescription()
     {
-        powerupText.text = powerupDescription;
+        base.SetPowerUpText(powerupDescription);
     }
-
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
+            enableText();
             outputPowerupName();
             outputPowerupDescription();
             collision.GetComponent<Player>().speedChangeForSpeedPowerup();
