@@ -45,6 +45,14 @@ public class SpeedPickup : Pickup
     {
         yield return new WaitForSeconds(powerupDuration);
         collision.GetComponent<Player>().speedChangeResetForSpeedPowerup();
+        disableText();
         Destroy(gameObject);
+
+    }
+
+    IEnumerator textDestroyer(Collider2D collision)
+    {
+        yield return new WaitForSeconds(powerupDuration);
+        
     }
 }
