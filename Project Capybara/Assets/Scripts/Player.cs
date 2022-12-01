@@ -267,8 +267,8 @@ public class Player : MonoBehaviour
 
             if (levelFourUnlock == true)
             {
-                levelText.text = "Press SPACE to Enter:\r\nLevel 4";
-                if (Input.GetKey(KeyCode.Space))
+                levelText.text = "Press 'E' to Enter:\r\nLevel 4";
+                if (Input.GetKey(KeyCode.E))
                 {
                     SceneManager.LoadScene("Level4");
                 }
@@ -284,8 +284,8 @@ public class Player : MonoBehaviour
 
             if (bossUnlock == true)
             {
-                levelText.text = "Press SPACE to Enter:\r\nCentral Chamber";
-                if (Input.GetKey(KeyCode.Space))
+                levelText.text = "Press 'E' to Enter:\r\nCentral Chamber";
+                if (Input.GetKey(KeyCode.E))
                 {
                     SceneManager.LoadScene("BossLevel");
                 }
@@ -299,8 +299,8 @@ public class Player : MonoBehaviour
         {
             saveText.gameObject.SetActive(true);
 
-            saveText.text = "Press SPACE to Save Game";
-            if (Input.GetKey(KeyCode.Space))
+            saveText.text = "Press 'E' to Save Game";
+            if (Input.GetKey(KeyCode.E))
             {
                 //Save Game
             }
