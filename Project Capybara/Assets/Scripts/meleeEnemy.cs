@@ -6,17 +6,18 @@ public class meleeEnemy : INpc
 {
     public Animator anim;
     public Transform m_capyTransform;
-
- 
+    public GameObject attackObject;
+    private bool AttackPlayer = false;
     private bool m_movingRight;
     private bool isMovingLeft;
     private bool m_movingIdle;
     private bool flip = false;
+    private bool playerHasAttacked = false;
     int speed = 2;
-  
+    float timerForAttackAlive;
     float m_detectionRange = 3.5f;
     public Vector3 relativePos;
-  
+    
    
    
     public override void Health()
@@ -26,10 +27,13 @@ public class meleeEnemy : INpc
 
     public override void movement()
     {
+       
 
-        
         if (Vector3.Distance(m_capyTransform.position, transform.position) <= m_detectionRange)
         {
+           
+            timerForAttackAlive -= Time.deltaTime;
+            AttackPlayer = true;
 
             relativePos = m_capyTransform.position - transform.position;
             if(relativePos.y < 0)
@@ -74,6 +78,7 @@ public class meleeEnemy : INpc
         }
         else
         {
+            timerForAttackAlive = 0.5f;
             m_movingRight = false;
             m_movingIdle = true;
             isMovingLeft = false;
@@ -82,6 +87,11 @@ public class meleeEnemy : INpc
         {
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
             flip=false;
+        }
+        if(AttackPlayer==true)
+        {
+            hitPlayer();
+            AttackPlayer = false;
         }
 
     }
@@ -132,7 +142,27 @@ public class meleeEnemy : INpc
 
     public override void hitPlayer()
     {
-        Debug.Log("cat enemy hitplayer");
+       
+        if (playerHasAttacked==false)
+        {
+            GameObject cloneAttack = Instantiate(attackObject, gameObject.transform.position, Quaternion.identity);
+            Destroy(cloneAttack, 0.5f);
+            playerHasAttacked = true;
+            timerForAttackAlive = 1.5f;
+
+        }
+        
+         
+
+        if (timerForAttackAlive <= 0.03f)
+        {
+            playerHasAttacked = false;
+        }
+        else
+        {
+            playerHasAttacked= true;
+        }
+
     }
 
 }
