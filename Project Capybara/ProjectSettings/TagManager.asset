@@ -4,17 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - PowerupNameText
+  - PowerupText
   - SpeedPowerup
-  - Level1
-  - Level2
-  - Level3
   - Level4
-  - LevelBoss
-  - Save Bench
-  - Hub
-  - Settings
-  - Exit
   - Enemy
+  - Level1
+  - Save Bench
+  - Level3
+  - LevelBoss
+  - Level2
   - attack
   - llama
   - spit
@@ -22,11 +21,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - attack
-  - 
+  - RemoveFromMinmap
+  - RemoveFromMainCam
   - 
   - 
   - 
@@ -55,12 +54,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 996030659
-    locked: 0
-  - name: Enemy
-    uniqueID: 2747986787
-    locked: 0
-  - name: Powerup
-    uniqueID: 1739428881
+  - name: Pickup
+    uniqueID: 749549741
     locked: 0

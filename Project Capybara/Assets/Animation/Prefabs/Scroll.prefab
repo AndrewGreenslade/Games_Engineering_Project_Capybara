@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5153133419139374735}
   - component: {fileID: 6440900859224240456}
   - component: {fileID: 7008648967615824538}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Scroll
   m_TagString: SpeedPowerup
   m_Icon: {fileID: 0}
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1739428881
-  m_SortingLayer: 3
+  m_SortingLayerID: 749549741
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3c2a75e9def8bc04ab5b669b846901b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
