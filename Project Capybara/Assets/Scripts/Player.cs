@@ -90,6 +90,10 @@ public class Player : MonoBehaviour
             // game lost 
         }
 
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 
     }
     private void positionHealth()

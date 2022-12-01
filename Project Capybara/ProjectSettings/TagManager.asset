@@ -16,6 +16,7 @@ TagManager:
   - Level2
   - llama
   - Room
+  - InventoryCanvas
   layers:
   - Default
   - TransparentFX
