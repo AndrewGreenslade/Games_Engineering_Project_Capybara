@@ -4,26 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - spit
-  - attack
+  - PowerupNameText
+  - PowerupText
   - SpeedPowerup
   - Level4
   - Enemy
   - Level1
   - Save Bench
-<<<<<<< HEAD
-  - Hub
-  - Settings
-  - Exit
-  - PowerupText
-  - PowerupNameText
-=======
   - Level3
   - LevelBoss
   - Level2
+  - attack
   - llama
-  - Room
->>>>>>> main
+  - spit
   layers:
   - Default
   - TransparentFX
@@ -60,4 +53,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Pickup
+    uniqueID: 749549741
     locked: 0
