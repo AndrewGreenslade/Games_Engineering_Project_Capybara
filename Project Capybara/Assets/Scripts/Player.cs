@@ -348,4 +348,10 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    public void healthIncreaseForHealthPowerup()
+    {
+        playerHealth += 0.5f;
+    }
+
 }
