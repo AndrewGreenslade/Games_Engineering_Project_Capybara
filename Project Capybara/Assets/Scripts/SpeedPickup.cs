@@ -4,40 +4,55 @@ using UnityEngine;
 
 public class SpeedPickup : Pickup
 {
+    private GameObject Speed;
     private string PowerName;
     private string powerupDescription;
-    public float powerupDuration;
+    private bool hasCollisionHappened;
+    private float powerupDuration;
     public GameObject Scroll;
-
     // Start is called before the first frame update
     void Start()
     {
-        base.Start();
+        Speed = GetComponent<GameObject>();
         PowerName = "Speed Boost";
         powerupDescription = "Gives capybara a temporary speed boost";
+        hasCollisionHappened = false;
+        powerupDuration = 5;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
     }
 
     public override void outputPowerupName()
     {
-        base.SetPowerUpNameText(PowerName);
+        Debug.Log(" You picked up " + PowerName);
     }
 
     public override void outputPowerupDescription()
     {
-        base.SetPowerUpText(powerupDescription);
+        Debug.Log(powerupDescription);
+    }
+
+    public override void powerupImplementation()
+    {
+        
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (hasCollisionHappened == false)
         {
-            enableText();
-            outputPowerupName();
-            outputPowerupDescription();
-            collision.GetComponent<Player>().speedChangeForSpeedPowerup();
-            this.transform.position = new Vector3(5000.0f, 5000.0f, 100.0f);
-            var newScroll = Instantiate(Scroll);
-            StartCoroutine(SelfDestruct(collision));
+            if (collision.tag == "Player")
+            {
+                outputPowerupName();
+                outputPowerupDescription();
+                collision.GetComponent<Player>().speedChangeForSpeedPowerup();
+                this.transform.position = new Vector3(5000.0f, 5000.0f, 100.0f);
+                var newScroll = Instantiate(Scroll);
+                StartCoroutine(SelfDestruct(collision));
+            }
         }
     }
 
@@ -45,14 +60,6 @@ public class SpeedPickup : Pickup
     {
         yield return new WaitForSeconds(powerupDuration);
         collision.GetComponent<Player>().speedChangeResetForSpeedPowerup();
-        disableText();
         Destroy(gameObject);
-
-    }
-
-    IEnumerator textDestroyer(Collider2D collision)
-    {
-        yield return new WaitForSeconds(powerupDuration);
-        
     }
 }

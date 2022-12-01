@@ -17,27 +17,15 @@ public class meleeEnemy : INpc
     float timerForAttackAlive;
     float m_detectionRange = 3.5f;
     public Vector3 relativePos;
-<<<<<<< HEAD
     
    
    
-=======
-
-    public SpriteRenderer myRenderer;
-
-    private void Start()
-    {
-        myRenderer = GetComponent<SpriteRenderer>();
-    }
-
->>>>>>> 0202b061bb793a4493e0b08ff6ed077f122c1b86
     public override void Health()
     {
         Debug.Log("cat health");
     }
 
     public override void movement()
-<<<<<<< HEAD
     {
        
 
@@ -47,16 +35,9 @@ public class meleeEnemy : INpc
             timerForAttackAlive -= Time.deltaTime;
             AttackPlayer = true;
 
-=======
-    {   
-        if (Vector3.Distance(m_capyTransform.position, transform.position) <= m_detectionRange)
-        {
->>>>>>> 0202b061bb793a4493e0b08ff6ed077f122c1b86
             relativePos = m_capyTransform.position - transform.position;
-
             if(relativePos.y < 0)
             {
-<<<<<<< HEAD
                
                 transform.position += Vector3.down * speed * Time.deltaTime;
               
@@ -66,29 +47,14 @@ public class meleeEnemy : INpc
                
                 transform.position += Vector3.up * speed * Time.deltaTime;
                
-=======
-                transform.position -= Vector3.up * speed * Time.deltaTime;
-            }
-            if (relativePos.y > 0)
-            {
-                transform.position -= Vector3.down * speed * Time.deltaTime;
->>>>>>> 0202b061bb793a4493e0b08ff6ed077f122c1b86
             }
 
             if (relativePos.x > 0)
             {
-<<<<<<< HEAD
                 //cat is right the player
                 //flip the sprite here
                 transform.position += Vector3.right * speed * Time.deltaTime;
                 m_movingRight = true;
-=======
-               //flip the sprite here
-                transform.position -= Vector3.left * speed * Time.deltaTime;
-                myRenderer.flipX = false;
-
-                m_movingRight = false;
->>>>>>> 0202b061bb793a4493e0b08ff6ed077f122c1b86
                 m_movingIdle = false;
                 isMovingLeft = false;
             }
@@ -96,7 +62,6 @@ public class meleeEnemy : INpc
             {
                 //cat is right the player
                 //flipped anim cause it will look better when shooting
-<<<<<<< HEAD
                 transform.position += Vector3.left * speed * Time.deltaTime;
                 if(flip==false)
                 {
@@ -106,21 +71,14 @@ public class meleeEnemy : INpc
               
                 isMovingLeft = true;
                 m_movingRight = false;
-=======
-                transform.position -= Vector3.right * speed * Time.deltaTime;
-                myRenderer.flipX = true;
-
-                m_movingRight = true;
->>>>>>> 0202b061bb793a4493e0b08ff6ed077f122c1b86
                 m_movingIdle = false;
             }
+
+
         }
         else
         {
-<<<<<<< HEAD
             timerForAttackAlive = 0.5f;
-=======
->>>>>>> 0202b061bb793a4493e0b08ff6ed077f122c1b86
             m_movingRight = false;
             m_movingIdle = true;
             isMovingLeft = false;
@@ -135,11 +93,10 @@ public class meleeEnemy : INpc
             hitPlayer();
             AttackPlayer = false;
         }
-    }
 
+    }
     public override void Animate()
     {
-<<<<<<< HEAD
         anim.SetBool("isIdle", false);
         anim.SetBool("isMovingRight", false);
        
@@ -151,11 +108,6 @@ public class meleeEnemy : INpc
             anim.SetBool("isIdle", false);
 
         }
-=======
-        anim.SetBool("isMovingRight", false);
-        anim.SetBool("isIdle", false);  
-      
->>>>>>> 0202b061bb793a4493e0b08ff6ed077f122c1b86
         if (m_movingRight == true)
         {
             anim.SetBool("isMovingRight", true);
@@ -171,7 +123,6 @@ public class meleeEnemy : INpc
             flip = false;
         }
     }
-
     public void Update()
     {
         movement();
@@ -213,4 +164,5 @@ public class meleeEnemy : INpc
         }
 
     }
+
 }

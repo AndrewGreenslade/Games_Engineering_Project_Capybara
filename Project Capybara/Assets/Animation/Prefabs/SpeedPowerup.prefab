@@ -114,7 +114,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28c275b98657d84281b1ed52f7515e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupText: {fileID: 0}
-  powerupNameText: {fileID: 0}
-  powerupDuration: 5
   Scroll: {fileID: 3622171618464763438, guid: f7a786a69fd91804a9bbcfcd289583be, type: 3}
