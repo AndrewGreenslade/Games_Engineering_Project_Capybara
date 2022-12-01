@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ScrollScript : MonoBehaviour
 {
     const float OPACITY_INCREASE = 0.01f;
     float opacity = 0.0f;
     bool isScrollDespawning = false;
+    private GameObject camera;
     // Start is called before the first frame update
     void Start()
     {
+        camera = GameObject.FindGameObjectWithTag("MainCamera");
         this.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, opacity);
 
         StartCoroutine(startSelfDestruct());
@@ -18,6 +21,7 @@ public class ScrollScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y - 3.0f, 0);
         if (isScrollDespawning == false)
         {
             increaseVisibility();

@@ -11,11 +11,19 @@ TagManager:
   - Enemy
   - Level1
   - Save Bench
+<<<<<<< HEAD
+  - Hub
+  - Settings
+  - Exit
+  - PowerupText
+  - PowerupNameText
+=======
   - Level3
   - LevelBoss
   - Level2
   - llama
   - Room
+>>>>>>> main
   layers:
   - Default
   - TransparentFX
