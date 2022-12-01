@@ -77,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 996030659
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 45b90eea78dbe2b43865f05aa6898dd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -103,10 +103,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 0
+  timerForAttackAlive: 0.5
   sprintSpeed: 0
   anim: {fileID: 0}
   state: 0
   levelText: {fileID: 0}
+  saveText: {fileID: 0}
+  originalLocalScale: {x: 0, y: 0, z: 0}
+  attackObject: {fileID: 6258601233021667109, guid: 962763151aa74e14f9b06aed235ebeeb, type: 3}
+  heartObject: {fileID: 2107567221826837298, guid: e01819a738507884b893759371279218, type: 3}
+  playerHasAttacked: 0
   levelTwoUnlock: 0
   levelThreeUnlock: 0
   levelFourUnlock: 0
@@ -191,6 +197,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2818732813398283186}
     m_Modifications:
+    - target: {fileID: 644256243674781482, guid: 1620e96f4b56f784480cb81f5e1b2a2e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 664436708967312635, guid: 1620e96f4b56f784480cb81f5e1b2a2e, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 183
+      objectReference: {fileID: 0}
     - target: {fileID: 664436709494026577, guid: 1620e96f4b56f784480cb81f5e1b2a2e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -286,6 +300,26 @@ PrefabInstance:
     - target: {fileID: 664436709885811626, guid: 1620e96f4b56f784480cb81f5e1b2a2e, type: 3}
       propertyPath: m_Name
       value: MiniMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 664436710172648090, guid: 1620e96f4b56f784480cb81f5e1b2a2e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.2784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 664436710172648090, guid: 1620e96f4b56f784480cb81f5e1b2a2e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.2784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 664436710172648090, guid: 1620e96f4b56f784480cb81f5e1b2a2e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.2784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 6894147894121422079, guid: 1620e96f4b56f784480cb81f5e1b2a2e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 6894147894121422079, guid: 1620e96f4b56f784480cb81f5e1b2a2e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.86
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1620e96f4b56f784480cb81f5e1b2a2e, type: 3}
