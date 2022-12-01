@@ -220,8 +220,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Level1"))
         {
             levelText.gameObject.SetActive(true);
-            levelText.text = "Press SPACE to Enter:\r\nLevel 1";
-            if (Input.GetKey(KeyCode.Space))
+            levelText.text = "Press 'E' to Enter:\r\nLevel 1";
+            if (Input.GetKey(KeyCode.E))
             {
                 SceneManager.LoadScene("Level1");
             }
@@ -233,8 +233,8 @@ public class Player : MonoBehaviour
 
             if (levelTwoUnlock == true)
             {
-                levelText.text = "Press SPACE to Enter:\r\nLevel 2";
-                if (Input.GetKey(KeyCode.Space))
+                levelText.text = "Press 'E' to Enter:\r\nLevel 2";
+                if (Input.GetKey(KeyCode.E))
                 {
                     SceneManager.LoadScene("Level2");
                 }
@@ -250,8 +250,8 @@ public class Player : MonoBehaviour
 
             if (levelThreeUnlock == true)
             {
-                levelText.text = "Press SPACE to Enter:\r\nLevel 3";
-                if (Input.GetKey(KeyCode.Space))
+                levelText.text = "Press 'E' to Enter:\r\nLevel 3";
+                if (Input.GetKey(KeyCode.E))
                 {
                     SceneManager.LoadScene("Level3");
                 }
