@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class HealthPickup : Pickup
 {
-    private GameObject Health;
-    private string PowerUpName;
+    private string PowerName;
     private string powerupDescription;
-    // Start is called before the first frame update
+    public float powerupDuration;
+    public GameObject Scroll;
+
     void Start()
     {
-        Health = GetComponent<GameObject>();
-        PowerUpName = "Health Regeneration";
+        base.Start();
+        PowerName = "Speed Boost";
+        powerupDescription = "Gives capybara a temporary speed boost";
     }
 
     // Update is called once per frame
@@ -21,11 +23,34 @@ public class HealthPickup : Pickup
 
     public override void outputPowerupName()
     {
-        Debug.Log(" You picked up " + PowerUpName);
+        base.SetPowerUpNameText(PowerName);
     }
 
     public override void outputPowerupDescription()
     {
-        Debug.Log(powerupDescription);
+        base.SetPowerUpText(powerupDescription);
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            enableText();
+            outputPowerupName();
+            outputPowerupDescription();
+            collision.GetComponent<Player>().healthIncreaseForHealthPowerup();
+            this.transform.position = new Vector3(5000.0f, 5000.0f, 100.0f);
+            var newScroll = Instantiate(Scroll);
+            StartCoroutine(SelfDestruct(collision));
+        }
+    }
+
+    IEnumerator SelfDestruct(Collider2D collision)
+    {
+        yield return new WaitForSeconds(powerupDuration);
+        //collision.GetComponent<Player>().speedChangeResetForSpeedPowerup();
+        disableText();
+        Destroy(gameObject);
+
     }
 }
