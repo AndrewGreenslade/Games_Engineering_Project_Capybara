@@ -15,76 +15,64 @@ public class meleeEnemy : INpc
   
     float m_detectionRange = 3.5f;
     public Vector3 relativePos;
-  
-   
-   
+
+    public SpriteRenderer myRenderer;
+
+    private void Start()
+    {
+        myRenderer = GetComponent<SpriteRenderer>();
+    }
+
     public override void Health()
     {
         Debug.Log("cat health");
     }
 
     public override void movement()
-    {
-
-        
+    {   
         if (Vector3.Distance(m_capyTransform.position, transform.position) <= m_detectionRange)
         {
-
             relativePos = m_capyTransform.position - transform.position;
+
             if(relativePos.y < 0)
             {
                 transform.position -= Vector3.up * speed * Time.deltaTime;
-              
-                m_movingRight = true;
-                m_movingIdle = false;
             }
-             if (relativePos.y > 0)
+            if (relativePos.y > 0)
             {
                 transform.position -= Vector3.down * speed * Time.deltaTime;
-                //moving right
-                m_movingRight = true;
-                m_movingIdle = false;
             }
 
             if (relativePos.x > 0)
             {
                //flip the sprite here
                 transform.position -= Vector3.left * speed * Time.deltaTime;
-              
-                m_movingRight = true;
+                myRenderer.flipX = false;
+
+                m_movingRight = false;
                 m_movingIdle = false;
             }
             if (relativePos.x < 0)
             {
                 //flipped anim cause it will look better when shooting
                 transform.position -= Vector3.right * speed * Time.deltaTime;
-                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                myRenderer.flipX = true;
 
-                 
                 m_movingRight = true;
                 m_movingIdle = false;
             }
-
-
         }
         else
         {
-       
             m_movingRight = false;
             m_movingIdle = true;
         }
-
     }
+
     public override void Animate()
     {
-       
         anim.SetBool("isMovingRight", false);
-    
-      
-        anim.SetBool("isIdle", false);
-
-
-       
+        anim.SetBool("isIdle", false);  
       
         if (m_movingRight == true)
         {
@@ -95,6 +83,7 @@ public class meleeEnemy : INpc
             anim.SetBool("isIdle", true);
         }
     }
+
     public void Update()
     {
         movement();
@@ -116,5 +105,4 @@ public class meleeEnemy : INpc
     {
         Debug.Log("cat enemy hitplayer");
     }
-
 }
