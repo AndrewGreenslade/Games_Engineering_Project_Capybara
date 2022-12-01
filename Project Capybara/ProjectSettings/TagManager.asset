@@ -16,7 +16,18 @@ TagManager:
   - Level2
   - attack
   - llama
+  - Room
+  - InventoryCanvas
+  - PowerupNameText
+  - PowerupText
+  - AxeText
+  - SwordText
+  - BowText
+  - Axe
+  - Sword
+  - Bow
   - spit
+
   layers:
   - Default
   - TransparentFX
