@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - spit
-  - attack
+  - PowerupNameText
+  - PowerupText
   - SpeedPowerup
   - Level4
   - Enemy
@@ -14,6 +14,7 @@ TagManager:
   - Level3
   - LevelBoss
   - Level2
+  - attack
   - llama
   - Room
   - InventoryCanvas
@@ -25,6 +26,8 @@ TagManager:
   - Axe
   - Sword
   - Bow
+  - spit
+
   layers:
   - Default
   - TransparentFX
@@ -61,4 +64,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Pickup
+    uniqueID: 749549741
     locked: 0
