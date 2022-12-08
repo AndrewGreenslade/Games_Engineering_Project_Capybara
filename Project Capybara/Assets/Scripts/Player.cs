@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     private float agility = 10.0f;
     public float timerForAttackAlive = 0.5f;
     private int attackDirection = 0;
-    private float playerHealth = 2.5f;
+    public float playerHealth = 2.5f;
     public float sprintSpeed;
     private bool isHealthAdded = false;
     public Animator anim;
@@ -44,16 +44,18 @@ public class Player : MonoBehaviour
     public bool levelThreeUnlock = false;
     public bool levelFourUnlock = false;
     public bool bossUnlock = false;
+    public GameObject saveObject;
 
     void Start()
     {
-
         walkSpeed = (float)(charSpeed + (agility / 5));
         sprintSpeed = walkSpeed + (walkSpeed / 2);
         anim = GetComponent<Animator>();
         state = States.Idle;
         healthClone = Instantiate(heartObject, new Vector3(0, 0, 0), Quaternion.identity);
         originalLocalScale = healthClone.transform.localScale;
+        SavePrefs s = saveObject.GetComponent<SavePrefs>();
+        s.LoadGame();
 
     }
 
@@ -107,7 +109,7 @@ public class Player : MonoBehaviour
 
     }
 
-
+    
 
     void checkStatesForAnimator()
     {
@@ -297,6 +299,9 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 //Save Game
+                SavePrefs s = saveObject.GetComponent<SavePrefs>();
+                s.setSaveValues();
+                s.SaveGame();
             }
           
         }
