@@ -8,7 +8,7 @@ public class AxeScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inventoryManager = GetComponent<InventoryManager>();    
+        inventoryManager = FindObjectOfType<InventoryManager>();    
     }
 
     // Update is called once per frame
@@ -29,4 +29,5 @@ public class AxeScript : MonoBehaviour
 
         }
     }
+
 }
