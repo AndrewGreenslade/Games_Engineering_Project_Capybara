@@ -11,9 +11,9 @@ public class InventoryManager : MonoBehaviour
     private TextMeshProUGUI swordText;
     private TextMeshProUGUI bowText;
     public static InventoryManager instance;
-    private bool hasAxe = false;
-    private bool hasSword = false;
-    private bool hasBow = false;
+    public bool hasAxe = false;
+    public bool hasSword = false;
+    public bool hasBow = false;
 
     // Start is called before the first frame update
     void Start()
@@ -64,34 +64,6 @@ public class InventoryManager : MonoBehaviour
         {
             inventoryCanvas.SetActive(false);
             
-        }
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Axe"))
-        {
-            if (Input.GetKey(KeyCode.E))
-            {
-                hasAxe = true;
-            }
-
-        }
-        else if (collision.gameObject.CompareTag("Sword"))
-        {
-            if (Input.GetKey(KeyCode.E))
-            {
-                hasSword = true;
-            }
-
-        }
-        else if (collision.gameObject.CompareTag("Bow"))
-        {
-            if (Input.GetKey(KeyCode.E))
-            {
-                hasBow = true;
-            }
-
         }
     }
 }
