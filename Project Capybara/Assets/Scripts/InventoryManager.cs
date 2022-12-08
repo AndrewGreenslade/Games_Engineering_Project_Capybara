@@ -11,9 +11,9 @@ public class InventoryManager : MonoBehaviour
     private TextMeshProUGUI swordText;
     private TextMeshProUGUI bowText;
     public static InventoryManager instance;
-    private bool hasAxe = false;
-    private bool hasSword = false;
-    private bool hasBow = false;
+    public bool hasAxe = false;
+    public bool hasSword = false;
+    public bool hasBow = false;
 
     // Start is called before the first frame update
     void Start()

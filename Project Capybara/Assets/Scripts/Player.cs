@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     private float agility = 10.0f;
     public float timerForAttackAlive = 0.5f;
     private int attackDirection = 0;
-    private float playerHealth = 2.5f;
+    public float playerHealth = 2.5f;
     public float sprintSpeed;
     private bool isHealthAdded = false;
     public Animator anim;
