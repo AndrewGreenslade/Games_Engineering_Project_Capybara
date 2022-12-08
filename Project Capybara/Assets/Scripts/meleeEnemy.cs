@@ -101,15 +101,7 @@ public class meleeEnemy : INpc
         this.Animate();
     }
 
-    public override void Die()
-    {
-        Debug.Log("cat enemy Die");
-    }
-
-    public override void interact()
-    {
-        Debug.Log("cat enemy interact");
-    }
+  
 
     public override void hitPlayer()
     {

@@ -15,16 +15,7 @@ public class basicEnemy : INpc
         Debug.Log("basic enemy movement");
     }
 
-    public override void Die()
-    {
-        Debug.Log("basic enemy Die");
-    }
-
-    public override void interact()
-    {
-        Debug.Log("basic enemy interact");
-    }
-
+  
     public override void hitPlayer()
     {
         Debug.Log("basic enemy hitplayer");

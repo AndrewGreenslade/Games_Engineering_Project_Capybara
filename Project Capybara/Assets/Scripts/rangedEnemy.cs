@@ -161,15 +161,6 @@ public class rangedEnemy : INpc
         movement();
     }
 
-    public override void Die()
-    {
-        Debug.Log("v enemy Die");
-    }
-
-    public override void interact()
-    {
-        Debug.Log("ranged enemy interact");
-    }
 
     public override void hitPlayer()
     {
