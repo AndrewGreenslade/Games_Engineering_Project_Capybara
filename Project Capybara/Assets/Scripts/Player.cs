@@ -55,8 +55,6 @@ public class Player : MonoBehaviour
         healthClone = Instantiate(heartObject, new Vector3(0, 0, 0), Quaternion.identity);
         originalLocalScale = healthClone.transform.localScale;
 
-
-
     }
 
     void FixedUpdate()
@@ -72,7 +70,6 @@ public class Player : MonoBehaviour
                                                          Mathf.Lerp(0, Input.GetAxis("Vertical") * sprintSpeed, 0.8f));
 
         }
-
     }
 
 
@@ -101,19 +98,19 @@ public class Player : MonoBehaviour
         float distanceFromCamera = Camera.main.nearClipPlane; // Change this value if you want
         Vector3 topLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, distanceFromCamera));
      
-
         healthClone.transform.position = new Vector3(topLeft.x + 1, topLeft.y - 0.8f, 0);
-        healthClone.gameObject.transform.localScale = new Vector3(playerHealth, playerHealth, 0);
+        if (playerHealth >= 0.0f)
+        {
+            healthClone.gameObject.transform.localScale = new Vector3(playerHealth, playerHealth, 0);
+        }
 
 
     }
 
 
 
-
     void checkStatesForAnimator()
     {
-
         //////
         ///Idle animations Conrolls
         //////
@@ -146,9 +143,6 @@ public class Player : MonoBehaviour
 
             }
         }
-
-       
-
 
         //////
         ///Moving UP/DOWN/RIGHT/LEFT 
@@ -308,8 +302,22 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+ 
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("spit"))
+        {
+            playerHealth = playerHealth - 0.2f;
+            Destroy(collision.gameObject);
+            Debug.Log("spit hit player ");
+        }
+
+        if (collision.gameObject.CompareTag("catAttack"))
+        {
+            playerHealth = playerHealth - 0.1f;
+            //Destroy(collision.gameObject);
+            Debug.Log("CatAttack hit player ");
+        }
 
     }
 

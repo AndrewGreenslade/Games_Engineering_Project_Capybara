@@ -27,7 +27,8 @@ TagManager:
   - Sword
   - Bow
   - spit
-  - rcok
+  - catAttack
+  - Cat
   layers:
   - Default
   - TransparentFX
@@ -35,10 +36,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - ExcludeFromMinimap
+  - includeFromMinimap
+  - catLayer
+  - CatWeaponLayer
   - 
   - 
   - 

@@ -91,10 +91,6 @@ public class rangedEnemy : INpc
         }
 
 
-
-
-
-
         rb.AddForce(m_vel);
         
        
@@ -106,10 +102,7 @@ public class rangedEnemy : INpc
         //{
         //    m_vel = transform.position += Vector3.down * speed * Time.deltaTime;
         //}
-       
-      
-        
- 
+    
 
         if (m_vel.y > 0)
         {
@@ -167,5 +160,17 @@ public class rangedEnemy : INpc
         Debug.Log("ranged enemy hitplayer");
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("attack"))
+        {
+          // Destroy(collision.gameObject);
+          // do collision here 
+            Debug.Log("Player hits laama");
+
+        }
+
+    }
 
 }
