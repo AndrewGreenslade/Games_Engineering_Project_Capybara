@@ -27,7 +27,7 @@ TagManager:
   - Sword
   - Bow
   - spit
-
+  - DamageText
   layers:
   - Default
   - TransparentFX
@@ -35,8 +35,8 @@ TagManager:
   - 
   - Water
   - UI
-  - RemoveFromMinmap
-  - RemoveFromMainCam
+  - 
+  - 
   - 
   - 
   - 
@@ -64,7 +64,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Pickup
-    uniqueID: 749549741
     locked: 0
