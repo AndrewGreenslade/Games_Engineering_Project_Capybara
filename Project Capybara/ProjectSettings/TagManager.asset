@@ -27,16 +27,16 @@ TagManager:
   - Sword
   - Bow
   - spit
-
+  - catAttack
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - attackOnCat
   - Water
   - UI
-  - RemoveFromMinmap
-  - RemoveFromMainCam
+  - CatLayer
+  - Player
   - 
   - 
   - 
@@ -64,7 +64,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Pickup
-    uniqueID: 749549741
     locked: 0

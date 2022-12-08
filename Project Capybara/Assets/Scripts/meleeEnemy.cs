@@ -141,11 +141,13 @@ public class meleeEnemy : INpc
     {
         if (collision.gameObject.CompareTag("attack"))
         {
-            Debug.Log("Attacked");
+            // Destroy(collision.gameObject);
+            // do collision here 
+            Debug.Log("Player hits Cat");
+
         }
+
     }
-
-
 
 
 
