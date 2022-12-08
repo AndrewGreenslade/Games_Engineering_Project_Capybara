@@ -14,15 +14,8 @@ public class followerEnemy : INpc
         Debug.Log("follower enemy movement");
     }
 
-    public override void Die()
-    {
-        Debug.Log("follower enemy Die");
-    }
+  
 
-    public override void interact()
-    {
-        Debug.Log("follower enemy interact");
-    }
 
     public override void hitPlayer()
     {

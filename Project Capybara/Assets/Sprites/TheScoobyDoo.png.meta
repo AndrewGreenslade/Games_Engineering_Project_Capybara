@@ -1,0 +1,2535 @@
+fileFormatVersion: 2
+guid: a01f5681b4b0f614d809e661c4aa6f6a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TheScoobyDoo_4
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 335
+        width: 41
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58b78f53523159145b7f5930a5d2c355
+      internalID: 841251575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_5
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 335
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e88dfb084c0e446942c146607207aa
+      internalID: 934023045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_6
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 335
+        width: 46
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f684c8459a3eba4aa5f0e3acb781bfb
+      internalID: 1329897094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_7
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 335
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1351674ee78a110488e9a90e8fd58169
+      internalID: 558780827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_9
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 335
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e0a13ecceea399488dedbfc5e37ecf3
+      internalID: 446286818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_10
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 335
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62caa7498f090ed43a1d2b5c5128ba3f
+      internalID: 4894732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_11
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 335
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e300550f11c63b64eb1977e776d02c1e
+      internalID: 731338390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_12
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 335
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a65629de758f446acdc2cd061e614c
+      internalID: -54756711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_13
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 335
+        width: 32
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc7e9d727de77724fa288c9aad5c66c6
+      internalID: -687614545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_14
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 335
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86148bd6b64ed6f468015200e0913656
+      internalID: -985322941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_15
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 335
+        width: 41
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b35d5baadaa7645b6f2f45b48144cf
+      internalID: 1272000514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_16
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 356
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a316a2b6b9a3334ebb6db0e66bdda2c
+      internalID: -282688546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_17
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 356
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0cad2889c9a0e4fa26314e48a5230e
+      internalID: -319817048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_18
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 310
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 971065d76af2b0346a58e0080ad92ed9
+      internalID: 1144745517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_19
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 310
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a51f30b9ac4b040ba9ab617bb5bb1c
+      internalID: -938450877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_20
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 310
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c9a9e7493200d547a70538dec8eab92
+      internalID: -1003039438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_21
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 301
+        width: 63
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b5cec508988bff48a51776067fb653c
+      internalID: 1775809125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_22
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 301
+        width: 63
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b4d370bbd3a9c41a62b1a848e3af46
+      internalID: 1871434790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_23
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 301
+        width: 63
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10d223b9207889449ab1cafdc0982f73
+      internalID: -1503570834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_24
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 301
+        width: 64
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 245098ba80e28544997bdb8569dd0705
+      internalID: -1297506047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_25
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 301
+        width: 64
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b21b53c129d37e459902e6698828a41
+      internalID: 1895349926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_26
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 301
+        width: 64
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54fa4b6c82ddabf49a02d9637a88e682
+      internalID: -2092600405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_27
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 301
+        width: 65
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca3a9bce9810f54880933a2977af9c2
+      internalID: -982491938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_28
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 301
+        width: 65
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e69fb79e927944a8792dacb89b551c
+      internalID: -209800422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_29
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 301
+        width: 64
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0855ccf241c77346a5eb8474bfada13
+      internalID: 1016090497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_30
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 301
+        width: 64
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9275a10f5d7244045a1591493306da4f
+      internalID: -311329774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_31
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 301
+        width: 64
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe4153f89aa507142a8af3bc179303ad
+      internalID: -597294639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_32
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 301
+        width: 64
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f13847edbb550b4592d0843ea6077ad
+      internalID: -1701895551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_33
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 301
+        width: 63
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfece0efd4fc1704db55bd0fadbcf7b7
+      internalID: -2106861270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_34
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 301
+        width: 63
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d8afa898bec1ec4abbf77cb9f69d2b2
+      internalID: -1671684109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_35
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 301
+        width: 63
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3750bc0d6c607144daffd7fc53eae45d
+      internalID: -1605161595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_36
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 301
+        width: 63
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3faf8f6c25e2c8b47b4e1bcfe91d06e2
+      internalID: -2108163360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_37
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 274
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2196be5b368bdc47bd6717fb7826cdf
+      internalID: 1875363591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_38
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 274
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c8be628a62c0c642ae907329b9038cf
+      internalID: -1421043888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_39
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 274
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76417966f579d7498adb113157cd3bd
+      internalID: 890626772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_40
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 264
+        width: 65
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaafb9f788a773f4c937a4027bb69fbc
+      internalID: 1474007845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_41
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 267
+        width: 67
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50dd9bf7c167c8a47be6f7a7f3b28489
+      internalID: -1786712951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_42
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 267
+        width: 62
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b486f6c72579444b12ff84f91b8946
+      internalID: 1981456317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_43
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 264
+        width: 63
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d4e54c6e0d55794e809def238bd1490
+      internalID: 1865917242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_44
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 264
+        width: 63
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d174f313fb4f33d4388a153915969355
+      internalID: 1470048888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_45
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 264
+        width: 66
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 033771edc704e9c47a9275dcfc151a83
+      internalID: 1316055216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_46
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 264
+        width: 65
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e79cb7026ba86ea489f506077c1cebe4
+      internalID: 189170351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_47
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 228
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f53b2953d0a6234486b0200f9b22ee5
+      internalID: -1863000496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_48
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 228
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 863e34d9d1fc1a4468853e7a4a0e0dc1
+      internalID: -331918257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_49
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 228
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec69690246ed7640bdd808cc3f4084a
+      internalID: -1721230843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_50
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 226
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aaa6c4ac7018f343b7600933f4f6755
+      internalID: 244264950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_51
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 215
+        width: 41
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58cd36fb8b1b8e540a64ff675ae02b11
+      internalID: -114624540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_52
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 215
+        width: 54
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3062fbac52c565c4081ce12fa258d8c2
+      internalID: 268790648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_53
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 216
+        width: 60
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c5695c2c4a79f54e9d0373b75947ffa
+      internalID: 1605162920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_54
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 217
+        width: 62
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02225e6568a39241bccc67069c12181
+      internalID: -599853676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_55
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 226
+        width: 63
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 560067611c096b648813e0aa48ce1a64
+      internalID: 689095372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_56
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 216
+        width: 52
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0577f2b481cd694d8bf16d1c6344f01
+      internalID: 2130759538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_57
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 215
+        width: 54
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1274f59d6445d8043a2fe0f791f45866
+      internalID: -1978697275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_58
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 215
+        width: 57
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8133b2f454a3ad47b9150484cec5792
+      internalID: 1787488296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_59
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 215
+        width: 54
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8f771e7777547e4db806cf14d1b255d
+      internalID: -740735051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_60
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 215
+        width: 41
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac546f476a874844b9eae4d6227a30dd
+      internalID: -1632366751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_61
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 166
+        width: 41
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c78f59e0d7079384f8da8b4c9a56d64a
+      internalID: 917959523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_62
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 166
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45ec30046e1e55c4ab3d5c930ef07c08
+      internalID: 1427780192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_63
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 166
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11bd2813e10a47f45a3219efe3bee31d
+      internalID: -431078812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_64
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 192
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c66fd22b79c4a44795bb7639bfc0479
+      internalID: -640908521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_65
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 166
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b463ee4cfeef114496960e8dda16112
+      internalID: -595263080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_66
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 180
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bee1a700559a208429934673d6e5709a
+      internalID: -1827520627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_67
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 180
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e4a92e9ccb07f46ad56fdb566c67a0
+      internalID: -550758119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_68
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 180
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d69516950ec9647a4cdddd089aded2
+      internalID: -141163921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_69
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 180
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a952057e70373544d9bb8d1b6cb5d582
+      internalID: 569548442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_70
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 166
+        width: 39
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66dfc1f87a6be9b409c383703f60cd8f
+      internalID: 129751762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_71
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 144
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab5494201f5e844d8206b1c3bd8463e
+      internalID: -678120905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_72
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 144
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f318ccaf807e9e0468ef35996e7016a5
+      internalID: 306840643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_73
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 144
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8188441cebf5de94d95a925518466d23
+      internalID: 958482486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_74
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 117
+        width: 41
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c037f2f1474a0724fb673559d5a594e1
+      internalID: 1545338070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_75
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 117
+        width: 38
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc8c37e96a3c5143a84b84b4433af2b
+      internalID: -802735152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_76
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 117
+        width: 37
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c8f292c378d32438bee33acd83c350
+      internalID: -335869803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_77
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 117
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0b71b71bee7eae45b32d9d1f47c3ad0
+      internalID: -404367697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_78
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 117
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ae7e05e153097409870174822ead21
+      internalID: -1824451078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_79
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 117
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62434bc58c1a9af489c714679608e09c
+      internalID: -364915817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_80
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 133
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67014ebcaf29f234cbba788b25d57d6f
+      internalID: -269016390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_81
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 133
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 777404d79ade0a4478e9862c247e8d25
+      internalID: -1840335397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_82
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 133
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efacec8ed6b9c444db143a1ed7bb0e09
+      internalID: -1752170249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_83
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 133
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94839ec4c787ab34f9a14dd1d0e36199
+      internalID: -1454582353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_84
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 131
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85d5ee2c9ea9d34aa77b0530de933f0
+      internalID: -826275595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_85
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 133
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ab04622c17f73540896bb147fe2cc66
+      internalID: 1387331812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_86
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 122
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f587be09cc88c6e4abfd6770d61823f2
+      internalID: 1415985400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_87
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 122
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d3a53bd4c0c9240bf07921f53eeaff
+      internalID: -1658223318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_88
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 122
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 780b03a66c9023d43a754b4dcfb3dec0
+      internalID: -79424018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_89
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 75
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e56359d08df5e4d946b177bd674ad7
+      internalID: 1471641331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_90
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 75
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8071acc1ebd5b60419668e510e5e6f51
+      internalID: 390081635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_91
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 75
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f87cf9e40f20b7469223c295486ed23
+      internalID: 1183467450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_92
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 75
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7408e7eeb2c3758419fc9d46587357fa
+      internalID: -496964504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_93
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 60
+        width: 41
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f785c063ab0942c49ad390b13ea20811
+      internalID: -780735729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_94
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 60
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23561f53094f1d4ca9c3bc2ace657f6
+      internalID: -12724516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_95
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 60
+        width: 38
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8c400e7cfb6ee241b08ba780fc023e2
+      internalID: -1228109218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_96
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 60
+        width: 33
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c3ba5721f9e3a499cd9f7f8acf5ced
+      internalID: 1120636991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_97
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 60
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c88b7374443a254cbb787c22c3969b6
+      internalID: 970389930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_98
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 60
+        width: 60
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 622022c42f544c74999875cbd74204ba
+      internalID: 311110796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_99
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 60
+        width: 53
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e46678132489c0f4f9a962fc7462fca6
+      internalID: 673659576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_100
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 60
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de5d3181ba14804a9ac0454bb36005b
+      internalID: -1489684386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_101
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 60
+        width: 41
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d18a8e6afab1c4b9166f2aee21d941
+      internalID: -1606367112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_111
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 21
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61711dbfb35056e4d894b52c190b8636
+      internalID: 1257489773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_112
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 21
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb9b5944ed2b8d74a803bf5b99ca26c9
+      internalID: 121750078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_113
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 19
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15b1a29c952cb124582f1b1a910026de
+      internalID: 304564772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_114
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 21
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba1f0da4e17ee964894a0ac633e4cae1
+      internalID: -1912043886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_115
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 21
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c36e2fc4b38d194e9b6328208282867
+      internalID: -645521771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_116
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 21
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea809cf60278f354396af1bf7f04918f
+      internalID: 51682430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_117
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 21
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe765d8f0c7c808469db97db15309a2f
+      internalID: -1662113012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_118
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 3
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fc4a83bd9a9fbc4ea2f1f1adc33c889
+      internalID: -1738819661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_119
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 3
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 624a116b229ca1d44a573c08e612aab6
+      internalID: -1962730506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_120
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 3
+        width: 53
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac338f88fcbb6fe4abf344d790a96061
+      internalID: -360414850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_121
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 3
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74cc232b3ab41c24b9c2df2767e4d63d
+      internalID: -1100860911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheScoobyDoo_122
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 3
+        width: 136
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5748a8a7938aef34db065e671012c8a8
+      internalID: -1414369904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      TheScoobyDoo_35: -1605161595
+      TheScoobyDoo_57: -1978697275
+      TheScoobyDoo_101: -1606367112
+      TheScoobyDoo_88: -79424018
+      TheScoobyDoo_14: -985322941
+      TheScoobyDoo_109: -1780876689
+      TheScoobyDoo_103: -1863906856
+      TheScoobyDoo_59: -740735051
+      TheScoobyDoo_62: 1427780192
+      TheScoobyDoo_44: 1470048888
+      TheScoobyDoo_102: -603162920
+      TheScoobyDoo_100: -1489684386
+      TheScoobyDoo_108: 248841968
+      TheScoobyDoo_41: -1786712951
+      TheScoobyDoo_60: -1632366751
+      TheScoobyDoo_96: 1120636991
+      TheScoobyDoo_27: -982491938
+      TheScoobyDoo_74: 1545338070
+      TheScoobyDoo_46: 189170351
+      TheScoobyDoo_23: -1503570834
+      TheScoobyDoo_54: -599853676
+      TheScoobyDoo_65: -595263080
+      TheScoobyDoo_67: -550758119
+      TheScoobyDoo_104: 994224265
+      TheScoobyDoo_75: -802735152
+      TheScoobyDoo_40: 1474007845
+      TheScoobyDoo_66: -1827520627
+      TheScoobyDoo_72: 306840643
+      TheScoobyDoo_118: -1738819661
+      TheScoobyDoo_63: -431078812
+      TheScoobyDoo_85: 1387331812
+      TheScoobyDoo_94: -12724516
+      TheScoobyDoo_76: -335869803
+      TheScoobyDoo_8: -616808752
+      TheScoobyDoo_29: 1016090497
+      TheScoobyDoo_25: 1895349926
+      TheScoobyDoo_45: 1316055216
+      TheScoobyDoo_99: 673659576
+      TheScoobyDoo_34: -1671684109
+      TheScoobyDoo_49: -1721230843
+      TheScoobyDoo_98: 311110796
+      TheScoobyDoo_86: 1415985400
+      TheScoobyDoo_122: -1414369904
+      TheScoobyDoo_9: 446286818
+      TheScoobyDoo_51: -114624540
+      TheScoobyDoo_42: 1981456317
+      TheScoobyDoo_20: -1003039438
+      TheScoobyDoo_19: -938450877
+      TheScoobyDoo_26: -2092600405
+      TheScoobyDoo_95: -1228109218
+      TheScoobyDoo_121: -1100860911
+      TheScoobyDoo_21: 1775809125
+      TheScoobyDoo_115: -645521771
+      TheScoobyDoo_5: 934023045
+      TheScoobyDoo_22: 1871434790
+      TheScoobyDoo_52: 268790648
+      TheScoobyDoo_31: -597294639
+      TheScoobyDoo_116: 51682430
+      TheScoobyDoo_53: 1605162920
+      TheScoobyDoo_89: 1471641331
+      TheScoobyDoo_93: -780735729
+      TheScoobyDoo_6: 1329897094
+      TheScoobyDoo_70: 129751762
+      TheScoobyDoo_81: -1840335397
+      TheScoobyDoo_110: 1839319435
+      TheScoobyDoo_10: 4894732
+      TheScoobyDoo_4: 841251575
+      TheScoobyDoo_113: 304564772
+      TheScoobyDoo_55: 689095372
+      TheScoobyDoo_117: -1662113012
+      TheScoobyDoo_43: 1865917242
+      TheScoobyDoo_80: -269016390
+      TheScoobyDoo_119: -1962730506
+      TheScoobyDoo_0: -1712999207
+      TheScoobyDoo_3: 292354136
+      TheScoobyDoo_91: 1183467450
+      TheScoobyDoo_12: -54756711
+      TheScoobyDoo_33: -2106861270
+      TheScoobyDoo_36: -2108163360
+      TheScoobyDoo_61: 917959523
+      TheScoobyDoo_32: -1701895551
+      TheScoobyDoo_120: -360414850
+      TheScoobyDoo_87: -1658223318
+      TheScoobyDoo_92: -496964504
+      TheScoobyDoo_38: -1421043888
+      TheScoobyDoo_16: -282688546
+      TheScoobyDoo_11: 731338390
+      TheScoobyDoo_106: 248868087
+      TheScoobyDoo_82: -1752170249
+      TheScoobyDoo_84: -826275595
+      TheScoobyDoo_90: 390081635
+      TheScoobyDoo_15: 1272000514
+      TheScoobyDoo_30: -311329774
+      TheScoobyDoo_111: 1257489773
+      TheScoobyDoo_7: 558780827
+      TheScoobyDoo_37: 1875363591
+      TheScoobyDoo_2: -1314083899
+      TheScoobyDoo_83: -1454582353
+      TheScoobyDoo_28: -209800422
+      TheScoobyDoo_107: -217873325
+      TheScoobyDoo_79: -364915817
+      TheScoobyDoo_69: 569548442
+      TheScoobyDoo_78: -1824451078
+      TheScoobyDoo_68: -141163921
+      TheScoobyDoo_24: -1297506047
+      TheScoobyDoo_97: 970389930
+      TheScoobyDoo_71: -678120905
+      TheScoobyDoo_73: 958482486
+      TheScoobyDoo_105: -1891755842
+      TheScoobyDoo_18: 1144745517
+      TheScoobyDoo_114: -1912043886
+      TheScoobyDoo_112: 121750078
+      TheScoobyDoo_64: -640908521
+      TheScoobyDoo_50: 244264950
+      TheScoobyDoo_39: 890626772
+      TheScoobyDoo_1: 645940532
+      TheScoobyDoo_56: 2130759538
+      TheScoobyDoo_58: 1787488296
+      TheScoobyDoo_13: -687614545
+      TheScoobyDoo_47: -1863000496
+      TheScoobyDoo_17: -319817048
+      TheScoobyDoo_48: -331918257
+      TheScoobyDoo_77: -404367697
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

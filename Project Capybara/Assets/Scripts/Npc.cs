@@ -9,10 +9,10 @@ public abstract class INpc : MonoBehaviour
 
     public abstract void movement();
 
-    public abstract void Die();
+  
 
     public abstract void Animate();
-    public abstract void interact();
+  
 
     public abstract void hitPlayer();
     

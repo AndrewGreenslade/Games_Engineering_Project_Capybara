@@ -27,6 +27,8 @@ public class FactoryRoomGenerator : MonoBehaviour
     public int RoomsGenerated = 0;
 
     public GameObject room;
+    public bool pathGenerated = false;
+    public bool areRoomsgenerated = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,21 +38,38 @@ public class FactoryRoomGenerator : MonoBehaviour
         StartCoroutine(spawnRooms());
     }
 
+    private void Update()
+    {
+        if(!pathGenerated && !areRoomsgenerated)
+        {
+            if (RoomsGenerated >= RoomsTogenerate)
+            {
+                if (Rooms[Rooms.Count - 1].GetComponent<RoomReposition>().isGenerated)
+                {
+                    areRoomsgenerated = true;
+                }
+            }
+        }
+
+        if (!pathGenerated && areRoomsgenerated)
+        {
+            GeneratePaths();
+            pathGenerated = true;
+        }
+    }
+
     IEnumerator spawnRooms()
     {
         GameObject rooms = Instantiate(room, transform.position, Quaternion.identity);
         Rooms.Add(rooms);
-        RoomsGenerated++;
 
         yield return new WaitForSeconds(RoomReposition.spawnTime);
+        
+        RoomsGenerated++;
 
         if (RoomsGenerated < RoomsTogenerate)
         {
             StartCoroutine(spawnRooms());
-        }
-        else
-        {
-            GeneratePaths();
         }
     }
 
@@ -109,6 +128,7 @@ public class FactoryRoomGenerator : MonoBehaviour
         while(currentX != t_pos2.x)
         {
             bg.SetTile(new Vector3Int(currentX, currentY , 0), tiles[(int)floorTile]);
+            
             fg.SetTile(new Vector3Int(currentX, currentY, 0), null);
             darkness.SetTile(new Vector3Int(currentX, currentY, 0), null);
 
@@ -125,6 +145,7 @@ public class FactoryRoomGenerator : MonoBehaviour
         while (currentY != t_pos2.y)
         {
             bg.SetTile(new Vector3Int(currentX, currentY, 0), tiles[(int)floorTile]);
+
             fg.SetTile(new Vector3Int(currentX, currentY, 0), null);
             darkness.SetTile(new Vector3Int(currentX, currentY, 0), null);
 
@@ -141,14 +162,12 @@ public class FactoryRoomGenerator : MonoBehaviour
 
     private void GeneratePaths()
     {
-        int currentRoom = 1;
 
         for (int i = 0; i < Rooms.Count; i++)
         {
-            if(currentRoom < Rooms.Count)
+            if(i < Rooms.Count - 1)
             {
-                generatePath(Rooms[i].transform.position, Rooms[currentRoom].transform.position, TilesList.cobbleFloor);
-                currentRoom++;
+                generatePath(Rooms[i].transform.position, Rooms[i + 1].transform.position, TilesList.cobbleFloor);
             }
         }
     }
