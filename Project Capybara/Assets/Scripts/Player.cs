@@ -103,7 +103,10 @@ public class Player : MonoBehaviour
      
 
         healthClone.transform.position = new Vector3(topLeft.x + 1, topLeft.y - 0.8f, 0);
-        healthClone.gameObject.transform.localScale = new Vector3(playerHealth, playerHealth, 0);
+        if (playerHealth >= 0.0f)
+        {
+            healthClone.gameObject.transform.localScale = new Vector3(playerHealth, playerHealth, 0);
+        }
 
 
     }
@@ -308,10 +311,27 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+ 
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("spit"))
+        {
+            playerHealth = playerHealth - 0.2f;
+            Destroy(collision.gameObject);
+            Debug.Log("spit hit player ");
+        }
+
+        if (collision.gameObject.CompareTag("catAttack"))
+        {
+            playerHealth = playerHealth - 0.1f;
+            //Destroy(collision.gameObject);
+            Debug.Log("CatAttack hit player ");
+        }
+
 
     }
+
+
 
 
     private void attack()
