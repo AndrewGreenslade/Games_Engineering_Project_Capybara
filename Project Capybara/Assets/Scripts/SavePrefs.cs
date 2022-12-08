@@ -10,11 +10,18 @@ public class SavePrefs : MonoBehaviour
     string doesPlayerHaveBow;
 
     public GameObject player;
+    private Player p;
+    private InventoryManager inventory;
 
-    void setSaveValues()
+
+    private void Start()
+    {      
+        p = player.GetComponent<Player>();
+        inventory = player.GetComponent<InventoryManager>();
+        //PlayerPrefs.DeleteAll();
+    }
+    public void setSaveValues()
     {
-        Player p = player.GetComponent<Player>();
-        InventoryManager inventory = player.GetComponent<InventoryManager>();
 
         healthToSave = p.playerHealth;
 
@@ -46,13 +53,57 @@ public class SavePrefs : MonoBehaviour
         }
     }
 
-    void SaveGame()
+    public void SaveGame()
     {
         PlayerPrefs.SetFloat("HealthSaveFloat", healthToSave);
         PlayerPrefs.SetString("AxeSaveString", doesPlayerHaveAxe);
         PlayerPrefs.SetString("SwordSaveString", doesPlayerHaveSword);
         PlayerPrefs.SetString("BowSaveString", doesPlayerHaveBow);
         PlayerPrefs.Save();
-        Debug.Log("Game data saved!");
+        Debug.Log("GAME SAVED!");
+
+    }
+
+
+    public void LoadGame()
+    {
+        if (PlayerPrefs.HasKey("AxeSaveString"))
+        {
+
+            //p.playerHealth = PlayerPrefs.GetInt("HealthSaveFloat");
+            if (PlayerPrefs.GetString("AxeSaveString") == "FALSE")
+            {
+                inventory.hasAxe = false;
+            }
+            else
+            {
+                inventory.hasAxe = true;
+            }
+
+            if (PlayerPrefs.GetString("SwordSaveString") == "FALSE")
+            {
+                inventory.hasSword = false;
+            }
+            else
+            {
+                inventory.hasSword = true;
+            }
+
+            if (PlayerPrefs.GetString("BowSaveString") == "FALSE")
+            {
+                inventory.hasBow = false;
+            }
+            else
+            {
+                inventory.hasBow = true;
+            }
+
+            Debug.Log(PlayerPrefs.GetFloat("HealthSaveFloat"));
+            Debug.Log(PlayerPrefs.GetString("AxeSaveString"));
+            Debug.Log(PlayerPrefs.GetString("SwordSaveString"));
+            Debug.Log(PlayerPrefs.GetString("BowSaveString"));
+    }
+        else
+            Debug.LogError("There is no save data!");
     }
 }
