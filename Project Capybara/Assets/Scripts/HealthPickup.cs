@@ -12,8 +12,8 @@ public class HealthPickup : Pickup
     void Start()
     {
         base.Start();
-        PowerName = "Speed Boost";
-        powerupDescription = "Gives capybara a temporary speed boost";
+        PowerName = "Health";
+        powerupDescription = "Gives capybara a health boost";
     }
 
     // Update is called once per frame

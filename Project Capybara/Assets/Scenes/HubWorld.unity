@@ -22691,6 +22691,10 @@ PrefabInstance:
       value: Cat
       objectReference: {fileID: 0}
     - target: {fileID: 4481365659145416494, guid: f0810cf1cd52e024694c10df356325f0, type: 3}
+      propertyPath: attackObject
+      value: 
+      objectReference: {fileID: 6258601233021667109, guid: 962763151aa74e14f9b06aed235ebeeb, type: 3}
+    - target: {fileID: 4481365659145416494, guid: f0810cf1cd52e024694c10df356325f0, type: 3}
       propertyPath: m_capyTransform
       value: 
       objectReference: {fileID: 1057370777}

@@ -6,16 +6,17 @@ public class meleeEnemy : INpc
 {
     public Animator anim;
     public Transform m_capyTransform;
+    public GameObject attackObject;
+    private bool AttackPlayer = false;
 
- 
     private bool m_movingRight;
   
     private bool m_movingIdle;
     int speed = 2;
-  
+    float timerForAttackAlive;
     float m_detectionRange = 3.5f;
     public Vector3 relativePos;
-
+    private bool playerHasAttacked = false;
     public SpriteRenderer myRenderer;
 
     private void Start()
@@ -29,7 +30,10 @@ public class meleeEnemy : INpc
     }
 
     public override void movement()
-    {   
+    {
+
+        timerForAttackAlive -= Time.deltaTime;
+        AttackPlayer = true;
         if (Vector3.Distance(m_capyTransform.position, transform.position) <= m_detectionRange)
         {
             relativePos = m_capyTransform.position - transform.position;
@@ -67,6 +71,12 @@ public class meleeEnemy : INpc
             m_movingRight = false;
             m_movingIdle = true;
         }
+        if (AttackPlayer == true)
+        {
+            hitPlayer();
+            AttackPlayer = false;
+        }
+
     }
 
     public override void Animate()
@@ -103,6 +113,24 @@ public class meleeEnemy : INpc
 
     public override void hitPlayer()
     {
-        Debug.Log("cat enemy hitplayer");
+        if (playerHasAttacked == false)
+        {
+            GameObject cloneAttack = Instantiate(attackObject, gameObject.transform.position, Quaternion.identity);
+            Destroy(cloneAttack, 0.5f);
+            playerHasAttacked = true;
+            timerForAttackAlive = 1.5f;
+
+        }
+
+
+
+        if (timerForAttackAlive <= 0.03f)
+        {
+            playerHasAttacked = false;
+        }
+        else
+        {
+            playerHasAttacked = true;
+        }
     }
 }
