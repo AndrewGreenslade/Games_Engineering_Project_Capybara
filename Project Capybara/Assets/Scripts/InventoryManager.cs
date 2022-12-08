@@ -5,6 +5,8 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 
+
+
 public enum Weapons
 {
     Claws,
@@ -19,6 +21,7 @@ public class InventoryManager : MonoBehaviour
     public Weapons equippedWeapon;
 
     private GameObject inventoryCanvas;
+    public List<GameObject> hotbarItems;
     private TextMeshProUGUI damageText;
     private TextMeshProUGUI axeText;
     private TextMeshProUGUI swordText;
@@ -36,6 +39,13 @@ public class InventoryManager : MonoBehaviour
         swordText = GameObject.FindGameObjectWithTag("SwordText").GetComponent<TextMeshProUGUI>();
         bowText = GameObject.FindGameObjectWithTag("BowText").GetComponent<TextMeshProUGUI>();
         damageText = GameObject.FindGameObjectWithTag("DamageText").GetComponent<TextMeshProUGUI>();
+
+        foreach (var weapon in hotbarItems)
+        {
+            weapon.SetActive(false);
+        }
+
+        hotbarItems[0].SetActive(true);
 
         axeText.enabled = false;
         swordText.enabled = false;
@@ -83,10 +93,12 @@ public class InventoryManager : MonoBehaviour
             if(hasAxe)
             {
                 axeText.enabled = true;
+                hotbarItems[2].SetActive(true);
             }
             if (hasSword)
             {
                 swordText.enabled = true;
+                hotbarItems[1].SetActive(true);
             }
             if (hasBow)
             {
