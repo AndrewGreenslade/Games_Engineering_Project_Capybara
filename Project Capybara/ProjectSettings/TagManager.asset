@@ -27,6 +27,8 @@ TagManager:
   - Sword
   - Bow
   - spit
+  - catAttack
+  - Cat
   layers:
   - Default
   - TransparentFX
@@ -36,8 +38,8 @@ TagManager:
   - UI
   - ExcludeFromMinimap
   - includeFromMinimap
-  - 
-  - 
+  - catLayer
+  - CatWeaponLayer
   - 
   - 
   - 
