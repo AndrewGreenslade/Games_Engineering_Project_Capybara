@@ -96,8 +96,29 @@ public class InventoryManager : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.Tab))
         {
             inventoryCanvas.SetActive(false);
-            
+
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            equippedWeapon = Weapons.Claws;
+            axeText.color = Color.red;
+            swordText.color = Color.red;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            equippedWeapon = Weapons.Sword;
+            swordText.color = Color.green;
+            axeText.color = Color.red;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            equippedWeapon = Weapons.Axe;
+            axeText.color = Color.green;
+            swordText.color = Color.red;
+        }
+
+
     }
 }
 
