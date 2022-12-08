@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6258601233021667111}
   - component: {fileID: 6258601233021667110}
   - component: {fileID: -7491209852060277631}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: betterClaw2
   m_TagString: attack
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 996030659
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 868cd38a872a59349b3d6c685e0b7d7c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

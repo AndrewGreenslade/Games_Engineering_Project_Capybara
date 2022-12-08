@@ -133,4 +133,23 @@ public class meleeEnemy : INpc
             playerHasAttacked = true;
         }
     }
+
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("attack"))
+        {
+            // Destroy(collision.gameObject);
+            // do collision here 
+            Debug.Log("Player hits Cat");
+
+        }
+
+    }
+
+
+
+
 }
