@@ -122,6 +122,7 @@ public class InventoryManager : MonoBehaviour
             equippedWeapon = Weapons.Sword;
             swordText.color = Color.green;
             axeText.color = Color.red;
+
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {

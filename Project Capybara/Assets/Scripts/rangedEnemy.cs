@@ -171,6 +171,21 @@ public class rangedEnemy : INpc
 
         }
 
+
+        if (collision.gameObject.CompareTag("realSwordOnCapy"))
+        {
+            // Destroy(collision.gameObject);
+            // do collision here 
+            Debug.Log("Player with sword hits llama");
+        }
+
+        if (collision.gameObject.CompareTag("realAxeOnCapy"))
+        {
+            // Destroy(collision.gameObject);
+            // do collision here 
+            Debug.Log("Player with Axe hits llama");
+        }
+
     }
 
 }

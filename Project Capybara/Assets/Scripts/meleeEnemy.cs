@@ -136,8 +136,22 @@ public class meleeEnemy : INpc
             // Destroy(collision.gameObject);
             // do collision here 
             Debug.Log("Player hits Cat");
-
         }
+
+        if (collision.gameObject.CompareTag("realSwordOnCapy"))
+        {
+            // Destroy(collision.gameObject);
+            // do collision here 
+            Debug.Log("Player with sword hits Cat");
+        }
+
+        if (collision.gameObject.CompareTag("realAxeOnCapy"))
+        {
+            // Destroy(collision.gameObject);
+            // do collision here 
+            Debug.Log("Player with axe hits Cat");
+        }
+
 
     }
 

@@ -38,6 +38,9 @@ public class Player : MonoBehaviour
     private GameObject healthClone;
     public Vector3 originalLocalScale;
     public GameObject attackObject;
+    public GameObject swordPrefab;
+    public GameObject axePrefab;
+
     public GameObject heartObject;
     public bool playerHasAttacked = false;
     public bool levelTwoUnlock = false;
@@ -45,6 +48,9 @@ public class Player : MonoBehaviour
     public bool levelFourUnlock = false;
     public bool bossUnlock = false;
     public GameObject saveObject;
+
+    public InventoryManager im;
+
 
     void Start()
     {
@@ -54,6 +60,7 @@ public class Player : MonoBehaviour
         state = States.Idle;
         healthClone = Instantiate(heartObject, new Vector3(0, 0, 0), Quaternion.identity);
         originalLocalScale = healthClone.transform.localScale;
+        im = FindObjectOfType<InventoryManager>();
 
     }
 
@@ -107,6 +114,8 @@ public class Player : MonoBehaviour
 
     }
 
+
+   
     
 
     void checkStatesForAnimator()
@@ -327,7 +336,7 @@ public class Player : MonoBehaviour
 
     private void attack()
     {
-        if (Input.GetKey(KeyCode.Space) && !playerHasAttacked)
+        if (Input.GetKey(KeyCode.Space) && !playerHasAttacked && im.equippedWeapon == Weapons.Claws)
         {
             cloneAttack = Instantiate(attackObject, gameObject.transform.position, Quaternion.identity);
             playerHasAttacked = true;
@@ -336,7 +345,28 @@ public class Player : MonoBehaviour
 
         }
 
-        if (timerForAttackAlive <= 0.03f)
+		if (Input.GetKey(KeyCode.Space) && !playerHasAttacked && im.equippedWeapon == Weapons.Sword)
+		{
+			cloneAttack = Instantiate(swordPrefab, gameObject.transform.position, Quaternion.identity);
+			playerHasAttacked = true;
+			timerForAttackAlive = 0.5f;
+			Destroy(cloneAttack, 0.5f);
+
+		}
+
+
+		if (Input.GetKey(KeyCode.Space) && !playerHasAttacked && im.equippedWeapon == Weapons.Axe)
+		{
+			cloneAttack = Instantiate(axePrefab, gameObject.transform.position, Quaternion.identity);
+			playerHasAttacked = true;
+			timerForAttackAlive = 0.5f;
+			Destroy(cloneAttack, 0.5f);
+
+		}
+
+
+
+		if (timerForAttackAlive <= 0.03f)
         {
             playerHasAttacked = false;
         }
