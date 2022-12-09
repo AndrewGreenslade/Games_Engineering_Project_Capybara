@@ -526,14 +526,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 322998545, guid: d36b065a135f43a4aab31e097fdce557, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349889885, guid: d36b065a135f43a4aab31e097fdce557, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2818732813398283186, guid: d36b065a135f43a4aab31e097fdce557, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -590,14 +582,6 @@ PrefabInstance:
       propertyPath: saveObject
       value: 
       objectReference: {fileID: 1331060544}
-    - target: {fileID: 2818732813398283196, guid: d36b065a135f43a4aab31e097fdce557, type: 3}
-      propertyPath: heartObject
-      value: 
-      objectReference: {fileID: 2107567221826837298, guid: e01819a738507884b893759371279218, type: 3}
-    - target: {fileID: 2818732813398283196, guid: d36b065a135f43a4aab31e097fdce557, type: 3}
-      propertyPath: attackObject
-      value: 
-      objectReference: {fileID: 6258601233021667109, guid: 962763151aa74e14f9b06aed235ebeeb, type: 3}
     - target: {fileID: 2818732813398283199, guid: d36b065a135f43a4aab31e097fdce557, type: 3}
       propertyPath: m_Name
       value: Player
@@ -15303,7 +15287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &621523180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22647,6 +22631,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 978090275298062761, guid: 1461d67e21d32fc408a92b510067fcab, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 978090275298062762, guid: 1461d67e21d32fc408a92b510067fcab, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -22703,7 +22691,7 @@ PrefabInstance:
     - target: {fileID: 4007171229594645748, guid: 562ae8d1491284848b6178dc2770e8a2, type: 3}
       propertyPath: inventoryManager
       value: 
-      objectReference: {fileID: 1328125704}
+      objectReference: {fileID: 0}
     - target: {fileID: 4007171229594645749, guid: 562ae8d1491284848b6178dc2770e8a2, type: 3}
       propertyPath: m_IsTrigger
       value: 0

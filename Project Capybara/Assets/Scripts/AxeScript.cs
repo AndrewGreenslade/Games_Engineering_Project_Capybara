@@ -5,16 +5,20 @@ using UnityEngine;
 public class AxeScript : MonoBehaviour
 {
     public InventoryManager inventoryManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        inventoryManager = FindObjectOfType<InventoryManager>();    
+        inventoryManager = FindObjectOfType<InventoryManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (inventoryManager.hasAxe)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)

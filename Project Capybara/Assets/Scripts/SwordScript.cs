@@ -10,13 +10,16 @@ public class SwordScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inventoryManager = FindObjectOfType<InventoryManager>();
+        inventoryManager = FindObjectOfType<InventoryManager>();  
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (inventoryManager.hasSword)
+        {
+            Destroy(gameObject);  
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)

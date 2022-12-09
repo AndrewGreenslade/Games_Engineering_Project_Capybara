@@ -11,12 +11,17 @@ public class BowScript : MonoBehaviour
     void Start()
     {
         inventoryManager = FindObjectOfType<InventoryManager>();
+
+  
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (inventoryManager.hasBow)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)

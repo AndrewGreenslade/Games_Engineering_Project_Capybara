@@ -54,8 +54,6 @@ public class Player : MonoBehaviour
         state = States.Idle;
         healthClone = Instantiate(heartObject, new Vector3(0, 0, 0), Quaternion.identity);
         originalLocalScale = healthClone.transform.localScale;
-        SavePrefs s = saveObject.GetComponent<SavePrefs>();
-        s.LoadGame();
 
     }
 

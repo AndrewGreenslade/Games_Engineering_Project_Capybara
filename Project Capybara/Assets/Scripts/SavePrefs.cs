@@ -17,7 +17,8 @@ public class SavePrefs : MonoBehaviour
     private void Start()
     {      
         p = player.GetComponent<Player>();
-        inventory = player.GetComponent<InventoryManager>();
+        inventory = FindObjectOfType<InventoryManager>();
+        LoadGame();
         //PlayerPrefs.DeleteAll();
     }
     public void setSaveValues()
@@ -31,6 +32,7 @@ public class SavePrefs : MonoBehaviour
         }
         else
         {
+
             doesPlayerHaveAxe = "TRUE";
         }
 
@@ -61,7 +63,6 @@ public class SavePrefs : MonoBehaviour
         PlayerPrefs.SetString("BowSaveString", doesPlayerHaveBow);
         PlayerPrefs.Save();
         Debug.Log("GAME SAVED!");
-
     }
 
 
@@ -69,14 +70,15 @@ public class SavePrefs : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("AxeSaveString"))
         {
-
             //p.playerHealth = PlayerPrefs.GetInt("HealthSaveFloat");
             if (PlayerPrefs.GetString("AxeSaveString") == "FALSE")
             {
+
                 inventory.hasAxe = false;
             }
             else
             {
+                inventory.hotbarItems[2].SetActive(true);
                 inventory.hasAxe = true;
             }
 
@@ -86,6 +88,7 @@ public class SavePrefs : MonoBehaviour
             }
             else
             {
+                inventory.hotbarItems[1].SetActive(true);
                 inventory.hasSword = true;
             }
 
@@ -104,6 +107,6 @@ public class SavePrefs : MonoBehaviour
             Debug.Log(PlayerPrefs.GetString("BowSaveString"));
     }
         else
-            Debug.LogError("There is no save data!");
+            Debug.Log("There is no save data!");
     }
 }
