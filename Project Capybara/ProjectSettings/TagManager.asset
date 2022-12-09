@@ -30,6 +30,10 @@ TagManager:
   - DamageText
   - catAttack
   - Cat
+  - Rock
+  - Scooby
+  - realSwordOnCapy
+  - realAxeOnCapy
   layers:
   - Default
   - TransparentFX
@@ -45,10 +49,6 @@ TagManager:
   - includeFromMinimap
   - catLayer
   - CatWeaponLayer
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 
