@@ -5,6 +5,8 @@ using UnityEngine;
 public class SavePrefs : MonoBehaviour
 {
     float healthToSave;
+    int healthInt;
+    float healthFloat;
     string doesPlayerHaveAxe;
     string doesPlayerHaveSword;
     string doesPlayerHaveBow;
@@ -15,16 +17,16 @@ public class SavePrefs : MonoBehaviour
 
 
     private void Start()
-    {      
+    {
         p = player.GetComponent<Player>();
         inventory = FindObjectOfType<InventoryManager>();
         LoadGame();
-        //PlayerPrefs.DeleteAll();
     }
     public void setSaveValues()
     {
 
-        healthToSave = p.playerHealth;
+        healthToSave = p.playerHealth * 2;
+        healthInt = (int)healthToSave;
 
         if (inventory.hasAxe == false)
         {
@@ -57,7 +59,7 @@ public class SavePrefs : MonoBehaviour
 
     public void SaveGame()
     {
-        PlayerPrefs.SetFloat("HealthSaveFloat", healthToSave);
+        PlayerPrefs.SetInt("HealthSaveInt", healthInt);
         PlayerPrefs.SetString("AxeSaveString", doesPlayerHaveAxe);
         PlayerPrefs.SetString("SwordSaveString", doesPlayerHaveSword);
         PlayerPrefs.SetString("BowSaveString", doesPlayerHaveBow);
@@ -70,7 +72,11 @@ public class SavePrefs : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("AxeSaveString"))
         {
-            //p.playerHealth = PlayerPrefs.GetInt("HealthSaveFloat");
+            healthInt = PlayerPrefs.GetInt("HealthSaveInt");
+            healthFloat = (float)healthInt;
+            healthFloat /= 2.0f;
+            p.playerHealth = healthFloat;
+            Debug.Log("Loaded Health Float" + healthFloat);
             if (PlayerPrefs.GetString("AxeSaveString") == "FALSE")
             {
 
@@ -101,12 +107,17 @@ public class SavePrefs : MonoBehaviour
                 inventory.hasBow = true;
             }
 
-            Debug.Log(PlayerPrefs.GetFloat("HealthSaveFloat"));
+            Debug.Log(PlayerPrefs.GetInt("HealthSaveInt"));
             Debug.Log(PlayerPrefs.GetString("AxeSaveString"));
             Debug.Log(PlayerPrefs.GetString("SwordSaveString"));
             Debug.Log(PlayerPrefs.GetString("BowSaveString"));
-    }
+        }
         else
             Debug.Log("There is no save data!");
+    }
+
+    void resetSaves()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
