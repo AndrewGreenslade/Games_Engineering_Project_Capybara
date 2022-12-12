@@ -422,12 +422,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f5945c4f4a016ae419bd0fb1152e2d1a, type: 2}
   - {fileID: 11400000, guid: f6d4829a6950ff94e85270d3fa1f75ed, type: 2}
   Rooms: []
+  powerUps: []
+  exitRoom: {fileID: 4004186761326102348, guid: 514c01442db13fd439d92a796fe51f22, type: 3}
   startRoomSize: 6
   mapSizeX: 60
   mapSizey: 60
   RoomsTogenerate: 4
   RoomsGenerated: 0
   room: {fileID: 4450222633488106632, guid: 04ea16a787d2eee4c86c5de27ea1096a, type: 3}
+  pathGenerated: 0
+  areRoomsgenerated: 0
 --- !u!61 &235070064
 BoxCollider2D:
   m_ObjectHideFlags: 0
