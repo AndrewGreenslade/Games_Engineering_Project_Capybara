@@ -15,16 +15,7 @@ public class basicEnemy : INpc
         Debug.Log("basic enemy movement");
     }
 
-    public override void Die()
-    {
-        Debug.Log("basic enemy Die");
-    }
-
-    public override void interact()
-    {
-        Debug.Log("basic enemy interact");
-    }
-
+  
     public override void hitPlayer()
     {
         Debug.Log("basic enemy hitplayer");
@@ -34,14 +25,6 @@ public class basicEnemy : INpc
         throw new System.NotImplementedException();
     }
 
-
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-        if (collision.gameObject.CompareTag("attack"))
-        {
-            Debug.Log("Attacked");
-        }
-    }
 
 
 

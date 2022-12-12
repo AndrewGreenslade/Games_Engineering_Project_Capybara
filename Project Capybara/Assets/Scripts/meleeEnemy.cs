@@ -101,15 +101,7 @@ public class meleeEnemy : INpc
         this.Animate();
     }
 
-    public override void Die()
-    {
-        Debug.Log("cat enemy Die");
-    }
-
-    public override void interact()
-    {
-        Debug.Log("cat enemy interact");
-    }
+  
 
     public override void hitPlayer()
     {
@@ -133,4 +125,37 @@ public class meleeEnemy : INpc
             playerHasAttacked = true;
         }
     }
+
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("attack"))
+        {
+            // Destroy(collision.gameObject);
+            // do collision here 
+            Debug.Log("Player hits Cat");
+        }
+
+        if (collision.gameObject.CompareTag("realSwordOnCapy"))
+        {
+            // Destroy(collision.gameObject);
+            // do collision here 
+            Debug.Log("Player with sword hits Cat");
+        }
+
+        if (collision.gameObject.CompareTag("realAxeOnCapy"))
+        {
+            // Destroy(collision.gameObject);
+            // do collision here 
+            Debug.Log("Player with axe hits Cat");
+        }
+
+
+    }
+
+
+
+
 }

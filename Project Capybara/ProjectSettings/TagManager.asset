@@ -27,6 +27,13 @@ TagManager:
   - Sword
   - Bow
   - spit
+  - DamageText
+  - catAttack
+  - Cat
+  - Rock
+  - Scooby
+  - realSwordOnCapy
+  - realAxeOnCapy
   layers:
   - Default
   - TransparentFX
@@ -34,14 +41,14 @@ TagManager:
   - 
   - Water
   - UI
+  - 
+  - 
+  - 
+  - 
   - ExcludeFromMinimap
   - includeFromMinimap
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - catLayer
+  - CatWeaponLayer
   - 
   - 
   - 

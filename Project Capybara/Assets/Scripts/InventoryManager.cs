@@ -3,17 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+
+
+
+public enum Weapons
+{
+    Claws,
+    Sword,
+    Axe,
+    Bow
+}
 
 public class InventoryManager : MonoBehaviour
 {
+
+    public Weapons equippedWeapon;
+
     private GameObject inventoryCanvas;
+    public List<GameObject> hotbarItems;
+    private TextMeshProUGUI damageText;
     private TextMeshProUGUI axeText;
     private TextMeshProUGUI swordText;
     private TextMeshProUGUI bowText;
     public static InventoryManager instance;
-    private bool hasAxe = false;
-    private bool hasSword = false;
-    private bool hasBow = false;
+    public bool hasAxe = false;
+    public bool hasSword = false;
+    public bool hasBow = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +38,19 @@ public class InventoryManager : MonoBehaviour
         axeText = GameObject.FindGameObjectWithTag("AxeText").GetComponent<TextMeshProUGUI>();
         swordText = GameObject.FindGameObjectWithTag("SwordText").GetComponent<TextMeshProUGUI>();
         bowText = GameObject.FindGameObjectWithTag("BowText").GetComponent<TextMeshProUGUI>();
+        damageText = GameObject.FindGameObjectWithTag("DamageText").GetComponent<TextMeshProUGUI>();
+
+        foreach (var weapon in hotbarItems)
+        {
+            weapon.SetActive(false);
+        }
+
+        hotbarItems[0].SetActive(true);
 
         axeText.enabled = false;
         swordText.enabled = false;
         bowText.enabled = false;
+        damageText.enabled = true;
 
         if (instance != null && instance != this)
         {
@@ -37,6 +62,7 @@ public class InventoryManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
 
+        equippedWeapon = Weapons.Claws; //default attack
 
         inventoryCanvas.SetActive(false);
     }
@@ -44,16 +70,35 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        switch(equippedWeapon)
+        {
+            case Weapons.Claws:
+                damageText.text = "Damage Output:\r\n0.7";
+                break;
+            case Weapons.Sword:
+                damageText.text = "Damage Output:\r\n1.2";
+                break;
+            case Weapons.Axe:
+                damageText.text = "Damage Output:\r\n1.8";
+                break;
+            case Weapons.Bow:
+                damageText.text = "Damage Output:\r\n0.7";
+                break;
+        }
+
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             inventoryCanvas.SetActive(true);
             if(hasAxe)
             {
                 axeText.enabled = true;
+                hotbarItems[2].SetActive(true);
             }
             if (hasSword)
             {
                 swordText.enabled = true;
+                hotbarItems[1].SetActive(true);
             }
             if (hasBow)
             {
@@ -63,36 +108,30 @@ public class InventoryManager : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.Tab))
         {
             inventoryCanvas.SetActive(false);
-            
-        }
-    }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Axe"))
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (Input.GetKey(KeyCode.E))
-            {
-                hasAxe = true;
-            }
-
+            equippedWeapon = Weapons.Claws;
+            axeText.color = Color.red;
+            swordText.color = Color.red;
         }
-        else if (collision.gameObject.CompareTag("Sword"))
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && hasSword == true)
         {
-            if (Input.GetKey(KeyCode.E))
-            {
-                hasSword = true;
-            }
+            equippedWeapon = Weapons.Sword;
+            swordText.color = Color.green;
+            axeText.color = Color.red;
 
         }
-        else if (collision.gameObject.CompareTag("Bow"))
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && hasAxe == true)
         {
-            if (Input.GetKey(KeyCode.E))
-            {
-                hasBow = true;
-            }
-
+            equippedWeapon = Weapons.Axe;
+            axeText.color = Color.green;
+            swordText.color = Color.red;
         }
+
+
     }
 }
 
