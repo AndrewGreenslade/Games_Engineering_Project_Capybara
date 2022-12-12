@@ -117,14 +117,14 @@ public class InventoryManager : MonoBehaviour
             axeText.color = Color.red;
             swordText.color = Color.red;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && hasSword == true)
         {
             equippedWeapon = Weapons.Sword;
             swordText.color = Color.green;
             axeText.color = Color.red;
 
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && hasAxe == true)
         {
             equippedWeapon = Weapons.Axe;
             axeText.color = Color.green;

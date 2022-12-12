@@ -21,6 +21,7 @@ public class SavePrefs : MonoBehaviour
         p = player.GetComponent<Player>();
         inventory = FindObjectOfType<InventoryManager>();
         LoadGame();
+       
     }
     public void setSaveValues()
     {
