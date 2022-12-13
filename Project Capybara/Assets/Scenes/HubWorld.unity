@@ -191,11 +191,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &79236110 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4496141785962876893, guid: 1461d67e21d32fc408a92b510067fcab, type: 3}
-  m_PrefabInstance: {fileID: 978090274190752636}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &81544217
 GameObject:
   m_ObjectHideFlags: 0
@@ -16791,11 +16786,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1499583784 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4496141785107818381, guid: 1461d67e21d32fc408a92b510067fcab, type: 3}
-  m_PrefabInstance: {fileID: 978090274190752636}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1598216324
 GameObject:
   m_ObjectHideFlags: 0
@@ -16880,11 +16870,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1706475902 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4496141784715792972, guid: 1461d67e21d32fc408a92b510067fcab, type: 3}
-  m_PrefabInstance: {fileID: 978090274190752636}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1790660392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22839,18 +22824,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryManager
       objectReference: {fileID: 0}
-    - target: {fileID: 978090275298062761, guid: 1461d67e21d32fc408a92b510067fcab, type: 3}
-      propertyPath: hotbarItems.Array.data[0]
-      value: 
-      objectReference: {fileID: 1706475902}
-    - target: {fileID: 978090275298062761, guid: 1461d67e21d32fc408a92b510067fcab, type: 3}
-      propertyPath: hotbarItems.Array.data[1]
-      value: 
-      objectReference: {fileID: 79236110}
-    - target: {fileID: 978090275298062761, guid: 1461d67e21d32fc408a92b510067fcab, type: 3}
-      propertyPath: hotbarItems.Array.data[2]
-      value: 
-      objectReference: {fileID: 1499583784}
     - target: {fileID: 978090275298062762, guid: 1461d67e21d32fc408a92b510067fcab, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -22893,18 +22866,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 978090275298062762, guid: 1461d67e21d32fc408a92b510067fcab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 978090275887596297, guid: 1461d67e21d32fc408a92b510067fcab, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039761886056858128, guid: 1461d67e21d32fc408a92b510067fcab, type: 3}
-      propertyPath: m_TagString
-      value: EquippedPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 4687265789025113244, guid: 1461d67e21d32fc408a92b510067fcab, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
