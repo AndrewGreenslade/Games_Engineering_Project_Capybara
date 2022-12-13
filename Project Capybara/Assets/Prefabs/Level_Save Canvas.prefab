@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 7720486869181871649}
   m_Layer: 5
   m_Name: EquippedHighlight
-  m_TagString: Untagged
+  m_TagString: EquippedPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
