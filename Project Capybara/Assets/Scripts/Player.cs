@@ -42,11 +42,12 @@ public class Player : MonoBehaviour
     public GameObject axePrefab;
 
     public GameObject heartObject;
+    public int keysFound = 0;
     public bool playerHasAttacked = false;
-    public bool levelTwoUnlock = false;
-    public bool levelThreeUnlock = false;
-    public bool levelFourUnlock = false;
-    public bool bossUnlock = false;
+    //public bool levelTwoUnlock = false;
+    //public bool levelThreeUnlock = false;
+    //public bool levelFourUnlock = false;
+    //public bool bossUnlock = false;
     public GameObject saveObject;
 
     public InventoryManager im;
@@ -234,7 +235,7 @@ public class Player : MonoBehaviour
         {
             levelText.gameObject.SetActive(true);
 
-            if (levelTwoUnlock == true)
+            if (keysFound >= 1)
             {
                 levelText.text = "Press 'E' to Enter:\r\nLevel 2";
                 if (Input.GetKey(KeyCode.E))
@@ -251,7 +252,7 @@ public class Player : MonoBehaviour
         {
             levelText.gameObject.SetActive(true);
 
-            if (levelThreeUnlock == true)
+            if (keysFound >= 2)
             {
                 levelText.text = "Press 'E' to Enter:\r\nLevel 3";
                 if (Input.GetKey(KeyCode.E))
@@ -268,7 +269,7 @@ public class Player : MonoBehaviour
         {
             levelText.gameObject.SetActive(true);
 
-            if (levelFourUnlock == true)
+            if (keysFound >= 3)
             {
                 levelText.text = "Press 'E' to Enter:\r\nLevel 4";
                 if (Input.GetKey(KeyCode.E))
@@ -285,7 +286,7 @@ public class Player : MonoBehaviour
         {
             levelText.gameObject.SetActive(true);
 
-            if (bossUnlock == true)
+            if (keysFound >= 4)
             {
                 levelText.text = "Press 'E' to Enter:\r\nCentral Chamber";
                 if (Input.GetKey(KeyCode.E))
@@ -331,6 +332,18 @@ public class Player : MonoBehaviour
             Debug.Log("CatAttack hit player ");
         }
 
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Key"))
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+                Destroy(collision.gameObject);
+                keysFound++;
+            }
+        }
     }
 
 

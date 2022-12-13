@@ -34,6 +34,10 @@ TagManager:
   - Scooby
   - realSwordOnCapy
   - realAxeOnCapy
+  - Exit
+  - Settings
+  - Hub
+  - Key
   layers:
   - Default
   - TransparentFX
