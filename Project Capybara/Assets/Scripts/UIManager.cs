@@ -28,12 +28,12 @@ public class UIManager : MonoBehaviour
     }
     public void Play()
     {
+        prefs.resetSaves();
         SceneManager.LoadScene("HubWorld");
     }
     public void Load()
     {
         SceneManager.LoadScene("HubWorld");
-        prefs.LoadGame();
     }
     public void Back()
     {
