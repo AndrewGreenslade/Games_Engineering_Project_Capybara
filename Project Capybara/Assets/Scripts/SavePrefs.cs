@@ -30,7 +30,7 @@ public class SavePrefs : MonoBehaviour
         healthToSave = p.playerHealth * 2;
         healthInt = (int)healthToSave;
 
-        keys = p.keysFound;
+        keys = inventory.keysStored;
 
         if (inventory.hasAxe == false)
         {
@@ -81,7 +81,7 @@ public class SavePrefs : MonoBehaviour
             healthFloat = (float)healthInt;
             healthFloat /= 2.0f;
             p.playerHealth = healthFloat;
-            p.keysFound = PlayerPrefs.GetInt("KeySaveInt");
+            inventory.keysStored = PlayerPrefs.GetInt("KeySaveInt");
             if (PlayerPrefs.GetString("AxeSaveString") == "FALSE")
             {
 

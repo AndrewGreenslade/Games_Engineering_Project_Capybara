@@ -32,6 +32,7 @@ public class InventoryManager : MonoBehaviour
     public bool hasAxe = false;
     public bool hasSword = false;
     public bool hasBow = false;
+    public int keysStored = 0;
 
     // Start is called before the first frame update
     void Start()

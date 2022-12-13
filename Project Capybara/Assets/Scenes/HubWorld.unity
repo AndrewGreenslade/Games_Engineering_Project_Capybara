@@ -526,10 +526,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 322998545, guid: d36b065a135f43a4aab31e097fdce557, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2818732813398283186, guid: d36b065a135f43a4aab31e097fdce557, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -579,10 +575,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 494295390}
     - target: {fileID: 2818732813398283196, guid: d36b065a135f43a4aab31e097fdce557, type: 3}
-      propertyPath: axePrefab
-      value: 
-      objectReference: {fileID: 8306767457990399136, guid: 66da7e8991853604da14175f5f5bc94d, type: 3}
-    - target: {fileID: 2818732813398283196, guid: d36b065a135f43a4aab31e097fdce557, type: 3}
       propertyPath: levelText
       value: 
       objectReference: {fileID: 481545689}
@@ -590,10 +582,6 @@ PrefabInstance:
       propertyPath: saveObject
       value: 
       objectReference: {fileID: 1331060544}
-    - target: {fileID: 2818732813398283196, guid: d36b065a135f43a4aab31e097fdce557, type: 3}
-      propertyPath: swordPrefab
-      value: 
-      objectReference: {fileID: 5066125147319840274, guid: ad79d8e4843aca94c9a3ba813c600619, type: 3}
     - target: {fileID: 2818732813398283199, guid: d36b065a135f43a4aab31e097fdce557, type: 3}
       propertyPath: m_Name
       value: Player
@@ -22877,14 +22865,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4007171229594645748, guid: 562ae8d1491284848b6178dc2770e8a2, type: 3}
-      propertyPath: inventoryManager
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007171229594645749, guid: 562ae8d1491284848b6178dc2770e8a2, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4007171229594645750, guid: 562ae8d1491284848b6178dc2770e8a2, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -23197,9 +23177,5 @@ PrefabInstance:
       propertyPath: inventoryManager
       value: 
       objectReference: {fileID: 1328125704}
-    - target: {fileID: 8813563448704680843, guid: 468ab159dababa44093f4220c85518d8, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 468ab159dababa44093f4220c85518d8, type: 3}

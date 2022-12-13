@@ -42,7 +42,6 @@ public class Player : MonoBehaviour
     public GameObject axePrefab;
 
     public GameObject heartObject;
-    public int keysFound = 0;
     public bool playerHasAttacked = false;
     //public bool levelTwoUnlock = false;
     //public bool levelThreeUnlock = false;
@@ -89,7 +88,7 @@ public class Player : MonoBehaviour
         attack();
 
         positionHealth();
-        im.keysText.text = "Keys Collected:\r\n" + keysFound;
+        im.keysText.text = "Keys Collected:\r\n" + im.keysStored;
         if (playerHealth <= 0.0f)
         {
             // game lost 
@@ -235,7 +234,7 @@ public class Player : MonoBehaviour
         {
             levelText.gameObject.SetActive(true);
 
-            if (keysFound >= 1)
+            if (im.keysStored >= 1)
             {
                 levelText.text = "Press 'E' to Enter:\r\nLevel 2";
                 if (Input.GetKey(KeyCode.E))
@@ -252,7 +251,7 @@ public class Player : MonoBehaviour
         {
             levelText.gameObject.SetActive(true);
 
-            if (keysFound >= 2)
+            if (im.keysStored >= 2)
             {
                 levelText.text = "Press 'E' to Enter:\r\nLevel 3";
                 if (Input.GetKey(KeyCode.E))
@@ -269,7 +268,7 @@ public class Player : MonoBehaviour
         {
             levelText.gameObject.SetActive(true);
 
-            if (keysFound >= 3)
+            if (im.keysStored >= 3)
             {
                 levelText.text = "Press 'E' to Enter:\r\nLevel 4";
                 if (Input.GetKey(KeyCode.E))
@@ -286,7 +285,7 @@ public class Player : MonoBehaviour
         {
             levelText.gameObject.SetActive(true);
 
-            if (keysFound >= 4)
+            if (im.keysStored >= 4)
             {
                 levelText.text = "Press 'E' to Enter:\r\nCentral Chamber";
                 if (Input.GetKey(KeyCode.E))
@@ -341,7 +340,7 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 Destroy(collision.gameObject);
-                keysFound++;
+                im.keysStored++;
             }
         }
     }
