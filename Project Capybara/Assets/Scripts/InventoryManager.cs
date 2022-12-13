@@ -21,6 +21,7 @@ public class InventoryManager : MonoBehaviour
     public Weapons equippedWeapon;
 
     private GameObject inventoryCanvas;
+    public GameObject equippedPanel;
     public List<GameObject> hotbarItems;
     private TextMeshProUGUI damageText;
     private TextMeshProUGUI axeText;
@@ -35,6 +36,7 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
         inventoryCanvas = GameObject.FindGameObjectWithTag("InventoryCanvas");
+        equippedPanel = GameObject.FindGameObjectWithTag("EquippedPanel");
         axeText = GameObject.FindGameObjectWithTag("AxeText").GetComponent<TextMeshProUGUI>();
         swordText = GameObject.FindGameObjectWithTag("SwordText").GetComponent<TextMeshProUGUI>();
         bowText = GameObject.FindGameObjectWithTag("BowText").GetComponent<TextMeshProUGUI>();
@@ -74,12 +76,15 @@ public class InventoryManager : MonoBehaviour
         switch(equippedWeapon)
         {
             case Weapons.Claws:
+                equippedPanel.transform.localPosition = hotbarItems[0].transform.localPosition;
                 damageText.text = "Damage Output:\r\n0.7";
                 break;
             case Weapons.Sword:
+                equippedPanel.transform.localPosition = hotbarItems[1].transform.localPosition;
                 damageText.text = "Damage Output:\r\n1.2";
                 break;
             case Weapons.Axe:
+                equippedPanel.transform.localPosition = hotbarItems[2].transform.localPosition;
                 damageText.text = "Damage Output:\r\n1.8";
                 break;
             case Weapons.Bow:

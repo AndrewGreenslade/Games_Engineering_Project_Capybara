@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    SavePrefs prefs;
     // Start is called before the first frame update
     void Start()
     {
-        
+        prefs = FindObjectOfType<SavePrefs>();
     }
 
     // Update is called once per frame
@@ -28,6 +29,11 @@ public class UIManager : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene("HubWorld");
+    }
+    public void Load()
+    {
+        SceneManager.LoadScene("HubWorld");
+        prefs.LoadGame();
     }
     public void Back()
     {

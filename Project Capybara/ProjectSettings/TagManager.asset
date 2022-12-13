@@ -38,6 +38,7 @@ TagManager:
   - Settings
   - Hub
   - Key
+  - EquippedPanel
   layers:
   - Default
   - TransparentFX
