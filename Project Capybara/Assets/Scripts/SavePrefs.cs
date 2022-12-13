@@ -20,7 +20,7 @@ public class SavePrefs : MonoBehaviour
     {
         p = player.GetComponent<Player>();
         inventory = FindObjectOfType<InventoryManager>();
-        
+        LoadGame();
        
     }
     public void setSaveValues()
@@ -117,7 +117,7 @@ public class SavePrefs : MonoBehaviour
             Debug.Log("There is no save data!");
     }
 
-    void resetSaves()
+    public void resetSaves()
     {
         PlayerPrefs.DeleteAll();
     }
