@@ -10,6 +10,7 @@ public class SavePrefs : MonoBehaviour
     string doesPlayerHaveAxe;
     string doesPlayerHaveSword;
     string doesPlayerHaveBow;
+    int keys;
 
     public GameObject player;
     private Player p;
@@ -28,6 +29,8 @@ public class SavePrefs : MonoBehaviour
 
         healthToSave = p.playerHealth * 2;
         healthInt = (int)healthToSave;
+
+        keys = p.keysFound;
 
         if (inventory.hasAxe == false)
         {
@@ -61,6 +64,7 @@ public class SavePrefs : MonoBehaviour
     public void SaveGame()
     {
         PlayerPrefs.SetInt("HealthSaveInt", healthInt);
+        PlayerPrefs.SetInt("KeySaveInt", keys);
         PlayerPrefs.SetString("AxeSaveString", doesPlayerHaveAxe);
         PlayerPrefs.SetString("SwordSaveString", doesPlayerHaveSword);
         PlayerPrefs.SetString("BowSaveString", doesPlayerHaveBow);
@@ -77,7 +81,7 @@ public class SavePrefs : MonoBehaviour
             healthFloat = (float)healthInt;
             healthFloat /= 2.0f;
             p.playerHealth = healthFloat;
-            Debug.Log("Loaded Health Float" + healthFloat);
+            p.keysFound = PlayerPrefs.GetInt("KeySaveInt");
             if (PlayerPrefs.GetString("AxeSaveString") == "FALSE")
             {
 
@@ -107,11 +111,6 @@ public class SavePrefs : MonoBehaviour
             {
                 inventory.hasBow = true;
             }
-
-            Debug.Log(PlayerPrefs.GetInt("HealthSaveInt"));
-            Debug.Log(PlayerPrefs.GetString("AxeSaveString"));
-            Debug.Log(PlayerPrefs.GetString("SwordSaveString"));
-            Debug.Log(PlayerPrefs.GetString("BowSaveString"));
         }
         else
             Debug.Log("There is no save data!");
