@@ -89,10 +89,17 @@ public class Player : MonoBehaviour
 
         positionHealth();
         im.keysText.text = "Keys Collected:\r\n" + im.keysStored;
+
+
         if (playerHealth <= 0.0f)
         {
             // game lost 
+
+
+
         }
+
+
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
