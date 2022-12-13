@@ -21,9 +21,10 @@ public class InventoryManager : MonoBehaviour
     public Weapons equippedWeapon;
 
     private GameObject inventoryCanvas;
-    public GameObject equippedPanel;
+    private GameObject equippedPanel;
     public List<GameObject> hotbarItems;
     private TextMeshProUGUI damageText;
+    public TextMeshProUGUI keysText;
     private TextMeshProUGUI axeText;
     private TextMeshProUGUI swordText;
     private TextMeshProUGUI bowText;
@@ -41,7 +42,7 @@ public class InventoryManager : MonoBehaviour
         swordText = GameObject.FindGameObjectWithTag("SwordText").GetComponent<TextMeshProUGUI>();
         bowText = GameObject.FindGameObjectWithTag("BowText").GetComponent<TextMeshProUGUI>();
         damageText = GameObject.FindGameObjectWithTag("DamageText").GetComponent<TextMeshProUGUI>();
-
+        keysText = GameObject.FindGameObjectWithTag("KeysText").GetComponent<TextMeshProUGUI>();
         foreach (var weapon in hotbarItems)
         {
             weapon.SetActive(false);
@@ -91,6 +92,8 @@ public class InventoryManager : MonoBehaviour
                 damageText.text = "Damage Output:\r\n0.7";
                 break;
         }
+
+
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {

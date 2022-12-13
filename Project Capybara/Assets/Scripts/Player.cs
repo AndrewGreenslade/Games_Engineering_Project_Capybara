@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
         attack();
 
         positionHealth();
-
+        im.keysText.text = "Keys Collected:\r\n" + keysFound;
         if (playerHealth <= 0.0f)
         {
             // game lost 
