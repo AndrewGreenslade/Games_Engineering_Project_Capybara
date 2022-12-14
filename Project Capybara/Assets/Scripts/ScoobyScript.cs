@@ -15,6 +15,7 @@ public class ScoobyScript : INpc
     float m_detectionRange = 4.0f;
     public GameObject shockWave;
     float ShotTimer;
+    public int m_hp;
 
 
 	private float targetTime;
@@ -33,7 +34,10 @@ public class ScoobyScript : INpc
 
 	public override void Health()
     {
-        
+        if(m_hp<=0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public override void movement()
@@ -105,13 +109,16 @@ public class ScoobyScript : INpc
     void ShockWave()
     {
         ShotTimer += Time.deltaTime;
-
-        if (ShotTimer > 1)
+        if(gameObject!=null)
         {
-            GameObject temp = Instantiate(shockWave, transform.position,Quaternion.identity);
-            Destroy(temp, 3.0f);
-            ShotTimer = 0;
+            if (ShotTimer > 1)
+            {
+                GameObject temp = Instantiate(shockWave, transform.position, Quaternion.identity);
+                Destroy(temp, 3.0f);
+                ShotTimer = 0;
+            }
         }
+      
     }
 
     public override void Animate()
@@ -144,6 +151,7 @@ public class ScoobyScript : INpc
     {
         movement();
         Animate();
+        Health();
 		targetTime -= Time.deltaTime;
 
 	}
@@ -151,6 +159,11 @@ public class ScoobyScript : INpc
 	public override void hitPlayer()
     {
         
+    }
+
+    public void degregadeHP(int t_damage)
+    {
+        m_hp -= t_damage;
     }
 
 
@@ -164,9 +177,9 @@ public class ScoobyScript : INpc
 			// do collision here 
 			Debug.Log("Player hits Cat");
 
-			/// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
-			/// 
-			////
+            /// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
+            /// 
+            degregadeHP(1);
 			//// enemyCat health = enemy lama healt - sword daamge;
 			/// makke a simple timer from here https://answers.unity.com/questions/351420/simple-timer-1.html
 			/// and just make it so that enemy will lose health when it collides wvery 2 seconds
@@ -186,11 +199,11 @@ public class ScoobyScript : INpc
 
 			if (targetTime <= 0.0f)
 			{
-				// DO DAMAGE HERE
+                // DO DAMAGE HERE
 
-				/// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
-				/// 
-				////
+                /// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
+                /// 
+                degregadeHP(2);
 				//// enemyCat health = enemy lama healt - sword daamge;
 				/// and just make it so that enemy will lose health when it collides wvery 2 seconds
 
@@ -214,11 +227,11 @@ public class ScoobyScript : INpc
 
 			if (targetTime <= 0.0f)
 			{
-				// DO DAMAGE HERE
+                // DO DAMAGE HERE
 
-				/// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
-				/// 
-				////
+                /// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
+                /// 
+                degregadeHP(4);
 				//// enemyCat health = enemy lama healt - sword daamge;
 				/// and just make it so that enemy will lose health when it collides wvery 2 seconds
 
@@ -233,9 +246,15 @@ public class ScoobyScript : INpc
 			Destroy(gameObject);
 		}
 
+        if (collision.gameObject.CompareTag("Player"))
+        {
+                degregadeHP(4);
+     
+        }
 
 
-	}
+
+    }
 
 
 

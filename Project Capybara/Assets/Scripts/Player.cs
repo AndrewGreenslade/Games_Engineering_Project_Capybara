@@ -337,6 +337,13 @@ public class Player : MonoBehaviour
             //Destroy(collision.gameObject);
             Debug.Log("CatAttack hit player ");
         }
+        if (collision.gameObject.CompareTag("Rock"))
+        {
+            playerHealth = playerHealth - 0.5f;
+            Destroy(collision.gameObject);
+            Debug.Log("CatAttack hit player ");
+        }
+
 
     }
 
