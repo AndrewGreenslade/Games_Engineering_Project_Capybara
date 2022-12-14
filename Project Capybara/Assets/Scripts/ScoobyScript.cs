@@ -218,7 +218,7 @@ public class ScoobyScript : INpc
 			Destroy(gameObject);
 		}
 
-
+        //sdfsdfsdfsd
 		if (collision.gameObject.CompareTag("realAxeOnCapy"))
 		{
 			// Destroy(collision.gameObject);
