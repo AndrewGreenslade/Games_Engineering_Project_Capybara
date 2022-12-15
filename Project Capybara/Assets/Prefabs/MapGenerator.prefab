@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 3206837894550439959}
   - component: {fileID: 3206837894550439956}
   - component: {fileID: 235070064}
+  - component: {fileID: 1488244947}
   m_Layer: 0
   m_Name: MapGenerator
   m_TagString: Room
@@ -424,6 +425,7 @@ MonoBehaviour:
   Rooms: []
   powerUps: []
   exitRoom: {fileID: 4004186761326102348, guid: 514c01442db13fd439d92a796fe51f22, type: 3}
+  exitRoomKey: {fileID: 8164958521587180254, guid: 97b52ab398cb46c43b2f07f496afd281, type: 3}
   startRoomSize: 6
   mapSizeX: 60
   mapSizey: 60
@@ -458,6 +460,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 8}
   m_EdgeRadius: 0
+--- !u!114 &1488244947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3206837894550439958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5e2ce1a1f74faa4e9baa9d61166a7ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PowerUpItems:
+  - {fileID: 1290420726284078808, guid: ec8a948993b92ad48b38bb13d8fd5e86, type: 3}
+  - {fileID: 2211528619684082864, guid: 54592a9af5888764eb3721981dff6672, type: 3}
+  Enemies:
+  - {fileID: 4481365659145416493, guid: f0810cf1cd52e024694c10df356325f0, type: 3}
+  - {fileID: 3567371308388402793, guid: 3d3b35730e4aaf24c827538e0f965815, type: 3}
+  key: {fileID: 8164958521587180254, guid: 97b52ab398cb46c43b2f07f496afd281, type: 3}
+  sword: {fileID: 8813563448704680838, guid: 468ab159dababa44093f4220c85518d8, type: 3}
+  axe: {fileID: 8306767457990399136, guid: 66da7e8991853604da14175f5f5bc94d, type: 3}
+  SpecialSpawned: 0
+  itemsGenerated: 0
+  roomNumber: 0
+  MaxEnemies: 2
+  EnemiesCount: 0
+  roomsFilled: 
 --- !u!1 &3206837895281048834
 GameObject:
   m_ObjectHideFlags: 0

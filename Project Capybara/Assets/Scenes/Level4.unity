@@ -271,6 +271,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1488244947, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
+      propertyPath: MaxEnemies
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488244947, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
+      propertyPath: roomNumber
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488244947, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
+      propertyPath: LevelNumber
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3206837894550439956, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
       propertyPath: mapSizeX
       value: 120

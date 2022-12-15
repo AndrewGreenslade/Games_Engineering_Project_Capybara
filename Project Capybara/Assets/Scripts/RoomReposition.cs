@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class RoomReposition : MonoBehaviour
 {
-    public FactoryRoomGenerator mapGen;
+    public RoomGenerator mapGen;
     public float roomTime;
-    private uint roomSize = 6;
+    public uint roomSize = 6;
     private bool shoudIncreaseTime = false;
     public bool isGenerated = false;
     public Vector2 MaxMapSize;
@@ -16,7 +16,7 @@ public class RoomReposition : MonoBehaviour
 
     private void Awake()
     {
-        mapGen = FindObjectOfType<FactoryRoomGenerator>();
+        mapGen = FindObjectOfType<RoomGenerator>();
 
         GetComponent<BoxCollider2D>().size = new Vector2(roomSize + 6,roomSize + 6);
         

@@ -11,7 +11,7 @@ public enum TilesList
     cobbleWall = 2
 }
 
-public class FactoryRoomGenerator : MonoBehaviour
+public class RoomGenerator : MonoBehaviour
 {
     public Tilemap bg; //background tilemap
     public Tilemap fg; //foreground tilemap
@@ -21,7 +21,6 @@ public class FactoryRoomGenerator : MonoBehaviour
     public List<GameObject> Rooms;
     public List<GameObject> powerUps;
     public GameObject exitRoom;
-    public GameObject exitRoomKey;
 
     public uint startRoomSize = 3;
     public int mapSizeX = 75;
@@ -59,7 +58,6 @@ public class FactoryRoomGenerator : MonoBehaviour
             GeneratePaths();
             pathGenerated = true;
 
-            Instantiate(exitRoomKey, Rooms[1].GetComponent<RoomReposition>().transform.position, Quaternion.identity);
             Instantiate(exitRoom,Rooms[Rooms.Count - 1].GetComponent<RoomReposition>().transform.position,Quaternion.identity);
         }
     }

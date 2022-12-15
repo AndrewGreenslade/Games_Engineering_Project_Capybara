@@ -285,10 +285,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3206837894550439956, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
-      propertyPath: exitRoomKey
-      value: 
-      objectReference: {fileID: 8164958521587180254, guid: 97b52ab398cb46c43b2f07f496afd281, type: 3}
+    - target: {fileID: 1488244947, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
+      propertyPath: MaxEnemies
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488244947, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
+      propertyPath: roomNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488244947, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
+      propertyPath: LevelNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3206837894550439958, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
       propertyPath: m_Name
       value: MapGenerator

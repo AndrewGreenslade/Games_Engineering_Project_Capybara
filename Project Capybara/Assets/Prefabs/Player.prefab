@@ -76,9 +76,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 996030659
+  m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 1000
   m_Sprite: {fileID: 21300000, guid: 45b90eea78dbe2b43865f05aa6898dd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -112,6 +112,8 @@ MonoBehaviour:
   saveText: {fileID: 0}
   originalLocalScale: {x: 0, y: 0, z: 0}
   attackObject: {fileID: 6258601233021667109, guid: 962763151aa74e14f9b06aed235ebeeb, type: 3}
+  swordPrefab: {fileID: 0}
+  axePrefab: {fileID: 0}
   heartObject: {fileID: 2107567221826837298, guid: e01819a738507884b893759371279218, type: 3}
   playerHasAttacked: 0
   levelTwoUnlock: 0
@@ -119,6 +121,7 @@ MonoBehaviour:
   levelFourUnlock: 0
   bossUnlock: 0
   saveObject: {fileID: 0}
+  im: {fileID: 0}
 --- !u!50 &2818732813398283187
 Rigidbody2D:
   serializedVersion: 4
