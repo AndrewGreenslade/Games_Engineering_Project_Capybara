@@ -41,6 +41,7 @@ TagManager:
   - EquippedPanel
   - KeysText
   - AudioManager
+  - Volume
   layers:
   - Default
   - TransparentFX

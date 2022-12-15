@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    private float volume;
+    public float volume;
     public Slider slider;
     public AudioSource backgroundMusic;
     public AudioSource levelMusic;
@@ -22,12 +22,17 @@ public class AudioManager : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
         backgroundMusic.Play();
+        volume = 1;
+        backgroundMusic.volume = volume;
+        levelMusic.volume = volume;
+        bossMusic.volume = volume;
     }
 
     // Update is called once per frame
     void Update()
     {
         //volume = slider.value;
+
     }
 
     public void changeToLevelMusic()
@@ -40,5 +45,13 @@ public class AudioManager : MonoBehaviour
     {
         levelMusic.Stop();
         bossMusic.Play();
+    }
+
+    public void changeVolume(float t_sliderValue)
+    {
+        volume = t_sliderValue;
+        backgroundMusic.volume = volume;
+        levelMusic.volume = volume;
+        bossMusic.volume = volume;
     }
 }

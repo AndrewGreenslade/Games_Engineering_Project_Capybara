@@ -7,11 +7,11 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     SavePrefs prefs;
-    //private float volume;
-    //public Slider slider;
+    public GameObject volume;
     // Start is called before the first frame update
     void Start()
     {
+        volume = GameObject.FindGameObjectWithTag("Volume");
         prefs = FindObjectOfType<SavePrefs>();
     }
 
@@ -44,6 +44,8 @@ public class UIManager : MonoBehaviour
     }
     public void Back()
     {
+        GameObject obj = GameObject.FindGameObjectWithTag("AudioManager");
+        obj.GetComponent<AudioManager>().changeVolume(volume.GetComponent<VolumeScript>().sliderValue);
         SceneManager.LoadScene("Main Menu");
     }
 
