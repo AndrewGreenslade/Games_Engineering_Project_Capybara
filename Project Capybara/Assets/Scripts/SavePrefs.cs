@@ -19,7 +19,11 @@ public class SavePrefs : MonoBehaviour
 
     private void Start()
     {
-        p = player.GetComponent<Player>();
+        if (player != null)
+        {
+            p = player.GetComponent<Player>();
+        }
+
         inventory = FindObjectOfType<InventoryManager>();
         LoadGame();
        

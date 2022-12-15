@@ -9,6 +9,7 @@ public class PortalKey : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             FindObjectOfType<PortalDoor>().openDoor();
+            FindObjectOfType<InventoryManager>().keysStored += 1;
             Destroy(gameObject);
         }
     }

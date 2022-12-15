@@ -283,6 +283,14 @@ PrefabInstance:
       propertyPath: LevelNumber
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1488244947, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
+      propertyPath: PowerUpItems.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488244947, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
+      propertyPath: PowerUpItems.Array.data[2]
+      value: 
+      objectReference: {fileID: 4734654478708206874, guid: c82858cc17a0be84fa341888ef34809e, type: 3}
     - target: {fileID: 3206837894550439956, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
       propertyPath: mapSizeX
       value: 120

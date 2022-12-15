@@ -9,10 +9,11 @@ public class VolumeScript : MonoBehaviour
     public Slider slider;
     public float sliderValue;
     public GameObject audioManager;
-    GameObject obj = GameObject.FindGameObjectWithTag("AudioManager");
+    GameObject obj ;
     // Start is called before the first frame update
     void Start()
     {
+        obj = GameObject.FindGameObjectWithTag("AudioManager");
     }
 
     // Update is called once per frame

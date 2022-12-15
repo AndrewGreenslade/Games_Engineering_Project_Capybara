@@ -27,8 +27,8 @@ public class meleeEnemy : INpc
     {
         myRenderer = GetComponent<SpriteRenderer>();
 		targetTime = howLongForDamage;
-
-	}
+        m_capyTransform = FindObjectOfType<Player>().transform;
+    }
 
     public override void Health()
     {

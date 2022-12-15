@@ -19,7 +19,7 @@ public class PortalDoor : MonoBehaviour
         {
             if (hasKey)
             {
-                if (Input.GetKeyDown(KeyCode.F))
+                if (Input.GetKey(KeyCode.F))
                 {
                     SceneManager.LoadScene("HubWorld");
                 }

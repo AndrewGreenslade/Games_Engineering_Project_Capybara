@@ -63,7 +63,6 @@ public class Player : MonoBehaviour
         originalLocalScale = healthClone.transform.localScale;
         im = FindObjectOfType<InventoryManager>();
         audio = GameObject.FindGameObjectWithTag("AudioManager");
-
     }
 
     void FixedUpdate()
@@ -352,19 +351,6 @@ public class Player : MonoBehaviour
 
 
     }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Key"))
-        {
-            if (Input.GetKey(KeyCode.E))
-            {
-                Destroy(collision.gameObject);
-                im.keysStored++;
-            }
-        }
-    }
-
 
     private void attack()
     {

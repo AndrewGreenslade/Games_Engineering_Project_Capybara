@@ -29,10 +29,10 @@ public class rangedEnemy : INpc
 	private void Start()
 	{
 		targetTime = howLongForDamage;
+        m_capyTransform = FindObjectOfType<Player>().transform;
+    }
 
-	}
-
-	public override void Health()
+    public override void Health()
     {
         Debug.Log("ranged enemy movement");
 
