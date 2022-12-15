@@ -21,8 +21,10 @@ public class InventoryManager : MonoBehaviour
     public Weapons equippedWeapon;
 
     private GameObject inventoryCanvas;
+    private GameObject equippedPanel;
     public List<GameObject> hotbarItems;
     private TextMeshProUGUI damageText;
+    public TextMeshProUGUI keysText;
     private TextMeshProUGUI axeText;
     private TextMeshProUGUI swordText;
     private TextMeshProUGUI bowText;
@@ -30,16 +32,18 @@ public class InventoryManager : MonoBehaviour
     public bool hasAxe = false;
     public bool hasSword = false;
     public bool hasBow = false;
+    public int keysStored = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         inventoryCanvas = GameObject.FindGameObjectWithTag("InventoryCanvas");
+        equippedPanel = GameObject.FindGameObjectWithTag("EquippedPanel");
         axeText = GameObject.FindGameObjectWithTag("AxeText").GetComponent<TextMeshProUGUI>();
         swordText = GameObject.FindGameObjectWithTag("SwordText").GetComponent<TextMeshProUGUI>();
         bowText = GameObject.FindGameObjectWithTag("BowText").GetComponent<TextMeshProUGUI>();
         damageText = GameObject.FindGameObjectWithTag("DamageText").GetComponent<TextMeshProUGUI>();
-
+        keysText = GameObject.FindGameObjectWithTag("KeysText").GetComponent<TextMeshProUGUI>();
         foreach (var weapon in hotbarItems)
         {
             weapon.SetActive(false);
@@ -74,18 +78,23 @@ public class InventoryManager : MonoBehaviour
         switch(equippedWeapon)
         {
             case Weapons.Claws:
+                equippedPanel.transform.localPosition = hotbarItems[0].transform.localPosition;
                 damageText.text = "Damage Output:\r\n0.7";
                 break;
             case Weapons.Sword:
+                equippedPanel.transform.localPosition = hotbarItems[1].transform.localPosition;
                 damageText.text = "Damage Output:\r\n1.2";
                 break;
             case Weapons.Axe:
+                equippedPanel.transform.localPosition = hotbarItems[2].transform.localPosition;
                 damageText.text = "Damage Output:\r\n1.8";
                 break;
             case Weapons.Bow:
                 damageText.text = "Damage Output:\r\n0.7";
                 break;
         }
+
+
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {

@@ -43,11 +43,12 @@ public class Player : MonoBehaviour
 
     public GameObject heartObject;
     public bool playerHasAttacked = false;
-    public bool levelTwoUnlock = false;
-    public bool levelThreeUnlock = false;
-    public bool levelFourUnlock = false;
-    public bool bossUnlock = false;
+    //public bool levelTwoUnlock = false;
+    //public bool levelThreeUnlock = false;
+    //public bool levelFourUnlock = false;
+    //public bool bossUnlock = false;
     public GameObject saveObject;
+    public GameObject audio;
 
     public InventoryManager im;
 
@@ -61,6 +62,7 @@ public class Player : MonoBehaviour
         healthClone = Instantiate(heartObject, new Vector3(0, 0, 0), Quaternion.identity);
         originalLocalScale = healthClone.transform.localScale;
         im = FindObjectOfType<InventoryManager>();
+        audio = GameObject.FindGameObjectWithTag("AudioManager");
 
     }
 
@@ -88,11 +90,18 @@ public class Player : MonoBehaviour
         attack();
 
         positionHealth();
+        im.keysText.text = "Keys Collected:\r\n" + im.keysStored;
+
 
         if (playerHealth <= 0.0f)
         {
             // game lost 
+
+
+
         }
+
+
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
@@ -234,7 +243,7 @@ public class Player : MonoBehaviour
         {
             levelText.gameObject.SetActive(true);
 
-            if (levelTwoUnlock == true)
+            if (im.keysStored >= 1)
             {
                 levelText.text = "Press 'E' to Enter:\r\nLevel 2";
                 if (Input.GetKey(KeyCode.E))
@@ -251,7 +260,7 @@ public class Player : MonoBehaviour
         {
             levelText.gameObject.SetActive(true);
 
-            if (levelThreeUnlock == true)
+            if (im.keysStored >= 2)
             {
                 levelText.text = "Press 'E' to Enter:\r\nLevel 3";
                 if (Input.GetKey(KeyCode.E))
@@ -268,7 +277,7 @@ public class Player : MonoBehaviour
         {
             levelText.gameObject.SetActive(true);
 
-            if (levelFourUnlock == true)
+            if (im.keysStored >= 3)
             {
                 levelText.text = "Press 'E' to Enter:\r\nLevel 4";
                 if (Input.GetKey(KeyCode.E))
@@ -285,11 +294,13 @@ public class Player : MonoBehaviour
         {
             levelText.gameObject.SetActive(true);
 
-            if (bossUnlock == true)
+            if (im.keysStored >= 4)
             {
                 levelText.text = "Press 'E' to Enter:\r\nCentral Chamber";
                 if (Input.GetKey(KeyCode.E))
                 {
+                    GameObject obj = GameObject.FindGameObjectWithTag("AudioManager");
+                    obj.GetComponent<AudioManager>().changeToBossMusic();
                     SceneManager.LoadScene("BossLevel");
                 }
             }
@@ -309,8 +320,7 @@ public class Player : MonoBehaviour
                 SavePrefs s = saveObject.GetComponent<SavePrefs>();
                 s.setSaveValues();
                 s.SaveGame();
-            }
-          
+            }          
         }
     }
 
@@ -319,6 +329,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("spit"))
         {
+            audio.GetComponent<AudioManager>().playHurt();
             playerHealth = playerHealth - 0.2f;
             Destroy(collision.gameObject);
             Debug.Log("spit hit player ");
@@ -326,18 +337,42 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("catAttack"))
         {
+            audio.GetComponent<AudioManager>().playHurt();
             playerHealth = playerHealth - 0.1f;
             //Destroy(collision.gameObject);
             Debug.Log("CatAttack hit player ");
         }
+        if (collision.gameObject.CompareTag("Rock"))
+        {
+            audio.GetComponent<AudioManager>().playHurt();
+            playerHealth = playerHealth - 0.5f;
+            Destroy(collision.gameObject);
+            Debug.Log("CatAttack hit player ");
+        }
 
+
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Key"))
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+                Destroy(collision.gameObject);
+                im.keysStored++;
+            }
+        }
     }
 
 
     private void attack()
     {
+
+
         if (Input.GetKey(KeyCode.Space) && !playerHasAttacked && im.equippedWeapon == Weapons.Claws)
         {
+            audio.GetComponent<AudioManager>().playAttack();
             cloneAttack = Instantiate(attackObject, gameObject.transform.position, Quaternion.identity);
             playerHasAttacked = true;
             timerForAttackAlive = 0.5f;
@@ -347,7 +382,8 @@ public class Player : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.Space) && !playerHasAttacked && im.equippedWeapon == Weapons.Sword)
 		{
-			cloneAttack = Instantiate(swordPrefab, gameObject.transform.position, Quaternion.identity);
+            audio.GetComponent<AudioManager>().playAttack();
+            cloneAttack = Instantiate(swordPrefab, gameObject.transform.position, Quaternion.identity);
 			playerHasAttacked = true;
 			timerForAttackAlive = 0.5f;
 			Destroy(cloneAttack, 0.5f);
@@ -357,7 +393,8 @@ public class Player : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.Space) && !playerHasAttacked && im.equippedWeapon == Weapons.Axe)
 		{
-			cloneAttack = Instantiate(axePrefab, gameObject.transform.position, Quaternion.identity);
+            audio.GetComponent<AudioManager>().playAttack();
+            cloneAttack = Instantiate(axePrefab, gameObject.transform.position, Quaternion.identity);
 			playerHasAttacked = true;
 			timerForAttackAlive = 0.5f;
 			Destroy(cloneAttack, 0.5f);

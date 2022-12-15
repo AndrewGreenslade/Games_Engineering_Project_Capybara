@@ -34,6 +34,14 @@ TagManager:
   - Scooby
   - realSwordOnCapy
   - realAxeOnCapy
+  - Exit
+  - Settings
+  - Hub
+  - Key
+  - EquippedPanel
+  - KeysText
+  - AudioManager
+  - Volume
   layers:
   - Default
   - TransparentFX

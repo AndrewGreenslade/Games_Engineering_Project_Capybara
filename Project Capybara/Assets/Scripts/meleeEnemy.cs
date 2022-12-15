@@ -19,10 +19,16 @@ public class meleeEnemy : INpc
     private bool playerHasAttacked = false;
     public SpriteRenderer myRenderer;
 
-    private void Start()
+
+	private float targetTime;
+	private float howLongForDamage = 2.0f; //seconds 
+
+	private void Start()
     {
         myRenderer = GetComponent<SpriteRenderer>();
-    }
+		targetTime = howLongForDamage;
+
+	}
 
     public override void Health()
     {
@@ -99,11 +105,13 @@ public class meleeEnemy : INpc
         movement();
 
         this.Animate();
-    }
+		targetTime -= Time.deltaTime;
 
-  
+	}
 
-    public override void hitPlayer()
+
+
+	public override void hitPlayer()
     {
         if (playerHasAttacked == false)
         {
@@ -136,21 +144,76 @@ public class meleeEnemy : INpc
             // Destroy(collision.gameObject);
             // do collision here 
             Debug.Log("Player hits Cat");
-        }
+
+			/// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
+			/// 
+			////
+			//// enemyCat health = enemy lama healt - sword daamge;
+			/// makke a simple timer from here https://answers.unity.com/questions/351420/simple-timer-1.html
+			/// and just make it so that enemy will lose health when it collides wvery 2 seconds
+			/// 
+
+			Destroy(collision.gameObject);
+			Destroy(gameObject);
+		}
+
+	
 
         if (collision.gameObject.CompareTag("realSwordOnCapy"))
         {
             // Destroy(collision.gameObject);
             // do collision here 
             Debug.Log("Player with sword hits Cat");
-        }
+			
+			if (targetTime <= 0.0f)
+			{
+				// DO DAMAGE HERE
+
+				/// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
+				/// 
+				////
+				//// enemyCat health = enemy lama healt - sword daamge;
+				/// and just make it so that enemy will lose health when it collides wvery 2 seconds
+
+				// reset timer 
+				targetTime = howLongForDamage; 
+			}
+
+			// if(health is zero=)
+			// kill enemy 
+			// put theses in a statement 
+			Destroy(collision.gameObject);
+			Destroy(gameObject);
+		}
+	
 
         if (collision.gameObject.CompareTag("realAxeOnCapy"))
         {
             // Destroy(collision.gameObject);
             // do collision here 
             Debug.Log("Player with axe hits Cat");
-        }
+
+			if (targetTime <= 0.0f)
+			{
+				// DO DAMAGE HERE
+
+				/// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
+				/// 
+				////
+				//// enemyCat health = enemy lama healt - sword daamge;
+				/// and just make it so that enemy will lose health when it collides wvery 2 seconds
+
+				// reset timer 
+				targetTime = howLongForDamage;
+			}
+
+			// if(health is zero=)
+			// kill enemy 
+			// put theses in a statement 
+			Destroy(collision.gameObject);
+			Destroy(gameObject);
+		}
+	
 
 
     }
