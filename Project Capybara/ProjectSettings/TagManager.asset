@@ -40,6 +40,7 @@ TagManager:
   - Key
   - EquippedPanel
   - KeysText
+  - AudioManager
   layers:
   - Default
   - TransparentFX

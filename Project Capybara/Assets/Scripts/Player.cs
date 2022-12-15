@@ -297,6 +297,8 @@ public class Player : MonoBehaviour
                 levelText.text = "Press 'E' to Enter:\r\nCentral Chamber";
                 if (Input.GetKey(KeyCode.E))
                 {
+                    GameObject obj = GameObject.FindGameObjectWithTag("AudioManager");
+                    obj.GetComponent<AudioManager>().changeToBossMusic();
                     SceneManager.LoadScene("BossLevel");
                 }
             }
