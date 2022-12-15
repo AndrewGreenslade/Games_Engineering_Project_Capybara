@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
     //public bool levelFourUnlock = false;
     //public bool bossUnlock = false;
     public GameObject saveObject;
+    public GameObject audio;
 
     public InventoryManager im;
 
@@ -61,6 +62,7 @@ public class Player : MonoBehaviour
         healthClone = Instantiate(heartObject, new Vector3(0, 0, 0), Quaternion.identity);
         originalLocalScale = healthClone.transform.localScale;
         im = FindObjectOfType<InventoryManager>();
+        audio = GameObject.FindGameObjectWithTag("AudioManager");
 
     }
 
@@ -297,6 +299,8 @@ public class Player : MonoBehaviour
                 levelText.text = "Press 'E' to Enter:\r\nCentral Chamber";
                 if (Input.GetKey(KeyCode.E))
                 {
+                    GameObject obj = GameObject.FindGameObjectWithTag("AudioManager");
+                    obj.GetComponent<AudioManager>().changeToBossMusic();
                     SceneManager.LoadScene("BossLevel");
                 }
             }
@@ -316,8 +320,7 @@ public class Player : MonoBehaviour
                 SavePrefs s = saveObject.GetComponent<SavePrefs>();
                 s.setSaveValues();
                 s.SaveGame();
-            }
-          
+            }          
         }
     }
 
@@ -326,6 +329,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("spit"))
         {
+            audio.GetComponent<AudioManager>().playHurt();
             playerHealth = playerHealth - 0.2f;
             Destroy(collision.gameObject);
             Debug.Log("spit hit player ");
@@ -333,12 +337,14 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("catAttack"))
         {
+            audio.GetComponent<AudioManager>().playHurt();
             playerHealth = playerHealth - 0.1f;
             //Destroy(collision.gameObject);
             Debug.Log("CatAttack hit player ");
         }
         if (collision.gameObject.CompareTag("Rock"))
         {
+            audio.GetComponent<AudioManager>().playHurt();
             playerHealth = playerHealth - 0.5f;
             Destroy(collision.gameObject);
             Debug.Log("CatAttack hit player ");
@@ -362,8 +368,11 @@ public class Player : MonoBehaviour
 
     private void attack()
     {
+
+
         if (Input.GetKey(KeyCode.Space) && !playerHasAttacked && im.equippedWeapon == Weapons.Claws)
         {
+            audio.GetComponent<AudioManager>().playAttack();
             cloneAttack = Instantiate(attackObject, gameObject.transform.position, Quaternion.identity);
             playerHasAttacked = true;
             timerForAttackAlive = 0.5f;
@@ -373,7 +382,8 @@ public class Player : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.Space) && !playerHasAttacked && im.equippedWeapon == Weapons.Sword)
 		{
-			cloneAttack = Instantiate(swordPrefab, gameObject.transform.position, Quaternion.identity);
+            audio.GetComponent<AudioManager>().playAttack();
+            cloneAttack = Instantiate(swordPrefab, gameObject.transform.position, Quaternion.identity);
 			playerHasAttacked = true;
 			timerForAttackAlive = 0.5f;
 			Destroy(cloneAttack, 0.5f);
@@ -383,7 +393,8 @@ public class Player : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.Space) && !playerHasAttacked && im.equippedWeapon == Weapons.Axe)
 		{
-			cloneAttack = Instantiate(axePrefab, gameObject.transform.position, Quaternion.identity);
+            audio.GetComponent<AudioManager>().playAttack();0
+            cloneAttack = Instantiate(axePrefab, gameObject.transform.position, Quaternion.identity);
 			playerHasAttacked = true;
 			timerForAttackAlive = 0.5f;
 			Destroy(cloneAttack, 0.5f);
