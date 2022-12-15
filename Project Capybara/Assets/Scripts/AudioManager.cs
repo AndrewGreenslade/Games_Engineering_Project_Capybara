@@ -9,7 +9,9 @@ public class AudioManager : MonoBehaviour
     public Slider slider;
     public AudioSource backgroundMusic;
     public AudioSource levelMusic;
-    public AudioSource bossMusic;  
+    public AudioSource bossMusic;
+    public AudioSource attackSound;
+    public AudioSource hurtSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +28,13 @@ public class AudioManager : MonoBehaviour
         backgroundMusic.volume = volume;
         levelMusic.volume = volume;
         bossMusic.volume = volume;
+        attackSound.volume = volume;
+        hurtSound.volume = volume;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //volume = slider.value;
-
     }
 
     public void changeToLevelMusic()
@@ -53,5 +55,17 @@ public class AudioManager : MonoBehaviour
         backgroundMusic.volume = volume;
         levelMusic.volume = volume;
         bossMusic.volume = volume;
+        attackSound.volume = volume;    
+        hurtSound.volume = volume;
+    }
+
+    public void playAttack()
+    {
+        attackSound.Play();
+    }
+
+    public void playHurt()
+    {
+        hurtSound.Play();
     }
 }
