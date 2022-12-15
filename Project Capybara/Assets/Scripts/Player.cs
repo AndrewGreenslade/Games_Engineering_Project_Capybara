@@ -393,7 +393,7 @@ public class Player : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.Space) && !playerHasAttacked && im.equippedWeapon == Weapons.Axe)
 		{
-            audio.GetComponent<AudioManager>().playAttack();0
+            audio.GetComponent<AudioManager>().playAttack();
             cloneAttack = Instantiate(axePrefab, gameObject.transform.position, Quaternion.identity);
 			playerHasAttacked = true;
 			timerForAttackAlive = 0.5f;
