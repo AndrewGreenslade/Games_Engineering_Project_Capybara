@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SavePrefs : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class SavePrefs : MonoBehaviour
     private InventoryManager inventory;
 
 
-    private void Start()
+    private void Awake()
     {
         if (player != null)
         {
@@ -25,7 +26,7 @@ public class SavePrefs : MonoBehaviour
         }
 
         inventory = FindObjectOfType<InventoryManager>();
-        LoadGame();
+       // LoadGame();
        
     }
     public void setSaveValues()
@@ -118,7 +119,7 @@ public class SavePrefs : MonoBehaviour
         }
         else
             Debug.Log("There is no save data!");
-    }
+}
 
     public void resetSaves()
     {

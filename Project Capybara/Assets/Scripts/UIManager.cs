@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
 {
     SavePrefs prefs;
     public GameObject volume;
+    public bool isLoaded = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,8 +42,19 @@ public class UIManager : MonoBehaviour
     {
         GameObject obj = GameObject.FindGameObjectWithTag("AudioManager");
         obj.GetComponent<AudioManager>().changeToLevelMusic();
+
+        SceneManager.sceneLoaded += (scene, mode) =>
+        {
+            if (scene.name == "HubWorld" && !isLoaded)
+            {
+                GameObject.FindObjectOfType<SavePrefs>().LoadGame();
+                isLoaded= true;
+            }
+        };
+
         SceneManager.LoadScene("HubWorld");
     }
+
     public void Back()
     {
         GameObject obj = GameObject.FindGameObjectWithTag("AudioManager");
