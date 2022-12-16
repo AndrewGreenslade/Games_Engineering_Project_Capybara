@@ -170,4 +170,4 @@ MonoBehaviour:
   anim: {fileID: 8578589922977368597}
   m_capyTransform: {fileID: 2818732813398283186, guid: d36b065a135f43a4aab31e097fdce557, type: 3}
   shockWave: {fileID: 741611132550573930, guid: 58adbf900fed2924c91e0b94923c2c6d, type: 3}
-  m_hp: 20
+  m_hp: 40

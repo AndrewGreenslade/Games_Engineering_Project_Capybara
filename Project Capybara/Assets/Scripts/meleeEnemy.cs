@@ -18,6 +18,7 @@ public class meleeEnemy : INpc
     public Vector3 relativePos;
     private bool playerHasAttacked = false;
     public SpriteRenderer myRenderer;
+    public float hp;
 
 
 	private float targetTime;
@@ -32,7 +33,10 @@ public class meleeEnemy : INpc
 
     public override void Health()
     {
-        Debug.Log("cat health");
+        if(hp<=0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public override void movement()
@@ -103,13 +107,11 @@ public class meleeEnemy : INpc
     public void Update()
     {
         movement();
-
+        Health();
         this.Animate();
 		targetTime -= Time.deltaTime;
 
 	}
-
-
 
 	public override void hitPlayer()
     {
@@ -122,8 +124,6 @@ public class meleeEnemy : INpc
 
         }
 
-
-
         if (timerForAttackAlive <= 0.03f)
         {
             playerHasAttacked = false;
@@ -134,86 +134,51 @@ public class meleeEnemy : INpc
         }
     }
 
-
-
+  
+    public void degregadeHP(float t_degrade)
+    {
+        hp -= t_degrade;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+      
+
         if (collision.gameObject.CompareTag("attack"))
         {
-            // Destroy(collision.gameObject);
-            // do collision here 
-            Debug.Log("Player hits Cat");
-
-			/// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
-			/// 
-			////
-			//// enemyCat health = enemy lama healt - sword daamge;
-			/// makke a simple timer from here https://answers.unity.com/questions/351420/simple-timer-1.html
-			/// and just make it so that enemy will lose health when it collides wvery 2 seconds
-			/// 
-
-			Destroy(collision.gameObject);
-			Destroy(gameObject);
-		}
-
-	
+            degregadeHP(FindObjectOfType<DamageValue>().ClawsDamage);
+        }
 
         if (collision.gameObject.CompareTag("realSwordOnCapy"))
         {
-            // Destroy(collision.gameObject);
-            // do collision here 
-            Debug.Log("Player with sword hits Cat");
-			
-			if (targetTime <= 0.0f)
-			{
-				// DO DAMAGE HERE
 
-				/// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
-				/// 
-				////
-				//// enemyCat health = enemy lama healt - sword daamge;
-				/// and just make it so that enemy will lose health when it collides wvery 2 seconds
+            if (targetTime <= 0.0f)
+            {
 
-				// reset timer 
-				targetTime = howLongForDamage; 
-			}
+                degregadeHP(FindObjectOfType<DamageValue>().SwordDamage);
 
-			// if(health is zero=)
-			// kill enemy 
-			// put theses in a statement 
-			Destroy(collision.gameObject);
-			Destroy(gameObject);
-		}
-	
+                targetTime = howLongForDamage;
+            }
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
 
         if (collision.gameObject.CompareTag("realAxeOnCapy"))
         {
-            // Destroy(collision.gameObject);
-            // do collision here 
-            Debug.Log("Player with axe hits Cat");
 
-			if (targetTime <= 0.0f)
-			{
-				// DO DAMAGE HERE
+            if (targetTime <= 0.0f)
+            {
 
-				/// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
-				/// 
-				////
-				//// enemyCat health = enemy lama healt - sword daamge;
-				/// and just make it so that enemy will lose health when it collides wvery 2 seconds
+                degregadeHP(FindObjectOfType<DamageValue>().AxeDamage);
 
-				// reset timer 
-				targetTime = howLongForDamage;
-			}
+                targetTime = howLongForDamage;
+            }
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
 
-			// if(health is zero=)
-			// kill enemy 
-			// put theses in a statement 
-			Destroy(collision.gameObject);
-			Destroy(gameObject);
-		}
-	
+        }
+
+
 
 
     }

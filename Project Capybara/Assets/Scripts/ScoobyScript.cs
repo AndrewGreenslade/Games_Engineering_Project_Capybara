@@ -16,7 +16,7 @@ public class ScoobyScript : INpc
     float m_detectionRange = 4.0f;
     public GameObject shockWave;
     float ShotTimer;
-    public int m_hp;
+    public float m_hp;
 
 
 	private float targetTime;
@@ -166,7 +166,7 @@ public class ScoobyScript : INpc
         
     }
 
-    public void degregadeHP(int t_damage)
+    public void degregadeHP(float t_damage)
     {
         m_hp -= t_damage;
     }
@@ -179,56 +179,27 @@ public class ScoobyScript : INpc
 		if (collision.gameObject.CompareTag("attack"))
 		{
             SceneManager.LoadScene("GameWon");
-            // Destroy(collision.gameObject);
-            // do collision here 
-            Debug.Log("Player hits scoob");
-
-            /// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
-            /// 
-            degregadeHP(1);
-            //// enemyCat health = enemy lama healt - sword daamge;
-            /// makke a simple timer from here https://answers.unity.com/questions/351420/simple-timer-1.html
-            /// and just make it so that enemy will lose health when it collides wvery 2 seconds
-            /// 
-
-            //Remove this after fix
           
-
-            //fIX THE DAMNCODE AND REMOVE THIS AND MAKE IT PROPERLY
-            Destroy(collision.gameObject);
-			Destroy(gameObject);
+            degregadeHP(FindObjectOfType<DamageValue>().ClawsDamage);
+          
         }
 
 
 
 		if (collision.gameObject.CompareTag("realSwordOnCapy"))
 		{
-			// Destroy(collision.gameObject);
-			// do collision here 
-			Debug.Log("Player with sword hits Cat");
-
+			
 			if (targetTime <= 0.0f)
 			{
-                // DO DAMAGE HERE
-
-                /// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
-                /// 
-                degregadeHP(2);
-				//// enemyCat health = enemy lama healt - sword daamge;
-				/// and just make it so that enemy will lose health when it collides wvery 2 seconds
-
-				// reset timer 
+               
+                degregadeHP(FindObjectOfType<DamageValue>().SwordDamage);
+				
 				targetTime = howLongForDamage;
 			}
 
-            //fIX THE DAMNCODE AND REMOVE THIS AND MAKE IT PROPERLY
-
-            //Remove this after fix
+            
             SceneManager.LoadScene("GameWon");
 
-            // if(health is zero=)
-            // kill enemy 
-            // put theses in a statement 
             Destroy(collision.gameObject);
 			Destroy(gameObject);
         }
@@ -236,43 +207,22 @@ public class ScoobyScript : INpc
         //sdfsdfsdfsd
 		if (collision.gameObject.CompareTag("realAxeOnCapy"))
 		{
-			// Destroy(collision.gameObject);
-			// do collision here 
-			Debug.Log("Player with axe hits Cat");
-
+			
 			if (targetTime <= 0.0f)
 			{
-                // DO DAMAGE HERE
-
-                /// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
-                /// 
-                degregadeHP(4);
-				//// enemyCat health = enemy lama healt - sword daamge;
-				/// and just make it so that enemy will lose health when it collides wvery 2 seconds
-
-				// reset timer 
+              
+                degregadeHP(FindObjectOfType<DamageValue>().AxeDamage);
+				
 				targetTime = howLongForDamage;
 			}
 
-            // if(health is zero=)
-            // kill enemy 
-            // put theses in a statement 
-
-            //Remove this after fix
+            
             SceneManager.LoadScene("GameWon");
 
             Destroy(collision.gameObject);
 			Destroy(gameObject);
 
-
         }
-
-        if (collision.gameObject.CompareTag("Player"))
-        {
-                degregadeHP(4);
-     
-        }
-
 
 
     }

@@ -5,7 +5,8 @@ using UnityEngine;
 public class AxeScript : MonoBehaviour
 {
     public InventoryManager inventoryManager;
-
+  
+    
     // Start is called before the first frame update
     void Start()
     {
