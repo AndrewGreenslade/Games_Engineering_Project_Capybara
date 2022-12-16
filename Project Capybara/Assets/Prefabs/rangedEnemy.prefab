@@ -211,6 +211,7 @@ MonoBehaviour:
   relativePos: {x: 0, y: 0, z: 0}
   spitObj: {fileID: 2089599015900425305, guid: 24cfb50437626ce4d956dfc9b0146f0f, type: 3}
   ShotTimer: 0
+  hp: 20
 --- !u!50 &3567371308388402799
 Rigidbody2D:
   serializedVersion: 4

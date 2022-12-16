@@ -19,6 +19,7 @@ public class rangedEnemy : INpc
     public Vector3 relativePos;
     public GameObject spitObj;
     public int ShotTimer=0;
+    public float hp;
     spitMovement spit;
 
 
@@ -34,7 +35,10 @@ public class rangedEnemy : INpc
 
     public override void Health()
     {
-        Debug.Log("ranged enemy movement");
+        if(hp<=0)
+        {
+            Destroy(gameObject);
+        }
 
     }
 
@@ -107,14 +111,6 @@ public class rangedEnemy : INpc
         rb.AddForce(m_vel);
         
        
-        //if(distanceVec.y < allowedSpace)
-        //{
-        //    m_vel = transform.position += Vector3.up * speed * Time.deltaTime;
-        //}
-        //else if(distanceVec.y > allowedSpace)
-        //{
-        //    m_vel = transform.position += Vector3.down * speed * Time.deltaTime;
-        //}
     
 
         if (m_vel.y > 0)
@@ -134,6 +130,10 @@ public class rangedEnemy : INpc
             m_movingRight =false;
         }
 
+    }
+    public void degregadeHP(float t_degrade)
+    {
+        hp -= t_degrade;
     }
     public override void Animate()
     {
@@ -165,6 +165,7 @@ public class rangedEnemy : INpc
     {
         this.Animate();
         movement();
+        Health();
 		targetTime -= Time.deltaTime;
 
 	}
@@ -176,93 +177,59 @@ public class rangedEnemy : INpc
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("attack"))
+   
+
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-          // Destroy(collision.gameObject);
-          // do collision here 
-            Debug.Log("Player hits laama");
+            if (collision.gameObject.CompareTag("attack"))
+            {
+             
 
-			if (targetTime <= 0.0f)
-			{
-				// DO DAMAGE HERE
+                degregadeHP(FindObjectOfType<DamageValue>().ClawsDamage);
 
-				/// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
-				/// 
-				////
-				//// enemyCat health = enemy lama healt - sword daamge;
-				/// and just make it so that enemy will lose health when it collides wvery 2 seconds
-
-				// reset timer 
-				targetTime = howLongForDamage;
-			}
-
-			// if(health is zero=)
-			// kill enemy 
-			// put theses in a statement 
-			Destroy(collision.gameObject);
-			Destroy(gameObject);
-
-		}
+            }
 
 
-		if (collision.gameObject.CompareTag("realSwordOnCapy"))
-        {
-            // Destroy(collision.gameObject);
-            // do collision here 
-            Debug.Log("Player with sword hits llamaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
-			if (targetTime <= 0.0f)
-			{
-				// DO DAMAGE HERE
+            if (collision.gameObject.CompareTag("realSwordOnCapy"))
+            {
 
-				/// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
-				/// 
-				////
-				//// enemyCat health = enemy lama healt - sword daamge;
-				/// and just make it so that enemy will lose health when it collides wvery 2 seconds
-				/// 
+                if (targetTime <= 0.0f)
+                {
+
+                degregadeHP(FindObjectOfType<DamageValue>().SwordDamage);
+
+                targetTime = howLongForDamage;
+                }
 
 
-				// reset timer 
-				targetTime = howLongForDamage;
-			}
+               
 
-			// if(health is zero=)
-			// kill enemy 
-			// put theses in a statement 
-			//Destroy(collision.gameObject);
-		//	Destroy(gameObject);
-		}
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+            }
 
-        if (collision.gameObject.CompareTag("realAxeOnCapy"))
-        {
-            // Destroy(collision.gameObject);
-            // do collision here 
-            Debug.Log("Player with Axe hits llama");
+            //sdfsdfsdfsd
+            if (collision.gameObject.CompareTag("realAxeOnCapy"))
+            {
 
-			if (targetTime <= 0.0f)
-			{
-				// DO DAMAGE HERE
+                if (targetTime <= 0.0f)
+                {
 
-				/// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
-				/// 
-				////
-				//// enemyCat health = enemy lama healt - sword daamge;
-				/// and just make it so that enemy will lose health when it collides wvery 2 seconds
+                    degregadeHP(FindObjectOfType<DamageValue>().AxeDamage);
 
-				// reset timer 
-				targetTime = howLongForDamage;
-			}
+                    targetTime = howLongForDamage;
+                }
 
-			// if(health is zero=)
-			// kill enemy 
-			// put theses in a statement 
-			Destroy(collision.gameObject);
-			Destroy(gameObject);
-		}
+
+            
+
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+
+            }
+
+
+        }
 
     }
-
-}
