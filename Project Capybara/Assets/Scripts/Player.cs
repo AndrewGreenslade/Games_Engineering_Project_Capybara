@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
         }
         else if (playerHealth <= 0.0f)
         {
-            gameObject.SetActive(false);
+            gameObject.GetComponent<Renderer>().enabled = false;
             if (Input.GetKey(KeyCode.R))
             {
                 SceneManager.LoadScene("Main Menu");
