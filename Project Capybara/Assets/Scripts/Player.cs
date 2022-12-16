@@ -219,32 +219,32 @@ public class Player : MonoBehaviour
             || collision.gameObject.CompareTag("Level3")|| collision.gameObject.CompareTag("Level4")
             || collision.gameObject.CompareTag("LevelBoss"))
         {
-            im.levelText.gameObject.SetActive(false);
+            im.levelText.enabled = false;
         }
         if (collision.gameObject.CompareTag("Save Bench"))
         {
-            im.saveText.gameObject.SetActive(false);
+            im.saveText.enabled = false;
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Level1"))
         {
-            im.levelText.gameObject.SetActive(true);
+            im.levelText.enabled = true;
             im.levelText.text = "Press 'E' to Enter:\r\nLevel 1";
             if (Input.GetKey(KeyCode.E))
             {
                 if (im.keysStored < 1)
                 {
                     SceneManager.LoadScene("Level1");
-                    im.levelText.gameObject.SetActive(false);
+                    im.levelText.enabled = false;
                 }
             }
 
         }
         else if(collision.gameObject.CompareTag("Level2"))
         {
-            im.levelText.gameObject.SetActive(true);
+            im.levelText.enabled = true;
 
             if (im.keysStored >= 1)
             {
@@ -254,7 +254,7 @@ public class Player : MonoBehaviour
                     if (im.keysStored < 2)
                     {
                         SceneManager.LoadScene("Level2");
-                        im.levelText.gameObject.SetActive(false);
+                        im.levelText.enabled = false;
                     }
                 }
             }
@@ -265,7 +265,7 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Level3"))
         {
-            im.levelText.gameObject.SetActive(true);
+            im.levelText.enabled = true;
 
             if (im.keysStored >= 2)
             {
@@ -275,7 +275,7 @@ public class Player : MonoBehaviour
                     if (im.keysStored < 3)
                     {
                         SceneManager.LoadScene("Level3");
-                        im.levelText.gameObject.SetActive(false);
+                        im.levelText.enabled = false;
                     }
                 }
             }
@@ -286,7 +286,7 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Level4"))
         {
-            im.levelText.gameObject.SetActive(true);
+            im.levelText.enabled = true;
 
             if (im.keysStored >= 3)
             {
@@ -296,7 +296,7 @@ public class Player : MonoBehaviour
                     if (im.keysStored < 4)
                     {
                         SceneManager.LoadScene("Level4");
-                        im.levelText.gameObject.SetActive(false);
+                        im.levelText.enabled = false;
                     }
                 }
             }
@@ -307,7 +307,7 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("LevelBoss"))
         {
-            im.levelText.gameObject.SetActive(true);
+            im.levelText.enabled = true;
 
             if (im.keysStored >= 4)
             {
@@ -317,7 +317,7 @@ public class Player : MonoBehaviour
                     GameObject obj = GameObject.FindGameObjectWithTag("AudioManager");
                     obj.GetComponent<AudioManager>().changeToBossMusic();
                     SceneManager.LoadScene("BossLevel");
-                    im.levelText.gameObject.SetActive(false);
+                    im.levelText.enabled = false;
                 }
             }
             else
@@ -327,7 +327,7 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Save Bench"))
         {
-            im.saveText.gameObject.SetActive(true);
+            im.saveText.enabled = true;
 
             im.saveText.text = "Press 'E' to Save Game";
             if (Input.GetKey(KeyCode.E))
@@ -340,8 +340,8 @@ public class Player : MonoBehaviour
         }
         else
         {
-            im.levelText.gameObject.SetActive(false);
-            im.saveText.gameObject.SetActive(false);
+            im.levelText.enabled = false;
+            im.saveText.enabled = false;
         }
     }
 

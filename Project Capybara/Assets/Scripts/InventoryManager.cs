@@ -46,8 +46,10 @@ public class InventoryManager : MonoBehaviour
         bowText = GameObject.FindGameObjectWithTag("BowText").GetComponent<TextMeshProUGUI>();
         damageText = GameObject.FindGameObjectWithTag("DamageText").GetComponent<TextMeshProUGUI>();
         keysText = GameObject.FindGameObjectWithTag("KeysText").GetComponent<TextMeshProUGUI>();
-        //saveText = GameObject.FindGameObjectWithTag("SaveText").GetComponent<TextMeshProUGUI>();
-        //levelText = GameObject.FindGameObjectWithTag("LevelEnterText").GetComponent<TextMeshProUGUI>();
+        saveText = GameObject.FindGameObjectWithTag("SaveText").GetComponent<TextMeshProUGUI>();
+        levelText = GameObject.FindGameObjectWithTag("LevelEnterText").GetComponent<TextMeshProUGUI>();
+        levelText.enabled = false;
+        saveText.enabled = false;
 
         foreach (var weapon in hotbarItems)
         {
@@ -60,8 +62,6 @@ public class InventoryManager : MonoBehaviour
         swordText.enabled = false;
         bowText.enabled = false;
         damageText.enabled = true;
-        levelText.enabled = false;
-        saveText.enabled = false;
 
         if (instance != null && instance != this)
         {
