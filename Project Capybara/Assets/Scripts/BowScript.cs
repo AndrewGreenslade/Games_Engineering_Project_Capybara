@@ -11,8 +11,6 @@ public class BowScript : MonoBehaviour
     void Start()
     {
         inventoryManager = FindObjectOfType<InventoryManager>();
-
-  
     }
 
     // Update is called once per frame
