@@ -277,7 +277,7 @@ PrefabInstance:
       objectReference: {fileID: 4007171229594646280, guid: 562ae8d1491284848b6178dc2770e8a2, type: 3}
     - target: {fileID: 1488244947, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
       propertyPath: MaxEnemies
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1488244947, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
       propertyPath: roomNumber
