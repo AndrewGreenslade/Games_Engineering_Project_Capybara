@@ -178,7 +178,7 @@ public class ScoobyScript : INpc
 	{
 		if (collision.gameObject.CompareTag("attack"))
 		{
-            SceneManager.LoadScene("GameWon");
+            
           
             degregadeHP(FindObjectOfType<DamageValue>().ClawsDamage);
           
@@ -196,12 +196,7 @@ public class ScoobyScript : INpc
 				
 				targetTime = howLongForDamage;
 			}
-
-            
-            SceneManager.LoadScene("GameWon");
-
-            Destroy(collision.gameObject);
-			Destroy(gameObject);
+       
         }
 
         //sdfsdfsdfsd
@@ -216,11 +211,6 @@ public class ScoobyScript : INpc
 				targetTime = howLongForDamage;
 			}
 
-            
-            SceneManager.LoadScene("GameWon");
-
-            Destroy(collision.gameObject);
-			Destroy(gameObject);
 
         }
 

@@ -97,6 +97,7 @@ public class Player : MonoBehaviour
         }
         else if (playerHealth <= 0.0f)
         {
+            gameObject.SetActive(false);
             if (Input.GetKey(KeyCode.R))
             {
                 SceneManager.LoadScene("Main Menu");
@@ -128,10 +129,10 @@ public class Player : MonoBehaviour
 
     void checkStatesForAnimator()
     {
-        //////
-        ///Idle animations Conrolls
-        //////
-        if (state == States.Idle)
+            //////
+            ///Idle animations Conrolls
+            //////
+            if (state == States.Idle)
         {
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
