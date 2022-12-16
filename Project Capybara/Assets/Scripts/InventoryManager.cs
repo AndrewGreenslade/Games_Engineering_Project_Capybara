@@ -102,24 +102,25 @@ public class InventoryManager : MonoBehaviour
         }
 
 
+        if (hasAxe)
+        {
+            axeText.enabled = true;
+            hotbarItems[2].SetActive(true);
+        }
+        if (hasSword)
+        {
+            swordText.enabled = true;
+            hotbarItems[1].SetActive(true);
+        }
+        if (hasBow)
+        {
+            bowText.enabled = true;
+        }
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             inventoryCanvas.SetActive(true);
-            if(hasAxe)
-            {
-                axeText.enabled = true;
-                hotbarItems[2].SetActive(true);
-            }
-            if (hasSword)
-            {
-                swordText.enabled = true;
-                hotbarItems[1].SetActive(true);
-            }
-            if (hasBow)
-            {
-                bowText.enabled = true;
-            }
+           
         }
         else if (Input.GetKeyUp(KeyCode.Tab))
         {
