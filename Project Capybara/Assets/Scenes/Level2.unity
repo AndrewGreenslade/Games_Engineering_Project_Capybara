@@ -199,6 +199,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1488244947, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
+      propertyPath: axe
+      value: 
+      objectReference: {fileID: 4007171229594646280, guid: 562ae8d1491284848b6178dc2770e8a2, type: 3}
+    - target: {fileID: 1488244947, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
       propertyPath: roomNumber
       value: 2
       objectReference: {fileID: 0}
@@ -206,6 +210,10 @@ PrefabInstance:
       propertyPath: LevelNumber
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1488244947, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
+      propertyPath: PowerUpItems.Array.data[0]
+      value: 
+      objectReference: {fileID: 4734654478708206874, guid: c82858cc17a0be84fa341888ef34809e, type: 3}
     - target: {fileID: 3206837894550439956, guid: 785f4951593f7574bba3ad67076e38f0, type: 3}
       propertyPath: exitRoomKey
       value: 

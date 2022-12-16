@@ -28,6 +28,8 @@ public class InventoryManager : MonoBehaviour
     private TextMeshProUGUI axeText;
     private TextMeshProUGUI swordText;
     private TextMeshProUGUI bowText;
+    public TextMeshProUGUI levelText;
+    public TextMeshProUGUI saveText;
     public static InventoryManager instance;
     public bool hasAxe = false;
     public bool hasSword = false;
@@ -44,6 +46,9 @@ public class InventoryManager : MonoBehaviour
         bowText = GameObject.FindGameObjectWithTag("BowText").GetComponent<TextMeshProUGUI>();
         damageText = GameObject.FindGameObjectWithTag("DamageText").GetComponent<TextMeshProUGUI>();
         keysText = GameObject.FindGameObjectWithTag("KeysText").GetComponent<TextMeshProUGUI>();
+        //saveText = GameObject.FindGameObjectWithTag("SaveText").GetComponent<TextMeshProUGUI>();
+        //levelText = GameObject.FindGameObjectWithTag("LevelEnterText").GetComponent<TextMeshProUGUI>();
+
         foreach (var weapon in hotbarItems)
         {
             weapon.SetActive(false);
@@ -55,6 +60,8 @@ public class InventoryManager : MonoBehaviour
         swordText.enabled = false;
         bowText.enabled = false;
         damageText.enabled = true;
+        levelText.enabled = false;
+        saveText.enabled = false;
 
         if (instance != null && instance != this)
         {

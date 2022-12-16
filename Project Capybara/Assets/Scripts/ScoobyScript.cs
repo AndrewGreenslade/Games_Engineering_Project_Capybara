@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoobyScript : INpc
 {
@@ -153,6 +154,10 @@ public class ScoobyScript : INpc
         Animate();
         Health();
 		targetTime -= Time.deltaTime;
+        if(m_hp <= 0)
+        {
+            SceneManager.LoadScene("GameWon");
+        }
 
 	}
 
@@ -173,21 +178,26 @@ public class ScoobyScript : INpc
 	{
 		if (collision.gameObject.CompareTag("attack"))
 		{
-			// Destroy(collision.gameObject);
-			// do collision here 
-			Debug.Log("Player hits Cat");
+            SceneManager.LoadScene("GameWon");
+            // Destroy(collision.gameObject);
+            // do collision here 
+            Debug.Log("Player hits scoob");
 
             /// WHEN HEALTH IS ADDED PUT THIS SHIT IN THE IF STATEMENT WHEN HEALT IS 0 SO IT DELETES ENEMY, 
             /// 
             degregadeHP(1);
-			//// enemyCat health = enemy lama healt - sword daamge;
-			/// makke a simple timer from here https://answers.unity.com/questions/351420/simple-timer-1.html
-			/// and just make it so that enemy will lose health when it collides wvery 2 seconds
-			/// 
+            //// enemyCat health = enemy lama healt - sword daamge;
+            /// makke a simple timer from here https://answers.unity.com/questions/351420/simple-timer-1.html
+            /// and just make it so that enemy will lose health when it collides wvery 2 seconds
+            /// 
 
-			Destroy(collision.gameObject);
+            //Remove this after fix
+          
+
+            //fIX THE DAMNCODE AND REMOVE THIS AND MAKE IT PROPERLY
+            Destroy(collision.gameObject);
 			Destroy(gameObject);
-		}
+        }
 
 
 
@@ -211,12 +221,17 @@ public class ScoobyScript : INpc
 				targetTime = howLongForDamage;
 			}
 
-			// if(health is zero=)
-			// kill enemy 
-			// put theses in a statement 
-			Destroy(collision.gameObject);
+            //fIX THE DAMNCODE AND REMOVE THIS AND MAKE IT PROPERLY
+
+            //Remove this after fix
+            SceneManager.LoadScene("GameWon");
+
+            // if(health is zero=)
+            // kill enemy 
+            // put theses in a statement 
+            Destroy(collision.gameObject);
 			Destroy(gameObject);
-		}
+        }
 
         //sdfsdfsdfsd
 		if (collision.gameObject.CompareTag("realAxeOnCapy"))
@@ -239,12 +254,18 @@ public class ScoobyScript : INpc
 				targetTime = howLongForDamage;
 			}
 
-			// if(health is zero=)
-			// kill enemy 
-			// put theses in a statement 
-			Destroy(collision.gameObject);
+            // if(health is zero=)
+            // kill enemy 
+            // put theses in a statement 
+
+            //Remove this after fix
+            SceneManager.LoadScene("GameWon");
+
+            Destroy(collision.gameObject);
 			Destroy(gameObject);
-		}
+
+
+        }
 
         if (collision.gameObject.CompareTag("Player"))
         {
