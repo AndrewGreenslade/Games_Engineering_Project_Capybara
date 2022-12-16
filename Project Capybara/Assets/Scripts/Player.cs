@@ -234,8 +234,11 @@ public class Player : MonoBehaviour
             im.levelText.text = "Press 'E' to Enter:\r\nLevel 1";
             if (Input.GetKey(KeyCode.E))
             {
-                SceneManager.LoadScene("Level1");
-                im.levelText.gameObject.SetActive(false);
+                if (im.keysStored < 1)
+                {
+                    SceneManager.LoadScene("Level1");
+                    im.levelText.gameObject.SetActive(false);
+                }
             }
 
         }
@@ -248,8 +251,11 @@ public class Player : MonoBehaviour
                 im.levelText.text = "Press 'E' to Enter:\r\nLevel 2";
                 if (Input.GetKey(KeyCode.E))
                 {
-                    SceneManager.LoadScene("Level2");
-                    im.levelText.gameObject.SetActive(false);
+                    if (im.keysStored < 2)
+                    {
+                        SceneManager.LoadScene("Level2");
+                        im.levelText.gameObject.SetActive(false);
+                    }
                 }
             }
             else
@@ -266,8 +272,11 @@ public class Player : MonoBehaviour
                 im.levelText.text = "Press 'E' to Enter:\r\nLevel 3";
                 if (Input.GetKey(KeyCode.E))
                 {
-                    SceneManager.LoadScene("Level3");
-                    im.levelText.gameObject.SetActive(false);
+                    if (im.keysStored < 3)
+                    {
+                        SceneManager.LoadScene("Level3");
+                        im.levelText.gameObject.SetActive(false);
+                    }
                 }
             }
             else
@@ -284,8 +293,11 @@ public class Player : MonoBehaviour
                 im.levelText.text = "Press 'E' to Enter:\r\nLevel 4";
                 if (Input.GetKey(KeyCode.E))
                 {
-                    SceneManager.LoadScene("Level4");
-                    im.levelText.gameObject.SetActive(false);
+                    if (im.keysStored < 4)
+                    {
+                        SceneManager.LoadScene("Level4");
+                        im.levelText.gameObject.SetActive(false);
+                    }
                 }
             }
             else
